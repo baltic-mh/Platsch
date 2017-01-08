@@ -1,0 +1,1 @@
+- Datei index.html muss beim Build noch ins Wurzelverzeichnis verschoben werden

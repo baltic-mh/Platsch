@@ -1,0 +1,31 @@
+= Platsch
+Mathias-H. Weber <mhw@teambaltic.de>
+v1.0, 08. Januar 2017
+:doctype: book
+:encoding: utf-8
+:lang: de
+//:toc: left
+//:toclevels: 4
+//:toc-title: Inhaltsverzeichnis
+:last-update-label: Erstellt mit Asciidoctor v{asciidoctor-version} : Zuletzt geändert:
+:icons: font
+:numbered:
+:source-highlighter: highlightjs
+
+Diese Dokumentation beschreibt das Werden und Entstehen der Vereinszeitung *Platsch* der link:http://www.kv-kiel.de[Kanu-Vereinigung Kiel]
+
+== Redaktionsarbeit
+
+Die gesamte Redaktionsarbeit, die die Abstimmung der Redakteure betrifft sowie das Sammeln und Aufbereiten der Inhalte, ist in link:html/Redaktionsarbeit.html[dieser Dokumentation] beschrieben.
+
+== Layout
+
+Das Erstellen des PDFs aus den gesammelten Inhalten ist in link:html/Layout.html[dieser Dokumentation] beschrieben.
+
+== Druck und Versand
+
+Der Prozess, wie die PDF-Datei zur Druckerei und schließlich als Papiererzeugnis zu den Mitgliedern kommt, ist in link:html/DruckUndVersand.html[dieser Dokumentation] beschrieben.
+
+== Colophon
+
+Eine Beschreibung, wie diese Dokumentation erstellt und verändert werden kann, ist in link:html/Colophon.html[dieser Dokumentation] enthalten.
