@@ -462,6 +462,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <ul class="sectlevel2">
 <li><a href="#_arbeiten_mit_texten">4.1. Arbeiten mit Texten</a></li>
 <li><a href="#_arbeiten_mit_bildern">4.2. Arbeiten mit Bildern</a></li>
+<li><a href="#_inhaltsverzeichnis">4.3. Inhaltsverzeichnis</a></li>
 </ul>
 </li>
 </ul>
@@ -482,12 +483,12 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="sect2">
 <h3 id="_cloud_software"><a class="anchor" href="#_cloud_software"></a>2.1. Cloud-Software</h3>
 <div class="paragraph">
-<p>Um eine automatische Synchronsisation der Daten auf den unterschiedlichen Rechnern der beteiligten Redakteure sicherzustellen, wird die <a href="https://cloud.telekom-dienste.de/">MagentaCLOUD</a> der Telekom verwendet.</p>
+<p>Um eine automatische Synchronisation der Daten auf den unterschiedlichen Rechnern der beteiligten Redakteure sicherzustellen, wird die <a href="https://cloud.telekom-dienste.de/">MagentaCLOUD</a> der Telekom verwendet.</p>
 </div>
 <div class="sect3">
 <h4 id="_installation"><a class="anchor" href="#_installation"></a>2.1.1. Installation</h4>
 <div class="paragraph">
-<p>Die Software ist <a href="https://static.magentacloud.de/software/MagentaCLOUD.exe">hier herunterzuladen(Windows)</a>. (Für den MAC <a href="https://static.magentacloud.de/software/mac-store">hier</a>.)</p>
+<p>Die Software ist <a href="https://static.magentacloud.de/software/MagentaCLOUD.exe">hier herunterzuladen(Windows)</a> (für den MAC <a href="https://static.magentacloud.de/software/mac-store">hier</a>).</p>
 </div>
 <div class="paragraph">
 <p>Die Installation ist mit den Standard-Vorgaben durchzuführen. Nach dem ersten Start muss einiges konfiguriert werden.</p>
@@ -509,7 +510,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="paragraph">
-<p>Dort drück man auf den <kbd>Zum Login</kbd>-Knopf und gibt die Login-Daten ein:</p>
+<p>Dort drückt man auf den <kbd>Zum Login</kbd>-Knopf und gibt die Login-Daten ein:</p>
 </div>
 <div class="imageblock" style="text-align: center">
 <div class="content">
@@ -700,9 +701,36 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li>
 <p>Eintritte/Austritte</p>
 </li>
+<li>
+<p>Rückseite anpassen</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Rückseitenbild aussuchen</p>
+</li>
+<li>
+<p>Bildunterschrift an Rückseitenbild anpassen</p>
+</li>
+</ol>
+</div>
+</li>
 </ol>
 </div>
 </div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Diese Liste der immer abzuarbeitenden Punkte ist in der Datei <em>Nochtun - Vorlage.txt</em> abgebildet. Am besten man kopiert bei Beginn der Arbeiten an einer neuen Ausgabe den Inhalt aus der Vorlagendatei in die Datei <em>Nochtun.txt</em>. In der Kann man dann die Zeilen löschen oder markieren, die bereits erledigt sind.</p>
+</div>
+</td>
+</tr>
+</table>
 </div>
 </div>
 <div class="sect2">
@@ -715,7 +743,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </td>
 <td class="content">
 <div class="paragraph">
-<p>Eventuell ist die Zuordnung zu bestimmten Ausgaben/Zeitpunkten besser in der <a href="html/Redaktionsarbeit.html">Dokumentation der Redaktionsarbeit</a> aufgehoben</p>
+<p>Eventuell ist die Zuordnung zu bestimmten Ausgaben/Zeitpunkten besser in der <a href="Redaktionsarbeit.html">Dokumentation der Redaktionsarbeit</a> aufgehoben</p>
 </div>
 </td>
 </tr>
@@ -776,13 +804,91 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>Soll in einen Bildrahmen ein Bild eingefügt werden, kann man dies über die Tastenkombination <kbd>Strg I</kbd> bewerkstelligen.</p>
 </div>
 </div>
+<div class="sect2">
+<h3 id="_inhaltsverzeichnis"><a class="anchor" href="#_inhaltsverzeichnis"></a>4.3. Inhaltsverzeichnis</h3>
+<div class="paragraph">
+<p>Das Erstellen eines Inhaltsverzeichnisses ist nach Möglichkeit soweit möglich automatisiert vorzunehmen. Grundsätzlich könnte man den Inhalt des entsprechenden Textrahmens auf der Umschlaginnenseite auch von Hand editieren, aber das ist zeitaufwändig und fehlerträchtig.</p>
+</div>
+<div class="paragraph">
+<p>Leider ist die Unterstützung von Scribus zu diesem Thema nicht ganz so, wie man sie sich wünschen könnte. Ein Teil der grundsätzlich notwendigen Arbeiten ist bereits vorbereitet, aber trotzdem muss noch jeder Textrahmen, dessen Überschrift ins Inhaltsverzeichnis aufgenommen werden soll, separat bearbeitet werden.</p>
+</div>
+<div class="paragraph">
+<p>Soll die Überschrift eines Textrahmens ins Inhaltsverzeichnis aufgenommen werden, wechselt man mit einem Doppelklick auf die Überschrift in den Editiermodus und selektiert anschließend die gesamte Überschrift. Mit <kbd>Strg C</kbd> sichert man den Text in den Kopierpuffer. Anschließend präsentiert ein rechter Mausklick irgendwo im Textrahmen das Kontext-Menu:</p>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="images/TOC1.png" alt="TOC1">
+</div>
+</div>
+<div class="paragraph">
+<p>Aus dem wählt man den Eintrag <kbd>Attribute&#8230;&#8203;</kbd> aus und erhält folgendes Fenster:</p>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="images/TOC2.png" alt="TOC2">
+</div>
+</div>
+<div class="paragraph">
+<p>Mit <kbd>Hinzufügen</kbd> erhält man einen Editor für die Objekt-Attribute:</p>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="images/TOC3.png" alt="TOC3">
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Eventuell ist bereits ein Attribut-Eintrag vorhanden. Das ist in aller Regel der Fall, wenn ein bereits in der vorherigen Version verwendeter Textrahmen recycled worden ist. Dann steht hier als Attribut-Wert vermutlich die alte Überschrift. man kann den Eintrag am besten wiederverwenden und nur den Attribut-Wert mit der neuen Überschrift aktualisieren.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>In der Auswahlbox der Spalte <em>Name</em> wählt man den Wert <em>Inhalt</em> aus.
+Mit einem Doppelklick in das Feld unter dem Überschrift <em>Wert</em> trägt man mit <kbd>Strg V</kbd> den eben kopierten Text der Überschrift hier hinein:</p>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="images/TOC4.png" alt="TOC4">
+</div>
+</div>
+<div class="paragraph">
+<p>Dieser Vorgang ist (leider) für jeden neuen bzw. jeden Textrahmen notwendig, in dem sich die Überschrift geändert hat.</p>
+</div>
+<div class="paragraph">
+<p>Der letzte Schritt besteht darin, die eben markierten Überschriften auch tatsächlich in den bereits dafür vorbereiteten Textrahmen zu übernehmen. Das geschieht durch Aufruf des Menu-Punktes <kbd>Extras/Inhaltsverzeichnis erstellen</kbd>:</p>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="images/TOC5.png" alt="TOC5">
+</div>
+</div>
+<div class="paragraph">
+<p>Die neue Überschrift ist nun unter der Angabe der korrekten Seitenzahl im Inhaltsverzeichnis auf der Umschlaginnenseite aufgeführt:</p>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="images/TOC6.png" alt="TOC6">
+</div>
+</div>
+<div class="paragraph">
+<p>Bei der Revision, bevor also die PDF-Datei endgültig für den Druck freigegeben wird, muss noch einmal das Inhaltsverzeichnis mit den in der Broschure enthaltenen Überschriften verglichen werden.</p>
+</div>
+</div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
 Version 1.0<br>
-Erstellt mit Asciidoctor v1.5.3 : Zuletzt geändert: 2017-01-08 14:02:13 +01:00
+Erstellt mit Asciidoctor v1.5.3 : Zuletzt geändert: 2017-01-08 16:44:39 +01:00
 </div>
 </div>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/styles/github.min.css">

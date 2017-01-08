@@ -31,11 +31,11 @@ In dieser Dokumentation ist der gesamte Prozess beschrieben, wie aus den durch d
 
 === Cloud-Software
 
-Um eine automatische Synchronsisation der Daten auf den unterschiedlichen Rechnern der beteiligten Redakteure sicherzustellen, wird die link:https://cloud.telekom-dienste.de/[MagentaCLOUD] der Telekom verwendet.
+Um eine automatische Synchronisation der Daten auf den unterschiedlichen Rechnern der beteiligten Redakteure sicherzustellen, wird die link:https://cloud.telekom-dienste.de/[MagentaCLOUD] der Telekom verwendet.
 
 ==== Installation
 
-Die Software ist link:https://static.magentacloud.de/software/MagentaCLOUD.exe[hier herunterzuladen(Windows)]. (Für den MAC link:https://static.magentacloud.de/software/mac-store[hier].)
+Die Software ist link:https://static.magentacloud.de/software/MagentaCLOUD.exe[hier herunterzuladen(Windows)] (für den MAC link:https://static.magentacloud.de/software/mac-store[hier]).
 
 Die Installation ist mit den Standard-Vorgaben durchzuführen. Nach dem ersten Start muss einiges konfiguriert werden.
 
@@ -47,7 +47,7 @@ kann übersprungen oder durchlaufen werden, bis der folgende Dialog angezeigt wi
 
 image::images/MagentaCLOUD2.png[align="center"]
 
-Dort drück man auf den kbd:[Zum Login]-Knopf und gibt die Login-Daten ein:
+Dort drückt man auf den kbd:[Zum Login]-Knopf und gibt die Login-Daten ein:
 
 image::images/MagentaCLOUD3.png[align="center"]
 
@@ -140,13 +140,21 @@ Hier sind zunächst einmal nur die blanken Arbeitsschritte aufgeführt, die zur 
 . Termine Wanderfahrer
 . Termine Polospieler
 . Eintritte/Austritte
+. Rückseite anpassen
+.. Rückseitenbild aussuchen
+.. Bildunterschrift an Rückseitenbild anpassen
+====
+
+[NOTE]
+====
+Diese Liste der immer abzuarbeitenden Punkte ist in der Datei _Nochtun - Vorlage.txt_ abgebildet. Am besten man kopiert bei Beginn der Arbeiten an einer neuen Ausgabe den Inhalt aus der Vorlagendatei in die Datei _Nochtun.txt_. In der Kann man dann die Zeilen löschen oder markieren, die bereits erledigt sind.
 ====
 
 === Wiederkehrende Arbeitsschritte - saisonal
 
 [TIP]
 ====
-Eventuell ist die Zuordnung zu bestimmten Ausgaben/Zeitpunkten besser in der link:html/Redaktionsarbeit.html[Dokumentation der Redaktionsarbeit] aufgehoben
+Eventuell ist die Zuordnung zu bestimmten Ausgaben/Zeitpunkten besser in der link:Redaktionsarbeit.html[Dokumentation der Redaktionsarbeit] aufgehoben
 ====
 
 ==== Ausgabe vor Mitgliederversammlung
@@ -180,5 +188,46 @@ Soll in einen Textrahmen Text eingefügt werden, kann man dies über die Tastenk
 Das Tastenkürzel für das Einfügen eines Bildrahmens ist kbd:[I].
 
 Soll in einen Bildrahmen ein Bild eingefügt werden, kann man dies über die Tastenkombination kbd:[Strg I] bewerkstelligen.
+
+
+=== Inhaltsverzeichnis
+
+Das Erstellen eines Inhaltsverzeichnisses ist nach Möglichkeit soweit möglich automatisiert vorzunehmen. Grundsätzlich könnte man den Inhalt des entsprechenden Textrahmens auf der Umschlaginnenseite auch von Hand editieren, aber das ist zeitaufwändig und fehlerträchtig.
+
+Leider ist die Unterstützung von Scribus zu diesem Thema nicht ganz so, wie man sie sich wünschen könnte. Ein Teil der grundsätzlich notwendigen Arbeiten ist bereits vorbereitet, aber trotzdem muss noch jeder Textrahmen, dessen Überschrift ins Inhaltsverzeichnis aufgenommen werden soll, separat bearbeitet werden.
+
+Soll die Überschrift eines Textrahmens ins Inhaltsverzeichnis aufgenommen werden, wechselt man mit einem Doppelklick auf die Überschrift in den Editiermodus und selektiert anschließend die gesamte Überschrift. Mit kbd:[Strg C] sichert man den Text in den Kopierpuffer. Anschließend präsentiert ein rechter Mausklick irgendwo im Textrahmen das Kontext-Menu:
+
+image::images/TOC1.png[align="center"]
+
+Aus dem wählt man den Eintrag kbd:[Attribute...] aus und erhält folgendes Fenster:
+
+image::images/TOC2.png[align="center"]
+
+Mit kbd:[Hinzufügen] erhält man einen Editor für die Objekt-Attribute:
+
+image::images/TOC3.png[align="center"]
+
+[NOTE]
+====
+Eventuell ist bereits ein Attribut-Eintrag vorhanden. Das ist in aller Regel der Fall, wenn ein bereits in der vorherigen Version verwendeter Textrahmen recycled worden ist. Dann steht hier als Attribut-Wert vermutlich die alte Überschrift. man kann den Eintrag am besten wiederverwenden und nur den Attribut-Wert mit der neuen Überschrift aktualisieren.
+====
+
+In der Auswahlbox der Spalte _Name_ wählt man den Wert _Inhalt_ aus.
+Mit einem Doppelklick in das Feld unter dem Überschrift _Wert_ trägt man mit kbd:[Strg V] den eben kopierten Text der Überschrift hier hinein:
+
+image::images/TOC4.png[align="center"] 
+
+Dieser Vorgang ist (leider) für jeden neuen bzw. jeden Textrahmen notwendig, in dem sich die Überschrift geändert hat.
+
+Der letzte Schritt besteht darin, die eben markierten Überschriften auch tatsächlich in den bereits dafür vorbereiteten Textrahmen zu übernehmen. Das geschieht durch Aufruf des Menu-Punktes kbd:[Extras/Inhaltsverzeichnis erstellen]:
+
+image::images/TOC5.png[align="center"]
+
+Die neue Überschrift ist nun unter der Angabe der korrekten Seitenzahl im Inhaltsverzeichnis auf der Umschlaginnenseite aufgeführt:
+
+image::images/TOC6.png[align="center"]
+
+Bei der Revision, bevor also die PDF-Datei endgültig für den Druck freigegeben wird, muss noch einmal das Inhaltsverzeichnis mit den in der Broschure enthaltenen Überschriften verglichen werden.
 
 
