@@ -26,7 +26,6 @@ v1.0, 08. Januar 2017
 
 In dieser Dokumentation ist der gesamte Prozess beschrieben, wie aus den durch die Redaktionsarbeit gesammelten Inhalten eine PDF_Datei erstellt wird, die schließlich der Druckerei übergeben wird, um daraus _wirklich_ die Vereinszeitung in Form einer Papierbroschure zu machen.
 
-
 == Verwendete Software
 
 === Cloud-Software
@@ -96,30 +95,122 @@ Ist dieses Werkzeug nicht installiert, kann man z.B. keine PDF-Dateien als Bilde
 
 Wenn nach der erstmaligen Installation von Scribus oder Ghostscript neuere Versionen installiert werden, bleiben die älteren Versionen auf dem Rechner installiert. Man kann also mehrere Versionen gleichzeitig betreiben, was für unsere Belange aber eher Verwirrung stiftet als Nutzen bringt. Die älteren Versionen sollten also danach möglichst deinstalliert werden. 
 
-== Grundsätzlicher Arbeitsablauf
+== Verzeichnisstrukturen
 
-=== Arbeiten im Dateisystem
+Um koordiniert mit mehreren Redakteuren und Layoutern an der Zeitung arbeiten zu können, ist ein gemeinsames Verständnis der Arbeitsablaufes und der Verzeichnisstruktur unerlässlich.
 
-Für jede Ausgabe der Vereinszeitung wird im Ordner der Cloud ein eigener Unterordner erzeugt.
+=== Struktur des Cloud-Verzeichnisses
+
+In der folgenden Abbildung ist die grundlegende Struktur des Cloud-Verzeichnisses (also des obersten Ordners, ab dem synchronisiert wird) angegeben:
 
 [[image-dateibaum,Dateibaum1]]
-.Dateibaum 1
+.Schema des Cloud-Verzeichnisses
 image::images/CloudVerzeichnis1.png[]
+
+Dort sind einige Verzeichnisse, die ausgabenübergreifende Bedeutung haben und für jede Ausgabe der Vereinszeitung ein eigener Ordner.
+
+Der Ordner _00-Vorlagen_ enthält Vorlagendateien, die für jede Ausgabe Verwendung finden. 
+
+Im Verzeichnis _01-Ausgabennummern_ sind vorbereitete Bilder für die Nummern, die auf der Titelseite der jeweiligen Ausgaben auftauchen.
+
+=== Ordnerstruktur einer bestimmten Ausgabe
+
+Auch innerhalb des Ordners einer bestimmten Ausgabe ist eine Verständigung über die Bedeutung einzelner Verzeichnisse hilfreich.
+
+[[image-dateibaum,Dateibaum2]]
+.Ordnerstruktur einer bestimmten Ausgabe (hier: Januar 2017)
+image::images/CloudVerzeichnis4.png[]
+
+Die zentrale Datei einer jeden Ausgabe ist die Datei _Platsch.sla_. Sie repräsentiert das Layout zusammen mit den Inhalten und ist die Quelle, aus der am Ende das druckbare PDF erzeugt wird.
+
+_Alle_ erzeugten und zugelieferten Dateien werden zuerst im Unterverzeichnis _01-Eingang_ aufgenommen #(1)#. Sobald sie redationell bearbeitet werden, werden sie in den Ordner _02-InBearbeitung_ verschoben #(2)#. Erst wenn sie ihre Form, in der sie in die Zeitung Eingang finden sollen, erhalten haben, werden sie - im Falle von Texten - in das Verzeichnis _Texte_ verschoben #(3)#, im Falle von Bildern in den Ordner _Bilder_ #(4)#.
+
+So ist eine für alle ersichtliche Trennung der unterschiedlichen Stadien der Bearbeitung gesichert und die Gefahr von Missverständnissen und Datenverluste ist minimal.
+
+Wenn man "Trockenübungen" machen möchte, um einen Bearbeitungsschritt auszuprobieren, sollte das in einer privaten Kopie des Ausgaben-Verzeichnisses außerhalb des Cloud-Ordners stattfinden.
+
+== Grundsätzlicher Arbeitsablauf
+
+=== Vorbereitende Arbeiten
+
+==== Anlegen eines Verzeichnisses für die neue Ausgabe
+Für jede Ausgabe der Vereinszeitung wird im Ordner der Cloud ein eigener Unterordner erzeugt.
 
 Der erste Schritt zur Erstellung einer neuen Ausgabe ist also das Kopieren des Ordners der letzten Ausgabe. Der dadurch neu entstandene Ordner wird danach geeignet umbenannt.
 
-Nach Kopieren des Ordners kann man eventuell den Ordner der alten Ausgabe bereinigen. Eigentlich sind alle Dateien verzichtbar bis auf die finale PDF-Datei der jeweiligen Ausgabe.
+Aus dem Ordner _Vorlagen_ ist die Datei _NochTun.txt_ in das neu entstandene Verzeichnis der aktuellen Ausgabe zu kopieren.
 
-Die folgende Abbildung gibt einen detaillierteren Blick in das innere des Ordners für die Ausgabe vom Januar 2017:
+[WARNING]
+====
+Es ist unbedingt darauf zu achten, dass die Datei  _NochTun.txt_ tatsächlich _kopiert_ wird und nicht etwa nur verschoben!
+====
+
+Aus dem Ordner _01-Ausgabennummern_ die (hoffentlich) schon vorbereitete .png-Datei für die betreffende Ausgabennummer. Wenn noch kein Nummernbild vorbereitet ist, guckst du 
+link:erzeugen_eines_bildes_f_r_die_ausgabennummer[hier]!
+
+Nach dem Kopieren kann man eventuell den Ordner der alten Ausgabe bereinigen. Eigentlich sind alle Dateien verzichtbar bis auf die finale PDF-Datei der jeweiligen Ausgabe.
+
+Die folgende Abbildung gibt einen detaillierteren Blick in das Innere des Ordners für die Ausgabe vom Januar 2017:
+
 [[image-dateibaum,Dateibaum2]]
-.Dateibaum 2
+.Ordnerstruktur einer bestimmten Ausgabe (hier: Januar 2017)
 image::images/CloudVerzeichnis2.png[]
 
-Neben für jede Ausgabe spezifischen Inhalten finden sich darin eine Reihe von Elementen, die in jeder Ausgabe vorkommen. Da ist zum einen das Verzeichnis mit Namen _Ewige Bilder_ zu nennen, in dem eben Bilder vorgehalten werden, die in jeder Ausgabe wieder auftauchen (ein einfaches Beispiel ist das Logo der Zeitung).
+Neben für jede Ausgabe spezifischen Inhalten finden sich darin eine Reihe von Elementen, die in jeder Ausgabe vorkommen. Da ist zum einen das Verzeichnis mit Namen _Ewige Bilder_ zu nennen, in dem eben Bilder vorgehalten werden, die in jeder Ausgabe wieder auftauchen (wie z.B. das Logo).
 
 Die Datei _Nochtun.txt_ ist schlicht ein Merkzettel, in die man Dinge hineinschreibt, die einem während der Arbeit am Layout auffallen, die aber nicht sofort erledigt werden können (wie z.B. das Besorgen der aktuellen Termine der Polo-Sparte, sollten diese ausnahmsweise einmal nicht bereits zum Redaktionsschluss vorliegen).
 
 Die Datei _Platsch.pdf_ ist das Endergebnis dieses Prozessschrittes, während die Datei _Platsch.sla_ das Scribus-Layout repräsentiert und damit den Startpunkt dieses Prozessschrittes.
+
+==== Erzeugen eines Bildes für die Ausgabennummer
+
+[WARNING]
+====
+Für das Erzeugen der Ausgabennummer, wie es hier beschrieben ist, wird _MicroSoft Word_ benötigt, sowie ein "Snippet"(ScreenShot)-Tool und IrfanView (ersatzweise _PhotoShop_ oder _Gimp_).
+
+Es wird hier nicht darauf eingegangen, wie diese Werkzeuge installiert oder benutzt werden. Die Erzeugung der Ausgabennummern ist aber nicht an den Termin der konkreten Ausgabe gebunden und kann auch auf Vorrat erfolgen. Es ist daher sinnvoll, dass jemand mit dem notwendigem Wissen und den Werkzeugen eine Serie von Ausgabennummern im Vorhinein erzeugt.
+====
+
+Im Verzeichnis _Vorlagen_ liegt eine Word-Datei _Ausgabennummer.docx_. Sie enthält eine bereits korrekt formatierte Zahl (als WordArt-Objekt) für die (vorherige) Auflagennummer:
+
+.Bearbeitung der Ausgabennummer
+image::images/Ausgabennummer1.png[]
+
+. Zuerst ist das WordArt-Objekt anzuklicken
+. Dann muss im Menu kbd:[Format] angewählt werden (entfällt, wenn man einen Doppelklick auf das WordArt-Objekt macht)
+. Durch einen Klick auf kbd:[Text bearbeiten] im Menu-Band öffnet sich ein WordArt-Editor,
+. in dem man die Nummer entsprechend anpasst
+
+.Anpassung der Ausgabennummer
+image::images/Ausgabennummer2.png[]
+
+Nun muss diese Nummer "abfotografiert" werden. Dazu sollte man zuerst mit der Maus unter den Rahmen des WordArt-Objekt klicken, damit dieser nicht mehr dargestellt wird.
+
+."Screenshotten" der Ausgabennummer
+image::images/Ausgabennummer3.png[]
+
+Das "Abfotografieren" macht man mit einem beliebigen "Snippet"-Tool - ich verwende link:http://getgreenshot.org/[GreenShot]. Der Screenshot ist als "png"-Datei zu speichern.
+
+Als letztes muss der Hintergrund noch transparent gemacht werden - weil er auf dem ScreenShot ja weiß ist und das nicht gut aussieht, wenn die Zahl auf der Titelseite in einem weißes Rechteck auftaucht.
+
+Das transparent-Machen kann man mit einem beliebigen Bildverarbeitungsprogramm bewerkstelligen - oder ganz einfach mit der sehr verbreiteten Bildbetrachtungssoftware link:http://www.irfanview.de/[IrfanView].
+
+Dazu wird die eben gespeicherte Datei mit dem Programm geöffnet. Durch Drücken der Taste kbd:[S] öffnet sich der "Speichern unter..."-Dialog:
+
+.IrfanView: Bild speichern unter...
+image::images/Ausgabennummer4.png[]
+
+Als Ausgabeort wählt man das Unterverzeichnis _Ausgabennummern_ direkt im Cloud-Ordner. Wenn das Häkchen im Kasten "Show Option Dialog" gesetzt ist, erscheint ein weiterer Dialog, in dem die Optionen wie unten dargestellt angewählt sein müssen:
+
+.Optionen, um Transparenz zu erzeugen
+image::images/Ausgabennummer5.png[]
+
+Wenn man dann im ursprünglichen "Speichern"-Dialog den Knopf kbd:[Speichern] drückt, öffnet sich abermals ein Fenster, in dem man die Farbe auswählen kann, die transparent gesetzt werden soll:
+
+.Transparente Farbe auswählen
+image::images/Ausgabennummer6.png[]
+
+Hier klickt man einfach in den weißen Hintergrund - et voilá: schon haben wir eine schöne neue Ausgabennummer!
 
 === Wiederkehrende Arbeitsschritte
 
@@ -180,15 +271,35 @@ Soll in einen Textrahmen Text eingefügt werden, kann man dies über die Tastenk
 
 Das Tastenkürzel für das Einfügen eines Textrahmens ist kbd:[T].
 
-Soll in einen Textrahmen Text eingefügt werden, kann man dies über die Tastenkombination kbd:[Strg T] bewerkstelligen.
+Soll in einen Textrahmen Text aus einer eingefügt werden, kann man dies über die Tastenkombination kbd:[Strg I](_insert_) bewerkstelligen.
+
+Soll in einen Textrahmen Text editiert werden, kann man entweder über einen Doppelklick in den Editiermodus gelangen oder über die Tastenkombination kbd:[Strg T] einen Story-Editor öffnen, in dem man neben der reinen Texteingabe auch den einzelnen Absätzen Formatvorlagen zuordnen kann.
+
+==== Absätze formatieren
+
+Das Format des Textes in einem Absatz sollte nach Möglichkeit _nur_ über die Zuweisung von Formatvorlagen vorgenommen werden. 
+
+==== KVK-Absatzformate
+.Spalten der Datei +BasisDaten.csv+
+[cols="15,85",options="header,footer"]
+|====================
+| Vorlagennamename          | Verwendung
+| KVK-Standardabsatz        | Bildet die Basis für weitere Formatvorlagen
+| KVK-Inhaltsverzeichnis    | Inhaltsverzeichnis
+| KVK-Artikelüberschrift    | Überschrift für Artikel,
+die ins Inhaltsverzeichnis aufgenommen werden sollen
+| KVK-UnterUeberschrift     | Unterüberschrift für die Zeile unter der Überschrift von Artikeln
+|====================
 
 
 === Arbeiten mit Bildern
 
 Das Tastenkürzel für das Einfügen eines Bildrahmens ist kbd:[I].
 
-Soll in einen Bildrahmen ein Bild eingefügt werden, kann man dies über die Tastenkombination kbd:[Strg I] bewerkstelligen.
+Soll in einen Bildrahmen ein Bild eingefügt werden, kann man dies über die Tastenkombination kbd:[Strg I](_insert_) bewerkstelligen.
 
+
+=== Verändern der Seitenzahl
 
 === Inhaltsverzeichnis
 
