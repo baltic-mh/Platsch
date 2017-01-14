@@ -458,7 +458,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_vorbereitende_arbeiten">4.1. Vorbereitende Arbeiten</a>
 <ul class="sectlevel3">
 <li><a href="#_anlegen_eines_verzeichnisses_für_die_neue_ausgabe">4.1.1. Anlegen eines Verzeichnisses für die neue Ausgabe</a></li>
-<li><a href="#_erzeugen_eines_bildes_für_die_ausgabennummer">4.1.2. Erzeugen eines Bildes für die Ausgabennummer</a></li>
+<li><a href="#_erzeugen_eines_bildes_fuer_die_ausgabennummer">4.1.2. Erzeugen eines Bildes fuer die Ausgabennummer</a></li>
 </ul>
 </li>
 <li><a href="#_wiederkehrende_arbeitsschritte">4.2. Wiederkehrende Arbeitsschritte</a></li>
@@ -646,11 +646,17 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="paragraph">
 <p>Im Verzeichnis <em>01-Ausgabennummern</em> sind vorbereitete Bilder für die Nummern, die auf der Titelseite der jeweiligen Ausgaben auftauchen.</p>
 </div>
+<div class="paragraph">
+<p>Im Verzeichnis <em>02-EwigeBilder</em> wohnen Bilder, die immer wieder auftauchen wie z.B. das Logo oder andere charakteristische Graphiken.</p>
+</div>
 </div>
 <div class="sect2">
 <h3 id="_ordnerstruktur_einer_bestimmten_ausgabe"><a class="anchor" href="#_ordnerstruktur_einer_bestimmten_ausgabe"></a>3.2. Ordnerstruktur einer bestimmten Ausgabe</h3>
 <div class="paragraph">
 <p>Auch innerhalb des Ordners einer bestimmten Ausgabe ist eine Verständigung über die Bedeutung einzelner Verzeichnisse hilfreich.</p>
+</div>
+<div class="paragraph">
+<p>Die folgende Abbildung gibt einen detaillierteren Blick in das Innere des Ordners für die Ausgabe vom Januar 2017:</p>
 </div>
 <div id="image-dateibaum" class="imageblock">
 <div class="content">
@@ -662,7 +668,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>Die zentrale Datei einer jeden Ausgabe ist die Datei <em>Platsch.sla</em>. Sie repräsentiert das Layout zusammen mit den Inhalten und ist die Quelle, aus der am Ende das druckbare PDF erzeugt wird.</p>
 </div>
 <div class="paragraph">
-<p><em>Alle</em> erzeugten und zugelieferten Dateien werden zuerst im Unterverzeichnis <em>01-Eingang</em> aufgenommen <mark>(1)</mark>. Sobald sie redationell bearbeitet werden, werden sie in den Ordner <em>02-InBearbeitung</em> verschoben <mark>(2)</mark>. Erst wenn sie ihre Form, in der sie in die Zeitung Eingang finden sollen, erhalten haben, werden sie - im Falle von Texten - in das Verzeichnis <em>Texte</em> verschoben <mark>(3)</mark>, im Falle von Bildern in den Ordner <em>Bilder</em> <mark>(4)</mark>.</p>
+<p><em>Alle</em> erzeugten und zugelieferten Dateien werden zuerst im Unterverzeichnis <em>01-Eingang</em> aufgenommen <mark>(1)</mark>. Sobald sie redationell bearbeitet werden, werden sie in den Ordner <em>02-InBearbeitung</em> verschoben <mark>(2)</mark>. Erst wenn sie ihre Form, in der sie in die Zeitung Eingang finden sollen, erhalten haben, werden sie - im Falle von Bildern - in das Verzeichnis <em>03-FertigeBilder</em> verschoben <mark>(3)</mark>, im Falle von Texten in den Ordner <em>03-FertigeTexte</em> <mark>(4)</mark>.</p>
 </div>
 <div class="paragraph">
 <p>So ist eine für alle ersichtliche Trennung der unterschiedlichen Stadien der Bearbeitung gesichert und die Gefahr von Missverständnissen und Datenverluste ist minimal.</p>
@@ -681,13 +687,19 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="sect3">
 <h4 id="_anlegen_eines_verzeichnisses_für_die_neue_ausgabe"><a class="anchor" href="#_anlegen_eines_verzeichnisses_für_die_neue_ausgabe"></a>4.1.1. Anlegen eines Verzeichnisses für die neue Ausgabe</h4>
 <div class="paragraph">
-<p>Für jede Ausgabe der Vereinszeitung wird im Ordner der Cloud ein eigener Unterordner erzeugt.</p>
+<p>Der erste Schritt zur Erstellung einer neuen Ausgabe ist das Erzeugen eines entsprechenden Unterverzeichnisses, das durch das Skript <em>NeuePlatschAusgabeStarten.bat</em> erstellt wird. Das Skript <em>muss</em> in einer Command-Shell im Hauptverzeichnis der Cloud aufgerufen werden.</p>
 </div>
 <div class="paragraph">
-<p>Der erste Schritt zur Erstellung einer neuen Ausgabe ist also das Kopieren des Ordners der letzten Ausgabe. Der dadurch neu entstandene Ordner wird danach geeignet umbenannt.</p>
+<p><span class="image"><img src="images/NeuePlatschAusgabeStarten.bat1.png" alt="NeuePlatschAusgabeStarten.bat1"></span></p>
 </div>
 <div class="paragraph">
-<p>Aus dem Ordner <em>Vorlagen</em> ist die Datei <em>NochTun.txt</em> in das neu entstandene Verzeichnis der aktuellen Ausgabe zu kopieren.</p>
+<p>Nach Bestätigen des vorgeschlagenen Verzeichnisnamens - oder Eingabe eines neuen - wird das Verzeichnis der vorherigen Ausgabe bestimmt sowie die neue Ausgabennummer:</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="images/NeuePlatschAusgabeStarten.bat2.png" alt="NeuePlatschAusgabeStarten.bat2"></span></p>
+</div>
+<div class="paragraph">
+<p>Es wird die oben dargestellte Verzeichnisstruktur erzeugt, sowie einige grundlegende Dateien in den Ordner kopiert.</p>
 </div>
 <div class="admonitionblock warning">
 <table>
@@ -697,30 +709,13 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </td>
 <td class="content">
 <div class="paragraph">
-<p>Es ist unbedingt darauf zu achten, dass die Datei  <em>NochTun.txt</em> tatsächlich <em>kopiert</em> wird und nicht etwa nur verschoben!</p>
+<p>Es ist unbedingt zu überprüfen, ob das Bild für die Ausgabennummer im Verzeichnis <em>03-FertigeBilder</em> korrekt angelegt worden ist!
+Wenn noch kein Nummernbild vorbereitet ist, guckst du
+<a href="_erzeugen_eines_bildes_fuer_die_ausgabennummer">hier</a>!</p>
 </div>
 </td>
 </tr>
 </table>
-</div>
-<div class="paragraph">
-<p>Aus dem Ordner <em>01-Ausgabennummern</em> die (hoffentlich) schon vorbereitete .png-Datei für die betreffende Ausgabennummer. Wenn noch kein Nummernbild vorbereitet ist, guckst du
-<a href="erzeugen_eines_bildes_f_r_die_ausgabennummer">hier</a>!</p>
-</div>
-<div class="paragraph">
-<p>Nach dem Kopieren kann man eventuell den Ordner der alten Ausgabe bereinigen. Eigentlich sind alle Dateien verzichtbar bis auf die finale PDF-Datei der jeweiligen Ausgabe.</p>
-</div>
-<div class="paragraph">
-<p>Die folgende Abbildung gibt einen detaillierteren Blick in das Innere des Ordners für die Ausgabe vom Januar 2017:</p>
-</div>
-<div id="image-dateibaum" class="imageblock">
-<div class="content">
-<img src="images/CloudVerzeichnis2.png" alt="CloudVerzeichnis2">
-</div>
-<div class="title">Abbildung 3. Ordnerstruktur einer bestimmten Ausgabe (hier: Januar 2017)</div>
-</div>
-<div class="paragraph">
-<p>Neben für jede Ausgabe spezifischen Inhalten finden sich darin eine Reihe von Elementen, die in jeder Ausgabe vorkommen. Da ist zum einen das Verzeichnis mit Namen <em>Ewige Bilder</em> zu nennen, in dem eben Bilder vorgehalten werden, die in jeder Ausgabe wieder auftauchen (wie z.B. das Logo).</p>
 </div>
 <div class="paragraph">
 <p>Die Datei <em>Nochtun.txt</em> ist schlicht ein Merkzettel, in die man Dinge hineinschreibt, die einem während der Arbeit am Layout auffallen, die aber nicht sofort erledigt werden können (wie z.B. das Besorgen der aktuellen Termine der Polo-Sparte, sollten diese ausnahmsweise einmal nicht bereits zum Redaktionsschluss vorliegen).</p>
@@ -730,7 +725,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect3">
-<h4 id="_erzeugen_eines_bildes_für_die_ausgabennummer"><a class="anchor" href="#_erzeugen_eines_bildes_für_die_ausgabennummer"></a>4.1.2. Erzeugen eines Bildes für die Ausgabennummer</h4>
+<h4 id="_erzeugen_eines_bildes_fuer_die_ausgabennummer"><a class="anchor" href="#_erzeugen_eines_bildes_fuer_die_ausgabennummer"></a>4.1.2. Erzeugen eines Bildes fuer die Ausgabennummer</h4>
 <div class="admonitionblock warning">
 <table>
 <tr>
@@ -749,13 +744,13 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </table>
 </div>
 <div class="paragraph">
-<p>Im Verzeichnis <em>Vorlagen</em> liegt eine Word-Datei <em>Ausgabennummer.docx</em>. Sie enthält eine bereits korrekt formatierte Zahl (als WordArt-Objekt) für die (vorherige) Auflagennummer:</p>
+<p>Im Verzeichnis <em>00-Vorlagen</em> liegt eine Word-Datei <em>Ausgabennummer.docx</em>. Sie enthält eine bereits korrekt formatierte Zahl (als WordArt-Objekt) für die (zuletzt erstellte) Auflagennummer:</p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/Ausgabennummer1.png" alt="Ausgabennummer1">
 </div>
-<div class="title">Abbildung 4. Bearbeitung der Ausgabennummer</div>
+<div class="title">Abbildung 3. Bearbeitung der Ausgabennummer</div>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -777,7 +772,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="content">
 <img src="images/Ausgabennummer2.png" alt="Ausgabennummer2">
 </div>
-<div class="title">Abbildung 5. Anpassung der Ausgabennummer</div>
+<div class="title">Abbildung 4. Anpassung der Ausgabennummer</div>
 </div>
 <div class="paragraph">
 <p>Nun muss diese Nummer "abfotografiert" werden. Dazu sollte man zuerst mit der Maus unter den Rahmen des WordArt-Objekt klicken, damit dieser nicht mehr dargestellt wird.</p>
@@ -786,7 +781,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="content">
 <img src="images/Ausgabennummer3.png" alt="Ausgabennummer3">
 </div>
-<div class="title">Abbildung 6. "Screenshotten" der Ausgabennummer</div>
+<div class="title">Abbildung 5. "Screenshotten" der Ausgabennummer</div>
 </div>
 <div class="paragraph">
 <p>Das "Abfotografieren" macht man mit einem beliebigen "Snippet"-Tool - ich verwende <a href="http://getgreenshot.org/">GreenShot</a>. Der Screenshot ist als "png"-Datei zu speichern.</p>
@@ -804,16 +799,16 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="content">
 <img src="images/Ausgabennummer4.png" alt="Ausgabennummer4">
 </div>
-<div class="title">Abbildung 7. IrfanView: Bild speichern unter&#8230;&#8203;</div>
+<div class="title">Abbildung 6. IrfanView: Bild speichern unter&#8230;&#8203;</div>
 </div>
 <div class="paragraph">
-<p>Als Ausgabeort wählt man das Unterverzeichnis <em>Ausgabennummern</em> direkt im Cloud-Ordner. Wenn das Häkchen im Kasten "Show Option Dialog" gesetzt ist, erscheint ein weiterer Dialog, in dem die Optionen wie unten dargestellt angewählt sein müssen:</p>
+<p>Als Ausgabeort wählt man das Unterverzeichnis <em>01-Ausgabennummern</em> direkt im Cloud-Ordner. Wenn das Häkchen im Kasten "Show Option Dialog" gesetzt ist, erscheint ein weiterer Dialog, in dem die Optionen wie unten dargestellt angewählt sein müssen:</p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/Ausgabennummer5.png" alt="Ausgabennummer5">
 </div>
-<div class="title">Abbildung 8. Optionen, um Transparenz zu erzeugen</div>
+<div class="title">Abbildung 7. Optionen, um Transparenz zu erzeugen</div>
 </div>
 <div class="paragraph">
 <p>Wenn man dann im ursprünglichen "Speichern"-Dialog den Knopf <kbd>Speichern</kbd> drückt, öffnet sich abermals ein Fenster, in dem man die Farbe auswählen kann, die transparent gesetzt werden soll:</p>
@@ -822,7 +817,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="content">
 <img src="images/Ausgabennummer6.png" alt="Ausgabennummer6">
 </div>
-<div class="title">Abbildung 9. Transparente Farbe auswählen</div>
+<div class="title">Abbildung 8. Transparente Farbe auswählen</div>
 </div>
 <div class="paragraph">
 <p>Hier klickt man einfach in den weißen Hintergrund - et voilá: schon haben wir eine schöne neue Ausgabennummer!</p>
@@ -842,9 +837,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>Titelseite anpassen</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
-<li>
-<p>Ausgabennummer erhöhen</p>
-</li>
 <li>
 <p>Ausgabedatum aktualisieren</p>
 </li>
@@ -1125,7 +1117,7 @@ Mit einem Doppelklick in das Feld unter dem Überschrift <em>Wert</em> trägt ma
 <div id="footer">
 <div id="footer-text">
 Version 1.0<br>
-Erstellt mit Asciidoctor v1.5.3 : Zuletzt geändert: 2017-01-12 21:09:09 +01:00
+Erstellt mit Asciidoctor v1.5.3 : Zuletzt geändert: 2017-01-14 00:05:49 +01:00
 </div>
 </div>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/styles/github.min.css">

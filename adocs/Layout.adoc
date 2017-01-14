@@ -103,9 +103,10 @@ Um koordiniert mit mehreren Redakteuren und Layoutern an der Zeitung arbeiten zu
 
 In der folgenden Abbildung ist die grundlegende Struktur des Cloud-Verzeichnisses (also des obersten Ordners, ab dem synchronisiert wird) angegeben:
 
-[[image-dateibaum,Dateibaum1]]
+[[image-dateibaum,CloudVerzeichnis1]]
 .Schema des Cloud-Verzeichnisses
 image::images/CloudVerzeichnis1.png[]
+
 
 Dort sind einige Verzeichnisse, die ausgabenübergreifende Bedeutung haben und für jede Ausgabe der Vereinszeitung ein eigener Ordner.
 
@@ -113,9 +114,13 @@ Der Ordner _00-Vorlagen_ enthält Vorlagendateien, die für jede Ausgabe Verwend
 
 Im Verzeichnis _01-Ausgabennummern_ sind vorbereitete Bilder für die Nummern, die auf der Titelseite der jeweiligen Ausgaben auftauchen.
 
+Im Verzeichnis _02-EwigeBilder_ wohnen Bilder, die immer wieder auftauchen wie z.B. das Logo oder andere charakteristische Graphiken.
+
 === Ordnerstruktur einer bestimmten Ausgabe
 
 Auch innerhalb des Ordners einer bestimmten Ausgabe ist eine Verständigung über die Bedeutung einzelner Verzeichnisse hilfreich.
+
+Die folgende Abbildung gibt einen detaillierteren Blick in das Innere des Ordners für die Ausgabe vom Januar 2017:
 
 [[image-dateibaum,Dateibaum2]]
 .Ordnerstruktur einer bestimmten Ausgabe (hier: Januar 2017)
@@ -123,7 +128,7 @@ image::images/CloudVerzeichnis4.png[]
 
 Die zentrale Datei einer jeden Ausgabe ist die Datei _Platsch.sla_. Sie repräsentiert das Layout zusammen mit den Inhalten und ist die Quelle, aus der am Ende das druckbare PDF erzeugt wird.
 
-_Alle_ erzeugten und zugelieferten Dateien werden zuerst im Unterverzeichnis _01-Eingang_ aufgenommen #(1)#. Sobald sie redationell bearbeitet werden, werden sie in den Ordner _02-InBearbeitung_ verschoben #(2)#. Erst wenn sie ihre Form, in der sie in die Zeitung Eingang finden sollen, erhalten haben, werden sie - im Falle von Texten - in das Verzeichnis _Texte_ verschoben #(3)#, im Falle von Bildern in den Ordner _Bilder_ #(4)#.
+_Alle_ erzeugten und zugelieferten Dateien werden zuerst im Unterverzeichnis _01-Eingang_ aufgenommen #(1)#. Sobald sie redationell bearbeitet werden, werden sie in den Ordner _02-InBearbeitung_ verschoben #(2)#. Erst wenn sie ihre Form, in der sie in die Zeitung Eingang finden sollen, erhalten haben, werden sie - im Falle von Bildern - in das Verzeichnis _03-FertigeBilder_ verschoben #(3)#, im Falle von Texten in den Ordner _03-FertigeTexte_ #(4)#.
 
 So ist eine für alle ersichtliche Trennung der unterschiedlichen Stadien der Bearbeitung gesichert und die Gefahr von Missverständnissen und Datenverluste ist minimal.
 
@@ -134,35 +139,29 @@ Wenn man "Trockenübungen" machen möchte, um einen Bearbeitungsschritt auszupro
 === Vorbereitende Arbeiten
 
 ==== Anlegen eines Verzeichnisses für die neue Ausgabe
-Für jede Ausgabe der Vereinszeitung wird im Ordner der Cloud ein eigener Unterordner erzeugt.
 
-Der erste Schritt zur Erstellung einer neuen Ausgabe ist also das Kopieren des Ordners der letzten Ausgabe. Der dadurch neu entstandene Ordner wird danach geeignet umbenannt.
+Der erste Schritt zur Erstellung einer neuen Ausgabe ist das Erzeugen eines entsprechenden Unterverzeichnisses, das durch das Skript _NeuePlatschAusgabeStarten.bat_ erstellt wird. Das Skript _muss_ in einer Command-Shell im Hauptverzeichnis der Cloud aufgerufen werden.
 
-Aus dem Ordner _Vorlagen_ ist die Datei _NochTun.txt_ in das neu entstandene Verzeichnis der aktuellen Ausgabe zu kopieren.
+image:images/NeuePlatschAusgabeStarten.bat1.png[]
+
+Nach Bestätigen des vorgeschlagenen Verzeichnisnamens - oder Eingabe eines neuen - wird das Verzeichnis der vorherigen Ausgabe bestimmt sowie die neue Ausgabennummer:
+
+image:images/NeuePlatschAusgabeStarten.bat2.png[]
+
+Es wird die oben dargestellte Verzeichnisstruktur erzeugt, sowie einige grundlegende Dateien in den Ordner kopiert.
 
 [WARNING]
 ====
-Es ist unbedingt darauf zu achten, dass die Datei  _NochTun.txt_ tatsächlich _kopiert_ wird und nicht etwa nur verschoben!
+Es ist unbedingt zu überprüfen, ob das Bild für die Ausgabennummer im Verzeichnis _03-FertigeBilder_ korrekt angelegt worden ist!
+Wenn noch kein Nummernbild vorbereitet ist, guckst du 
+link:_erzeugen_eines_bildes_fuer_die_ausgabennummer[hier]!
 ====
-
-Aus dem Ordner _01-Ausgabennummern_ die (hoffentlich) schon vorbereitete .png-Datei für die betreffende Ausgabennummer. Wenn noch kein Nummernbild vorbereitet ist, guckst du 
-link:erzeugen_eines_bildes_f_r_die_ausgabennummer[hier]!
-
-Nach dem Kopieren kann man eventuell den Ordner der alten Ausgabe bereinigen. Eigentlich sind alle Dateien verzichtbar bis auf die finale PDF-Datei der jeweiligen Ausgabe.
-
-Die folgende Abbildung gibt einen detaillierteren Blick in das Innere des Ordners für die Ausgabe vom Januar 2017:
-
-[[image-dateibaum,Dateibaum2]]
-.Ordnerstruktur einer bestimmten Ausgabe (hier: Januar 2017)
-image::images/CloudVerzeichnis2.png[]
-
-Neben für jede Ausgabe spezifischen Inhalten finden sich darin eine Reihe von Elementen, die in jeder Ausgabe vorkommen. Da ist zum einen das Verzeichnis mit Namen _Ewige Bilder_ zu nennen, in dem eben Bilder vorgehalten werden, die in jeder Ausgabe wieder auftauchen (wie z.B. das Logo).
 
 Die Datei _Nochtun.txt_ ist schlicht ein Merkzettel, in die man Dinge hineinschreibt, die einem während der Arbeit am Layout auffallen, die aber nicht sofort erledigt werden können (wie z.B. das Besorgen der aktuellen Termine der Polo-Sparte, sollten diese ausnahmsweise einmal nicht bereits zum Redaktionsschluss vorliegen).
 
 Die Datei _Platsch.pdf_ ist das Endergebnis dieses Prozessschrittes, während die Datei _Platsch.sla_ das Scribus-Layout repräsentiert und damit den Startpunkt dieses Prozessschrittes.
 
-==== Erzeugen eines Bildes für die Ausgabennummer
+==== Erzeugen eines Bildes fuer die Ausgabennummer
 
 [WARNING]
 ====
@@ -171,7 +170,7 @@ Für das Erzeugen der Ausgabennummer, wie es hier beschrieben ist, wird _MicroSo
 Es wird hier nicht darauf eingegangen, wie diese Werkzeuge installiert oder benutzt werden. Die Erzeugung der Ausgabennummern ist aber nicht an den Termin der konkreten Ausgabe gebunden und kann auch auf Vorrat erfolgen. Es ist daher sinnvoll, dass jemand mit dem notwendigem Wissen und den Werkzeugen eine Serie von Ausgabennummern im Vorhinein erzeugt.
 ====
 
-Im Verzeichnis _Vorlagen_ liegt eine Word-Datei _Ausgabennummer.docx_. Sie enthält eine bereits korrekt formatierte Zahl (als WordArt-Objekt) für die (vorherige) Auflagennummer:
+Im Verzeichnis _00-Vorlagen_ liegt eine Word-Datei _Ausgabennummer.docx_. Sie enthält eine bereits korrekt formatierte Zahl (als WordArt-Objekt) für die (zuletzt erstellte) Auflagennummer:
 
 .Bearbeitung der Ausgabennummer
 image::images/Ausgabennummer1.png[]
@@ -200,7 +199,7 @@ Dazu wird die eben gespeicherte Datei mit dem Programm geöffnet. Durch Drücken
 .IrfanView: Bild speichern unter...
 image::images/Ausgabennummer4.png[]
 
-Als Ausgabeort wählt man das Unterverzeichnis _Ausgabennummern_ direkt im Cloud-Ordner. Wenn das Häkchen im Kasten "Show Option Dialog" gesetzt ist, erscheint ein weiterer Dialog, in dem die Optionen wie unten dargestellt angewählt sein müssen:
+Als Ausgabeort wählt man das Unterverzeichnis _01-Ausgabennummern_ direkt im Cloud-Ordner. Wenn das Häkchen im Kasten "Show Option Dialog" gesetzt ist, erscheint ein weiterer Dialog, in dem die Optionen wie unten dargestellt angewählt sein müssen:
 
 .Optionen, um Transparenz zu erzeugen
 image::images/Ausgabennummer5.png[]
@@ -218,7 +217,6 @@ Hier sind zunächst einmal nur die blanken Arbeitsschritte aufgeführt, die zur 
 
 ====
 . Titelseite anpassen
-.. Ausgabennummer erhöhen
 .. Ausgabedatum aktualisieren
 .. Titelbild aussuchen
 .. Bildunterschrift an Titelbild anpassen
