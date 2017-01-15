@@ -1,0 +1,96 @@
+= Platsch - Software
+Mathias-H. Weber <mhw@teambaltic.de>
+v1.0, 08. Januar 2017
+:doctype: book
+:encoding: utf-8
+:lang: de
+:toc: left
+:toclevels: 4
+:toc-title: Inhaltsverzeichnis
+:last-update-label: Erstellt mit Asciidoctor v{asciidoctor-version} : Zuletzt geändert:
+// Ohne dem haben die "Admonition"-Blocks keine Icons!
+:icons: font
+:numbered:
+:source-highlighter: highlightjs
+// Deutsche Überschriften:
+:figure-caption: Abbildung
+:table-caption: Tabelle
+//:example-caption!:
+// Jeder Abschnitt bekommt automatisch einen Anker:
+:sectanchors:
+// Makro "kbd:" aktivieren:
+:experimental:
+
+[abstract]
+== Einleitung
+
+Bei der und für die Erstellung der Vereinszeitung werden eine Reihe von Softwareapplikationen verwendet.
+Die wesentlichen sind hier vorgestellt und teilweise auch beschrieben.
+
+== Cloud-Software
+
+Um eine automatische Synchronisation der Daten auf den unterschiedlichen Rechnern der beteiligten Redakteure sicherzustellen, wird die link:https://cloud.telekom-dienste.de/[MagentaCLOUD] der Telekom verwendet.
+
+=== Installation
+
+Die Software ist link:https://static.magentacloud.de/software/MagentaCLOUD.exe[hier herunterzuladen(Windows)] (für den MAC link:https://static.magentacloud.de/software/mac-store[hier]).
+
+Die Installation ist mit den Standard-Vorgaben durchzuführen. Nach dem ersten Start muss einiges konfiguriert werden.
+
+Der Begrüßungsbildschirm 
+
+image::images/MagentaCLOUD1.png[align="center"]
+
+kann übersprungen oder durchlaufen werden, bis der folgende Dialog angezeigt wird:
+
+image::images/MagentaCLOUD2.png[align="center"]
+
+Dort drückt man auf den kbd:[Zum Login]-Knopf und gibt die Login-Daten ein:
+
+image::images/MagentaCLOUD3.png[align="center"]
+
+(das Passwort erhalten selbstredend nur vertrauenswürdige Menschen auf Nachfrage ;-) )
+
+Nachdem der kbd:[Login]-Knopf gedrückt wurde, erscheint der folgende Dialog, bei dem man auf kbd:[Weiter] drückt, um noch den Ort zu bestimmen, an dem die Daten lokal auf dem eigenen Rechner abgelegt werden. 
+
+image::images/MagentaCLOUD4.png[align="center"]
+
+Im folgenden Fenster drückt man den kbd:[Verschieben]-Knopf und wählt einen passenden Ort auf der eigenen, lokalen Festplatte (es wird in dem ausgewählten Ordner immer noch automatisch ein Unterordner mit Namen #MagentaCLOUD# angelegt).
+
+image::images/MagentaCLOUD5.png[align="center"]
+
+Durch Betätigen des Knopfes kbd:[Synchronisation starten] werden die Daten aus der Cloud auf den lokalen Rechner kopiert. In der Taskleiste ist das Symbol für die MagentaCLOUD zu sehen. Solange die Synchronisation noch läuft, ist dort ein bläuliches Symbol mit zwei umeinander kreisenden Pfeilen zu sehen:
+
+image::images/MagentaCLOUD6.png[align="center"]
+
+Ist die Synchronistation beendet, ändert das Symbol sein Erscheinungsbild und sieht wie folgt aus:
+
+image::images/MagentaCLOUD7.png[align="center"]
+
+=== Bedienung
+
+Grundsätzlich läuft die Synchronisation der Daten vollautomatisch und konfliktfrei. Allerdings sollte vermieden werden, dass eine Datei von zwei Redakteuren gleichzeitig geöffnet und bearbeitet wird.
+
+Arbeiten tatsächlich einmal zwei Redakteure gleichzeitig an der Zeitung, ist es zu empfehlen, dass sie sich telefonisch (oder über eine geeignete Chat-Software) abstimmen. Hat ein Redakteur eine Datei geändert und gespeichert, kann er auf seinem Rechner über das Symbol der MagentaCLOUD in der Taskleiste erkennen, wann seine Änderungen auf dem Server gelandet sind. Dann kann der andere Redakteur auf dem Taskleistensymbol die rechte Maustaste drücken und den Eintrag kbd:[Jetzt synchronisieren] wählen. Wenn das Symbol dann wieder magentafarben wird, sind die Änderungen auch auf seinem Rechner angekommen.
+
+image::images/MagentaCLOUD8.png[align="center"]
+
+
+== Layout-Software
+
+Zum Erstellen des Layouts wird das Open Source Desktop-Publishing Programm link:https://www.scribus.net/[Scribus] verwendet.
+
+=== Installation
+
+Die Software steht auf link:https://www.scribus.net/downloads/stable-branch/[dieser Seite] zum Download zur Verfügung. Die Installation sollte mit den vorgegebenen Einstellungen ohne Probleme durchgeführt werden können. 
+
+Nach der erstmaligen Installation von Scribus muss das Werkzeug *Ghostscript* von link:https://github.com/ArtifexSoftware/ghostpdl-downloads/releases[dieser Seite] zusätzlich installiert werden. Dort wählt man die für sein Betriebssystem passende Datei aus: für Windows 32bit: #gs920w32.exe#, Windows 64bit: #gs920w64.exe#, MacOS: #???# - die Versionszahl (hier #920#)mag durch eine neuere ersetzt werden. Auch hier sollte die Installation mit den Standard-Vorgaben durchgeführt werden. 
+
+[WARNING]
+.*Ghostscript*
+====
+Ist dieses Werkzeug nicht installiert, kann man z.B. keine PDF-Dateien als Bilder einbinden.
+====
+
+Wenn nach der erstmaligen Installation von Scribus oder Ghostscript neuere Versionen installiert werden, bleiben die älteren Versionen auf dem Rechner installiert. Man kann also mehrere Versionen gleichzeitig betreiben, was für unsere Belange aber eher Verwirrung stiftet als Nutzen bringt. Die älteren Versionen sollten also danach möglichst deinstalliert werden. 
+

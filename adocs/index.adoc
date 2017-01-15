@@ -26,6 +26,11 @@ Das Erstellen des PDFs aus den gesammelten Inhalten ist in link:html/Layout.html
 
 Der Prozess, wie die PDF-Datei zur Druckerei und schließlich als Papiererzeugnis zu den Mitgliedern kommt, ist in link:html/DruckUndVersand.html[dieser Dokumentation] beschrieben.
 
+== Software
+
+Bei der und für die Erstellung der Vereinszeitung werden eine Reihe von Softwareapplikationen verwendet.
+Die Wesentlichen sind link:html/Software.html[hier vorgestellt] und teilweise auch beschrieben.
+
 == Colophon
 
 Eine Beschreibung, wie diese Dokumentation erstellt und verändert werden kann, ist in link:html/Colophon.html[dieser Dokumentation] enthalten.

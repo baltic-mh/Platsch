@@ -434,17 +434,8 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_einleitung">1. Einleitung</a></li>
 <li><a href="#_verwendete_software">2. Verwendete Software</a>
 <ul class="sectlevel2">
-<li><a href="#_cloud_software">2.1. Cloud-Software</a>
-<ul class="sectlevel3">
-<li><a href="#_installation">2.1.1. Installation</a></li>
-<li><a href="#_bedienung">2.1.2. Bedienung</a></li>
-</ul>
-</li>
-<li><a href="#_layout_software">2.2. Layout-Software</a>
-<ul class="sectlevel3">
-<li><a href="#_installation_2">2.2.1. Installation</a></li>
-</ul>
-</li>
+<li><a href="#_cloud_software">2.1. Cloud-Software</a></li>
+<li><a href="#_layout_software">2.2. Layout-Software</a></li>
 </ul>
 </li>
 <li><a href="#_verzeichnisstrukturen">3. Verzeichnisstrukturen</a>
@@ -478,8 +469,14 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </ul>
 </li>
 <li><a href="#_arbeiten_mit_bildern">5.2. Arbeiten mit Bildern</a></li>
-<li><a href="#_verändern_der_seitenzahl">5.3. Verändern der Seitenzahl</a></li>
-<li><a href="#_inhaltsverzeichnis">5.4. Inhaltsverzeichnis</a></li>
+<li><a href="#_seiten_hinzufügen_und_löschen">5.3. Seiten hinzufügen und löschen</a>
+<ul class="sectlevel3">
+<li><a href="#_seiten_hinzufügen">5.3.1. Seiten hinzufügen</a></li>
+<li><a href="#_seiten_löschen">5.3.2. Seiten löschen</a></li>
+</ul>
+</li>
+<li><a href="#_besondere_bedeutung_der_mittelseite">5.4. Besondere Bedeutung der Mittelseite</a></li>
+<li><a href="#_inhaltsverzeichnis">5.5. Inhaltsverzeichnis</a></li>
 </ul>
 </li>
 </ul>
@@ -500,103 +497,17 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="sect2">
 <h3 id="_cloud_software"><a class="anchor" href="#_cloud_software"></a>2.1. Cloud-Software</h3>
 <div class="paragraph">
-<p>Um eine automatische Synchronisation der Daten auf den unterschiedlichen Rechnern der beteiligten Redakteure sicherzustellen, wird die <a href="https://cloud.telekom-dienste.de/">MagentaCLOUD</a> der Telekom verwendet.</p>
-</div>
-<div class="sect3">
-<h4 id="_installation"><a class="anchor" href="#_installation"></a>2.1.1. Installation</h4>
-<div class="paragraph">
-<p>Die Software ist <a href="https://static.magentacloud.de/software/MagentaCLOUD.exe">hier herunterzuladen(Windows)</a> (für den MAC <a href="https://static.magentacloud.de/software/mac-store">hier</a>).</p>
-</div>
-<div class="paragraph">
-<p>Die Installation ist mit den Standard-Vorgaben durchzuführen. Nach dem ersten Start muss einiges konfiguriert werden.</p>
-</div>
-<div class="paragraph">
-<p>Der Begrüßungsbildschirm</p>
-</div>
-<div class="imageblock" style="text-align: center">
-<div class="content">
-<img src="images/MagentaCLOUD1.png" alt="MagentaCLOUD1">
-</div>
-</div>
-<div class="paragraph">
-<p>kann übersprungen oder durchlaufen werden, bis der folgende Dialog angezeigt wird:</p>
-</div>
-<div class="imageblock" style="text-align: center">
-<div class="content">
-<img src="images/MagentaCLOUD2.png" alt="MagentaCLOUD2">
-</div>
-</div>
-<div class="paragraph">
-<p>Dort drückt man auf den <kbd>Zum Login</kbd>-Knopf und gibt die Login-Daten ein:</p>
-</div>
-<div class="imageblock" style="text-align: center">
-<div class="content">
-<img src="images/MagentaCLOUD3.png" alt="MagentaCLOUD3">
-</div>
-</div>
-<div class="paragraph">
-<p>(das Passwort erhalten selbstredend nur vertrauenswürdige Menschen auf Nachfrage ;-) )</p>
-</div>
-<div class="paragraph">
-<p>Nachdem der <kbd>Login</kbd>-Knopf gedrückt wurde, erscheint der folgende Dialog, bei dem man auf <kbd>Weiter</kbd> drückt, um noch den Ort zu bestimmen, an dem die Daten lokal auf dem eigenen Rechner abgelegt werden.</p>
-</div>
-<div class="imageblock" style="text-align: center">
-<div class="content">
-<img src="images/MagentaCLOUD4.png" alt="MagentaCLOUD4">
-</div>
-</div>
-<div class="paragraph">
-<p>Im folgenden Fenster drückt man den <kbd>Verschieben</kbd>-Knopf und wählt einen passenden Ort auf der eigenen, lokalen Festplatte (es wird in dem ausgewählten Ordner immer noch automatisch ein Unterordner mit Namen <mark>MagentaCLOUD</mark> angelegt).</p>
-</div>
-<div class="imageblock" style="text-align: center">
-<div class="content">
-<img src="images/MagentaCLOUD5.png" alt="MagentaCLOUD5">
-</div>
-</div>
-<div class="paragraph">
-<p>Durch Betätigen des Knopfes <kbd>Synchronisation starten</kbd> werden die Daten aus der Cloud auf den lokalen Rechner kopiert. In der Taskleiste ist das Symbol für die MagentaCLOUD zu sehen. Solange die Synchronisation noch läuft, ist dort ein bläuliches Symbol mit zwei umeinander kreisenden Pfeilen zu sehen:</p>
-</div>
-<div class="imageblock" style="text-align: center">
-<div class="content">
-<img src="images/MagentaCLOUD6.png" alt="MagentaCLOUD6">
-</div>
-</div>
-<div class="paragraph">
-<p>Ist die Synchronistation beendet, ändert das Symbol sein Erscheinungsbild und sieht wie folgt aus:</p>
-</div>
-<div class="imageblock" style="text-align: center">
-<div class="content">
-<img src="images/MagentaCLOUD7.png" alt="MagentaCLOUD7">
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_bedienung"><a class="anchor" href="#_bedienung"></a>2.1.2. Bedienung</h4>
-<div class="paragraph">
-<p>Grundsätzlich läuft die Synchronisation der Daten vollautomatisch und konfliktfrei. Allerdings sollte vermieden werden, dass eine Datei von zwei Redakteuren gleichzeitig geöffnet und bearbeitet wird.</p>
-</div>
-<div class="paragraph">
-<p>Arbeiten tatsächlich einmal zwei Redakteure gleichzeitig an der Zeitung, ist es zu empfehlen, dass sie sich telefonisch (oder über eine geeignete Chat-Software) abstimmen. Hat ein Redakteur eine Datei geändert und gespeichert, kann er auf seinem Rechner über das Symbol der MagentaCLOUD in der Taskleiste erkennen, wann seine Änderungen auf dem Server gelandet sind. Dann kann der andere Redakteur auf dem Taskleistensymbol die rechte Maustaste drücken und den Eintrag <kbd>Jetzt synchronisieren</kbd> wählen. Wenn das Symbol dann wieder magentafarben wird, sind die Änderungen auch auf seinem Rechner angekommen.</p>
-</div>
-<div class="imageblock" style="text-align: center">
-<div class="content">
-<img src="images/MagentaCLOUD8.png" alt="MagentaCLOUD8">
-</div>
-</div>
+<p>Um eine automatische Synchronisation der Daten auf den unterschiedlichen Rechnern der beteiligten Redakteure sicherzustellen, wird die <a href="https://cloud.telekom-dienste.de/">MagentaCLOUD</a> der Telekom verwendet.
+Die Installation und Bedienung sind separat <a href="Software.html#_cloud_software">dokumentiert</a>.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_layout_software"><a class="anchor" href="#_layout_software"></a>2.2. Layout-Software</h3>
 <div class="paragraph">
-<p>Zum Erstellen des Layouts wird das Open Source Desktop-Publishing Programm <a href="https://www.scribus.net/">Scribus</a> verwendet.</p>
-</div>
-<div class="sect3">
-<h4 id="_installation_2"><a class="anchor" href="#_installation_2"></a>2.2.1. Installation</h4>
-<div class="paragraph">
-<p>Die Software steht auf <a href="https://www.scribus.net/downloads/stable-branch/">dieser Seite</a> zum Download zur Verfügung. Die Installation sollte mit den vorgegebenen Einstellungen ohne Probleme durchgeführt werden können.</p>
+<p>Zum Erstellen des Layouts wird das Open Source Desktop-Publishing Programm <a href="https://www.scribus.net/">Scribus</a> verwendet. Die Installation ist separat <a href="Software.html#_layout_software">dokumentiert</a>.</p>
 </div>
 <div class="paragraph">
-<p>Nach der erstmaligen Installation von Scribus muss das Werkzeug <strong>Ghostscript</strong> von <a href="https://github.com/ArtifexSoftware/ghostpdl-downloads/releases">dieser Seite</a> zusätzlich installiert werden. Dort wählt man die für sein Betriebssystem passende Datei aus: für Windows 32bit: <mark>gs920w32.exe</mark>, Windows 64bit: <mark>gs920w64.exe</mark>, MacOS: <mark>???</mark> - die Versionszahl (hier <mark>920</mark>)mag durch eine neuere ersetzt werden. Auch hier sollte die Installation mit den Standard-Vorgaben durchgeführt werden.</p>
+<p>Innerhalb von Scribus wird von <strong>Ghostscript</strong> Gebrauch gemacht. Daher muss auch dieses Werkzeug installiert werden.</p>
 </div>
 <div class="admonitionblock warning">
 <table>
@@ -612,10 +523,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </td>
 </tr>
 </table>
-</div>
-<div class="paragraph">
-<p>Wenn nach der erstmaligen Installation von Scribus oder Ghostscript neuere Versionen installiert werden, bleiben die älteren Versionen auf dem Rechner installiert. Man kann also mehrere Versionen gleichzeitig betreiben, was für unsere Belange aber eher Verwirrung stiftet als Nutzen bringt. Die älteren Versionen sollten also danach möglichst deinstalliert werden.</p>
-</div>
 </div>
 </div>
 </div>
@@ -821,6 +728,33 @@ Wenn noch kein Nummernbild vorbereitet ist, guckst du
 </div>
 <div class="paragraph">
 <p>Hier klickt man einfach in den weißen Hintergrund - et voilá: schon haben wir eine schöne neue Ausgabennummer!</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Die RGB-Farbewerte für das Innere der Zahl sind:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Rot:  39</p>
+</li>
+<li>
+<p>Grün: 76</p>
+</li>
+<li>
+<p>Blau: 176</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
@@ -1030,19 +964,89 @@ die ins Inhaltsverzeichnis aufgenommen werden sollen</p></td>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_verändern_der_seitenzahl"><a class="anchor" href="#_verändern_der_seitenzahl"></a>5.3. Verändern der Seitenzahl</h3>
-
+<h3 id="_seiten_hinzufügen_und_löschen"><a class="anchor" href="#_seiten_hinzufügen_und_löschen"></a>5.3. Seiten hinzufügen und löschen</h3>
+<div class="sect3">
+<h4 id="_seiten_hinzufügen"><a class="anchor" href="#_seiten_hinzufügen"></a>5.3.1. Seiten hinzufügen</h4>
+<div class="paragraph">
+<p>Aus dem Menu den Punkt <kbd>Seite</kbd> anwählen</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/SeitenHinzufuegen.png" alt="SeitenHinzufuegen">
+</div>
+</div>
+<div class="paragraph">
+<p>und dann <kbd>Einfügen&#8230;&#8203;</kbd></p>
+</div>
+<div class="paragraph">
+<p>Im folgenden Dialog ist darauf zu achten, dass bei der Anzahl der dazuzufügenden Seiten immer Vielfache von 4 sind (weil wir ja DIN-A5-Seiten auf DIN-A4-Bogen drucken - und auf einen Bogen gehen halt immer vier Seiten)!</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/SeitenHinzufuegen2.png" alt="SeitenHinzufuegen2">
+</div>
+</div>
+<div class="paragraph">
+<p>Es ist außerdem anzugeben, wo diese Seiten einzufügen sind - vor oder nach der ausgewählten Seite oder ganz am Ende des Dokumentes (was bei uns aber wohl nie vorkommt).</p>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Beim Einfügen von Seiten muss man darauf achten, dass man sie nicht mitten in verkettete Textrahmen einfügt. Es ist zwar ohne weiteres möglich, einen Artikel auf Seite drei beginnen und ihn dann auf Seite sieben weiterlaufen zu lassen. Aber das ist in den seltensten Fällen, was man will! In aller Regel will man Seiten auch nur nach ungradzahligen Seitennummern einfügen.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_seiten_löschen"><a class="anchor" href="#_seiten_löschen"></a>5.3.2. Seiten löschen</h4>
+<div class="paragraph">
+<p>Wenn man Seiten löschen will, muss einem klar, dass alle Inhalte auf gelöschten Seiten ebenfalls weg sind!</p>
+</div>
+<div class="paragraph">
+<p>Aus dem Menu den Punkt <kbd>Seite</kbd> anwählen</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/SeitenEntfernen.png" alt="SeitenEntfernen">
+</div>
+</div>
+<div class="paragraph">
+<p>und dann <kbd>Löschen&#8230;&#8203;</kbd></p>
+</div>
+</div>
 </div>
 <div class="sect2">
-<h3 id="_inhaltsverzeichnis"><a class="anchor" href="#_inhaltsverzeichnis"></a>5.4. Inhaltsverzeichnis</h3>
+<h3 id="_besondere_bedeutung_der_mittelseite"><a class="anchor" href="#_besondere_bedeutung_der_mittelseite"></a>5.4. Besondere Bedeutung der Mittelseite</h3>
+<div class="paragraph">
+<p>Unsere Vereinszeitung hat das Format DIN-A5. Gedruckt wird sie auf DIN-A4 Bogen, die übereinander gelegt, geheftet und gefalzt werden. Daraus folgt, dass beim Lesen nebeneinander liegende Seiten immer auf unterschiedliche Blätter gedruckt werden - außer bei den beiden Seiten genau in der Mitte (wo man auch die Heftklammern sehen kann).</p>
+</div>
+<div class="paragraph">
+<p>Nicht ohne Grund sind bei Zeitschriften Anzeigen auf dieser Innenseite besonders teuer. Denn nur hier kann mein ein Bild über zwei (Lese-)Seiten drucken, ohne dass der Druck auf zwei unterschiedlichen Bogen landet!</p>
+</div>
+<div class="paragraph">
+<p>Damit bietet sich nur diese Seite an, Bilder über die Seitengrenzen hinweg zu drucken! Ich freue mich schon darauf, wenn jemand das zum ersten Mal ausprobiert!</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_inhaltsverzeichnis"><a class="anchor" href="#_inhaltsverzeichnis"></a>5.5. Inhaltsverzeichnis</h3>
 <div class="paragraph">
 <p>Das Erstellen eines Inhaltsverzeichnisses ist nach Möglichkeit soweit möglich automatisiert vorzunehmen. Grundsätzlich könnte man den Inhalt des entsprechenden Textrahmens auf der Umschlaginnenseite auch von Hand editieren, aber das ist zeitaufwändig und fehlerträchtig.</p>
 </div>
 <div class="paragraph">
-<p>Leider ist die Unterstützung von Scribus zu diesem Thema nicht ganz so, wie man sie sich wünschen könnte. Ein Teil der grundsätzlich notwendigen Arbeiten ist bereits vorbereitet, aber trotzdem muss noch jeder Textrahmen, dessen Überschrift ins Inhaltsverzeichnis aufgenommen werden soll, separat bearbeitet werden.</p>
+<p>Leider ist die Unterstützung von Scribus zu diesem Thema nicht ganz so, wie man sie sich wünschen könnte.
+Ein Teil der grundsätzlich notwendigen Arbeiten ist bereits vorbereitet, aber trotzdem muss noch jeder Textrahmen, dessen Überschrift ins Inhaltsverzeichnis aufgenommen werden soll, separat bearbeitet werden.</p>
 </div>
 <div class="paragraph">
-<p>Soll die Überschrift eines Textrahmens ins Inhaltsverzeichnis aufgenommen werden, wechselt man mit einem Doppelklick auf die Überschrift in den Editiermodus und selektiert anschließend die gesamte Überschrift. Mit <kbd>Strg C</kbd> sichert man den Text in den Kopierpuffer. Anschließend präsentiert ein rechter Mausklick irgendwo im Textrahmen das Kontext-Menu:</p>
+<p>Soll die Überschrift eines Textrahmens ins Inhaltsverzeichnis aufgenommen werden, wechselt man mit einem Doppelklick auf die Überschrift in den Editiermodus und selektiert anschließend die gesamte Überschrift.
+Mit <kbd>Strg C</kbd> sichert man den Text in den Kopierpuffer.
+Anschließend präsentiert ein rechter Mausklick irgendwo im Textrahmen das Kontext-Menu:</p>
 </div>
 <div class="imageblock" style="text-align: center">
 <div class="content">
@@ -1100,12 +1104,26 @@ Mit einem Doppelklick in das Feld unter dem Überschrift <em>Wert</em> trägt ma
 </div>
 </div>
 <div class="paragraph">
-<p>Die neue Überschrift ist nun unter der Angabe der korrekten Seitenzahl im Inhaltsverzeichnis auf der Umschlaginnenseite aufgeführt:</p>
+<p>Nun sind die Überschriten alle unter der Angabe der korrekten Seitenzahl im Inhaltsverzeichnis auf der Umschlaginnenseite aufgeführt. Aber die Zeilen sind noch herzlich unformatiert.</p>
 </div>
 <div class="imageblock" style="text-align: center">
 <div class="content">
-<img src="images/TOC6.png" alt="TOC6">
+<img src="images/TOC7.png" alt="TOC7">
 </div>
+</div>
+<div class="paragraph">
+<p>Daher muss durch einen Doppelklick in den Rahmen und ein nachfolgendes <kbd>Strg A</kbd> der gesamte Text markiert werden.</p>
+</div>
+<div class="paragraph">
+<p>Im zugehörigen Eigenschaften-Dialog wählt man die Abteilung <kbd>Text</kbd> aus und darin den Abschnitt <kbd>Stil verändern</kbd>.</p>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="images/TOC8.png" alt="TOC8">
+</div>
+</div>
+<div class="paragraph">
+<p>Hier ist für den markierten Text die Vorlage <em>KVK-Inhaltsverzeichnis</em> zuzuweisen.</p>
 </div>
 <div class="paragraph">
 <p>Bei der Revision, bevor also die PDF-Datei endgültig für den Druck freigegeben wird, muss noch einmal das Inhaltsverzeichnis mit den in der Broschure enthaltenen Überschriften verglichen werden.</p>
@@ -1117,7 +1135,7 @@ Mit einem Doppelklick in das Feld unter dem Überschrift <em>Wert</em> trägt ma
 <div id="footer">
 <div id="footer-text">
 Version 1.0<br>
-Erstellt mit Asciidoctor v1.5.3 : Zuletzt geändert: 2017-01-14 00:05:49 +01:00
+Erstellt mit Asciidoctor v1.5.3 : Zuletzt geändert: 2017-01-15 18:51:23 +01:00
 </div>
 </div>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/styles/github.min.css">

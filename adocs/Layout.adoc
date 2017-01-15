@@ -31,69 +31,19 @@ In dieser Dokumentation ist der gesamte Prozess beschrieben, wie aus den durch d
 === Cloud-Software
 
 Um eine automatische Synchronisation der Daten auf den unterschiedlichen Rechnern der beteiligten Redakteure sicherzustellen, wird die link:https://cloud.telekom-dienste.de/[MagentaCLOUD] der Telekom verwendet.
-
-==== Installation
-
-Die Software ist link:https://static.magentacloud.de/software/MagentaCLOUD.exe[hier herunterzuladen(Windows)] (für den MAC link:https://static.magentacloud.de/software/mac-store[hier]).
-
-Die Installation ist mit den Standard-Vorgaben durchzuführen. Nach dem ersten Start muss einiges konfiguriert werden.
-
-Der Begrüßungsbildschirm 
-
-image::images/MagentaCLOUD1.png[align="center"]
-
-kann übersprungen oder durchlaufen werden, bis der folgende Dialog angezeigt wird:
-
-image::images/MagentaCLOUD2.png[align="center"]
-
-Dort drückt man auf den kbd:[Zum Login]-Knopf und gibt die Login-Daten ein:
-
-image::images/MagentaCLOUD3.png[align="center"]
-
-(das Passwort erhalten selbstredend nur vertrauenswürdige Menschen auf Nachfrage ;-) )
-
-Nachdem der kbd:[Login]-Knopf gedrückt wurde, erscheint der folgende Dialog, bei dem man auf kbd:[Weiter] drückt, um noch den Ort zu bestimmen, an dem die Daten lokal auf dem eigenen Rechner abgelegt werden. 
-
-image::images/MagentaCLOUD4.png[align="center"]
-
-Im folgenden Fenster drückt man den kbd:[Verschieben]-Knopf und wählt einen passenden Ort auf der eigenen, lokalen Festplatte (es wird in dem ausgewählten Ordner immer noch automatisch ein Unterordner mit Namen #MagentaCLOUD# angelegt).
-
-image::images/MagentaCLOUD5.png[align="center"]
-
-Durch Betätigen des Knopfes kbd:[Synchronisation starten] werden die Daten aus der Cloud auf den lokalen Rechner kopiert. In der Taskleiste ist das Symbol für die MagentaCLOUD zu sehen. Solange die Synchronisation noch läuft, ist dort ein bläuliches Symbol mit zwei umeinander kreisenden Pfeilen zu sehen:
-
-image::images/MagentaCLOUD6.png[align="center"]
-
-Ist die Synchronistation beendet, ändert das Symbol sein Erscheinungsbild und sieht wie folgt aus:
-
-image::images/MagentaCLOUD7.png[align="center"]
-
-==== Bedienung
-
-Grundsätzlich läuft die Synchronisation der Daten vollautomatisch und konfliktfrei. Allerdings sollte vermieden werden, dass eine Datei von zwei Redakteuren gleichzeitig geöffnet und bearbeitet wird.
-
-Arbeiten tatsächlich einmal zwei Redakteure gleichzeitig an der Zeitung, ist es zu empfehlen, dass sie sich telefonisch (oder über eine geeignete Chat-Software) abstimmen. Hat ein Redakteur eine Datei geändert und gespeichert, kann er auf seinem Rechner über das Symbol der MagentaCLOUD in der Taskleiste erkennen, wann seine Änderungen auf dem Server gelandet sind. Dann kann der andere Redakteur auf dem Taskleistensymbol die rechte Maustaste drücken und den Eintrag kbd:[Jetzt synchronisieren] wählen. Wenn das Symbol dann wieder magentafarben wird, sind die Änderungen auch auf seinem Rechner angekommen.
-
-image::images/MagentaCLOUD8.png[align="center"]
-
+Die Installation und Bedienung sind separat link:Software.html#_cloud_software[dokumentiert].
 
 === Layout-Software
 
-Zum Erstellen des Layouts wird das Open Source Desktop-Publishing Programm link:https://www.scribus.net/[Scribus] verwendet.
+Zum Erstellen des Layouts wird das Open Source Desktop-Publishing Programm link:https://www.scribus.net/[Scribus] verwendet. Die Installation ist separat link:Software.html#_layout_software[dokumentiert].
 
-==== Installation
-
-Die Software steht auf link:https://www.scribus.net/downloads/stable-branch/[dieser Seite] zum Download zur Verfügung. Die Installation sollte mit den vorgegebenen Einstellungen ohne Probleme durchgeführt werden können. 
-
-Nach der erstmaligen Installation von Scribus muss das Werkzeug *Ghostscript* von link:https://github.com/ArtifexSoftware/ghostpdl-downloads/releases[dieser Seite] zusätzlich installiert werden. Dort wählt man die für sein Betriebssystem passende Datei aus: für Windows 32bit: #gs920w32.exe#, Windows 64bit: #gs920w64.exe#, MacOS: #???# - die Versionszahl (hier #920#)mag durch eine neuere ersetzt werden. Auch hier sollte die Installation mit den Standard-Vorgaben durchgeführt werden. 
+Innerhalb von Scribus wird von *Ghostscript* Gebrauch gemacht. Daher muss auch dieses Werkzeug installiert werden.
 
 [WARNING]
 .*Ghostscript*
 ====
 Ist dieses Werkzeug nicht installiert, kann man z.B. keine PDF-Dateien als Bilder einbinden.
 ====
-
-Wenn nach der erstmaligen Installation von Scribus oder Ghostscript neuere Versionen installiert werden, bleiben die älteren Versionen auf dem Rechner installiert. Man kann also mehrere Versionen gleichzeitig betreiben, was für unsere Belange aber eher Verwirrung stiftet als Nutzen bringt. Die älteren Versionen sollten also danach möglichst deinstalliert werden. 
 
 == Verzeichnisstrukturen
 
@@ -211,6 +161,15 @@ image::images/Ausgabennummer6.png[]
 
 Hier klickt man einfach in den weißen Hintergrund - et voilá: schon haben wir eine schöne neue Ausgabennummer!
 
+[TIP]
+====
+Die RGB-Farbewerte für das Innere der Zahl sind:
+
+- Rot:  39
+- Grün: 76
+- Blau: 176
+====
+
 === Wiederkehrende Arbeitsschritte
 
 Hier sind zunächst einmal nur die blanken Arbeitsschritte aufgeführt, die zur Erstellung einer Ausgabe der Vereinszeitung notwendig sind. Wie die einzelnen Schritte durchgeführt werden und was es dabei zu beachten gibt, wird an anderer Stelle beschrieben.
@@ -297,15 +256,56 @@ Das Tastenkürzel für das Einfügen eines Bildrahmens ist kbd:[I].
 Soll in einen Bildrahmen ein Bild eingefügt werden, kann man dies über die Tastenkombination kbd:[Strg I](_insert_) bewerkstelligen.
 
 
-=== Verändern der Seitenzahl
+=== Seiten hinzufügen und löschen
+
+==== Seiten hinzufügen
+Aus dem Menu den Punkt kbd:[Seite] anwählen
+
+image::images/SeitenHinzufuegen.png[]
+
+und dann kbd:[Einfügen...]
+
+Im folgenden Dialog ist darauf zu achten, dass bei der Anzahl der dazuzufügenden Seiten immer Vielfache von 4 sind (weil wir ja DIN-A5-Seiten auf DIN-A4-Bogen drucken - und auf einen Bogen gehen halt immer vier Seiten)!
+
+image::images/SeitenHinzufuegen2.png[]
+
+Es ist außerdem anzugeben, wo diese Seiten einzufügen sind - vor oder nach der ausgewählten Seite oder ganz am Ende des Dokumentes (was bei uns aber wohl nie vorkommt).
+
+[WARNING]
+====
+Beim Einfügen von Seiten muss man darauf achten, dass man sie nicht mitten in verkettete Textrahmen einfügt. Es ist zwar ohne weiteres möglich, einen Artikel auf Seite drei beginnen und ihn dann auf Seite sieben weiterlaufen zu lassen. Aber das ist in den seltensten Fällen, was man will! In aller Regel will man Seiten auch nur nach ungradzahligen Seitennummern einfügen.
+====
+
+==== Seiten löschen
+
+Wenn man Seiten löschen will, muss einem klar, dass alle Inhalte auf gelöschten Seiten ebenfalls weg sind!
+
+Aus dem Menu den Punkt kbd:[Seite] anwählen
+
+image::images/SeitenEntfernen.png[]
+
+und dann kbd:[Löschen...]
+
+
+
+=== Besondere Bedeutung der Mittelseite
+
+Unsere Vereinszeitung hat das Format DIN-A5. Gedruckt wird sie auf DIN-A4 Bogen, die übereinander gelegt, geheftet und gefalzt werden. Daraus folgt, dass beim Lesen nebeneinander liegende Seiten immer auf unterschiedliche Blätter gedruckt werden - außer bei den beiden Seiten genau in der Mitte (wo man auch die Heftklammern sehen kann).
+
+Nicht ohne Grund sind bei Zeitschriften Anzeigen auf dieser Innenseite besonders teuer. Denn nur hier kann mein ein Bild über zwei (Lese-)Seiten drucken, ohne dass der Druck auf zwei unterschiedlichen Bogen landet!
+
+Damit bietet sich nur diese Seite an, Bilder über die Seitengrenzen hinweg zu drucken! Ich freue mich schon darauf, wenn jemand das zum ersten Mal ausprobiert!
 
 === Inhaltsverzeichnis
 
 Das Erstellen eines Inhaltsverzeichnisses ist nach Möglichkeit soweit möglich automatisiert vorzunehmen. Grundsätzlich könnte man den Inhalt des entsprechenden Textrahmens auf der Umschlaginnenseite auch von Hand editieren, aber das ist zeitaufwändig und fehlerträchtig.
 
-Leider ist die Unterstützung von Scribus zu diesem Thema nicht ganz so, wie man sie sich wünschen könnte. Ein Teil der grundsätzlich notwendigen Arbeiten ist bereits vorbereitet, aber trotzdem muss noch jeder Textrahmen, dessen Überschrift ins Inhaltsverzeichnis aufgenommen werden soll, separat bearbeitet werden.
+Leider ist die Unterstützung von Scribus zu diesem Thema nicht ganz so, wie man sie sich wünschen könnte.
+Ein Teil der grundsätzlich notwendigen Arbeiten ist bereits vorbereitet, aber trotzdem muss noch jeder Textrahmen, dessen Überschrift ins Inhaltsverzeichnis aufgenommen werden soll, separat bearbeitet werden.
 
-Soll die Überschrift eines Textrahmens ins Inhaltsverzeichnis aufgenommen werden, wechselt man mit einem Doppelklick auf die Überschrift in den Editiermodus und selektiert anschließend die gesamte Überschrift. Mit kbd:[Strg C] sichert man den Text in den Kopierpuffer. Anschließend präsentiert ein rechter Mausklick irgendwo im Textrahmen das Kontext-Menu:
+Soll die Überschrift eines Textrahmens ins Inhaltsverzeichnis aufgenommen werden, wechselt man mit einem Doppelklick auf die Überschrift in den Editiermodus und selektiert anschließend die gesamte Überschrift.
+Mit kbd:[Strg C] sichert man den Text in den Kopierpuffer.
+Anschließend präsentiert ein rechter Mausklick irgendwo im Textrahmen das Kontext-Menu:
 
 image::images/TOC1.png[align="center"]
 
@@ -333,9 +333,17 @@ Der letzte Schritt besteht darin, die eben markierten Überschriften auch tatsä
 
 image::images/TOC5.png[align="center"]
 
-Die neue Überschrift ist nun unter der Angabe der korrekten Seitenzahl im Inhaltsverzeichnis auf der Umschlaginnenseite aufgeführt:
+Nun sind die Überschriten alle unter der Angabe der korrekten Seitenzahl im Inhaltsverzeichnis auf der Umschlaginnenseite aufgeführt. Aber die Zeilen sind noch herzlich unformatiert.
 
-image::images/TOC6.png[align="center"]
+image::images/TOC7.png[align="center"]
+
+Daher muss durch einen Doppelklick in den Rahmen und ein nachfolgendes kbd:[Strg A] der gesamte Text markiert werden.
+
+Im zugehörigen Eigenschaften-Dialog wählt man die Abteilung kbd:[Text] aus und darin den Abschnitt kbd:[Stil verändern].
+
+image::images/TOC8.png[align="center"]
+
+Hier ist für den markierten Text die Vorlage _KVK-Inhaltsverzeichnis_ zuzuweisen. 
 
 Bei der Revision, bevor also die PDF-Datei endgültig für den Druck freigegeben wird, muss noch einmal das Inhaltsverzeichnis mit den in der Broschure enthaltenen Überschriften verglichen werden.
 
