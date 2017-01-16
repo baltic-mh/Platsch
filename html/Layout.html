@@ -464,11 +464,24 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <ul class="sectlevel2">
 <li><a href="#_arbeiten_mit_texten">5.1. Arbeiten mit Texten</a>
 <ul class="sectlevel3">
-<li><a href="#_absätze_formatieren">5.1.1. Absätze formatieren</a></li>
-<li><a href="#_kvk_absatzformate">5.1.2. KVK-Absatzformate</a></li>
+<li><a href="#_textinhalt_entfernen">5.1.1. Textinhalt entfernen</a></li>
+<li><a href="#_textrahmen_erzeugen">5.1.2. Textrahmen erzeugen</a></li>
+<li><a href="#_textinhalt_laden">5.1.3. Textinhalt laden</a></li>
+<li><a href="#_absätze_formatieren">5.1.4. Absätze formatieren</a></li>
+<li><a href="#_textrahmen_verketten">5.1.5. Textrahmen verketten</a></li>
+<li><a href="#_aufzählungen_paddelrätsel">5.1.6. Aufzählungen, Paddelrätsel</a></li>
+<li><a href="#_kvk_absatzformate">5.1.7. KVK-Absatzformate</a></li>
 </ul>
 </li>
-<li><a href="#_arbeiten_mit_bildern">5.2. Arbeiten mit Bildern</a></li>
+<li><a href="#_arbeiten_mit_bildern">5.2. Arbeiten mit Bildern</a>
+<ul class="sectlevel3">
+<li><a href="#_bildinhalt_entfernen">5.2.1. Bildinhalt entfernen</a></li>
+<li><a href="#_bildrahmen_erzeugen">5.2.2. Bildrahmen erzeugen</a></li>
+<li><a href="#_bildinhalt_laden">5.2.3. Bildinhalt laden</a></li>
+<li><a href="#_bild_formatieren">5.2.4. Bild formatieren</a></li>
+<li><a href="#_text_soll_bild_umfließen">5.2.5. Text soll Bild umfließen</a></li>
+</ul>
+</li>
 <li><a href="#_seiten_hinzufügen_und_löschen">5.3. Seiten hinzufügen und löschen</a>
 <ul class="sectlevel3">
 <li><a href="#_seiten_hinzufügen">5.3.1. Seiten hinzufügen</a></li>
@@ -628,7 +641,7 @@ Wenn noch kein Nummernbild vorbereitet ist, guckst du
 <p>Die Datei <em>Nochtun.txt</em> ist schlicht ein Merkzettel, in die man Dinge hineinschreibt, die einem während der Arbeit am Layout auffallen, die aber nicht sofort erledigt werden können (wie z.B. das Besorgen der aktuellen Termine der Polo-Sparte, sollten diese ausnahmsweise einmal nicht bereits zum Redaktionsschluss vorliegen).</p>
 </div>
 <div class="paragraph">
-<p>Die Datei <em>Platsch.pdf</em> ist das Endergebnis dieses Prozessschrittes, während die Datei <em>Platsch.sla</em> das Scribus-Layout repräsentiert und damit den Startpunkt dieses Prozessschrittes.</p>
+<p>Die Datei <em>Platsch.sla</em> repräsentiert das Scribus-Layout und damit den Startpunkt dieses Prozessschrittes. Sie wird aus dem Verzeichnis der vorherigen Ausgabe in das Verzeichnis dieser Ausgabe kopiert.</p>
 </div>
 </div>
 <div class="sect3">
@@ -651,7 +664,7 @@ Wenn noch kein Nummernbild vorbereitet ist, guckst du
 </table>
 </div>
 <div class="paragraph">
-<p>Im Verzeichnis <em>00-Vorlagen</em> liegt eine Word-Datei <em>Ausgabennummer.docx</em>. Sie enthält eine bereits korrekt formatierte Zahl (als WordArt-Objekt) für die (zuletzt erstellte) Auflagennummer:</p>
+<p>Im Wurzelverzeichnis der Cloud liegt im Verzeichnis <em>00-Vorlagen</em> eine Word-Datei <em>Ausgabennummer.docx</em>. Sie enthält eine bereits korrekt formatierte Zahl (als WordArt-Objekt) für die (zuletzt erstellte) Auflagennummer:</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -729,28 +742,46 @@ Wenn noch kein Nummernbild vorbereitet ist, guckst du
 <div class="paragraph">
 <p>Hier klickt man einfach in den weißen Hintergrund - et voilá: schon haben wir eine schöne neue Ausgabennummer!</p>
 </div>
-<div class="admonitionblock tip">
+<div class="admonitionblock note">
 <table>
 <tr>
 <td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
+<i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
 <div class="paragraph">
 <p>Die RGB-Farbewerte für das Innere der Zahl sind:</p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p>Rot:  39</p>
-</li>
-<li>
-<p>Grün: 76</p>
-</li>
-<li>
-<p>Blau: 176</p>
-</li>
-</ul>
+<table class="tableblock frame-all grid-all" style="width: 10%;">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Farbe</th>
+<th class="tableblock halign-left valign-top">Wert</th>
+</tr>
+</thead>
+<tfoot>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Blau</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">176</p></td>
+</tr>
+</tfoot>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Rot</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">39</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Grün</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">76</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Die Farbe des Rahmens ist schlicht schwarz, die Strichdicke 6pt.</p>
 </div>
 </td>
 </tr>
@@ -885,7 +916,7 @@ Wenn noch kein Nummernbild vorbereitet ist, guckst du
 <p>Das Arbeiten mit einem Layout-Programm unterscheidet sich sehr grundlegend von dem eines Textverarbeitungsprogrammes.</p>
 </div>
 <div class="paragraph">
-<p>In einem Layout-Programm wird explizit festgelegt, in welchem (Papier-)Format es erstellt werden und wieviele Seiten es umfassen soll. Diese Angaben sind der Rahmen für alle folgenden Schritte, die nichts daran ändern können. Wenn also der Text anwächst, wird nie der Fall eintreten, dass sich die Seitenzahl des Endproduktes von alleine verändert.</p>
+<p>In einem Layout-Programm wird explizit festgelegt, in welchem (Papier-)Format es erstellt werden und wieviele Seiten es umfassen soll. Diese Angaben sind der Rahmen für alle folgenden Schritte, die nichts daran ändern können. Wenn also der Text anwächst, wird nie der Fall eintreten, dass sich die Seitenzahl des Endproduktes von alleine verändert. Ist dies gewünscht, muss es explizit vorgenommen werden.</p>
 </div>
 <div class="paragraph">
 <p>Die Seiten der Broschure werden in erster Linie mit Rahmen befüllt, die Text oder Bilder beinhalten können. Auch hier wird der Inhalt nie die Größe oder die Position des umgebenden Rahmens auf der Seite verändern. So ist eine absolut verlässliche Gestaltung des Ergebnisses möglich.</p>
@@ -897,27 +928,188 @@ Wenn noch kein Nummernbild vorbereitet ist, guckst du
 <p>Das Tastenkürzel für das Einfügen eines Textrahmens ist <kbd>T</kbd>, für das  Einfügen eines Bildrahmens <kbd>I</kbd>.</p>
 </div>
 <div class="paragraph">
-<p>Soll in einen Textrahmen Text eingefügt werden, kann man dies über die Tastenkombination <kbd>Strg T</kbd> bewerkstelligen, um ein Bild in einen Bildrahmen einzufügen, dazu dient die Tastenkombination <kbd>Strg I</kbd>.</p>
+<p>Sowohl um Text aus einer Datei in einen Textrahmen als auch um ein Bild in einen Bildrahmen einzufügen, wird die Tastenkombination <kbd>Strg I</kbd>(<em>insert</em>) benutzt.</p>
 </div>
 <div class="sect2">
 <h3 id="_arbeiten_mit_texten"><a class="anchor" href="#_arbeiten_mit_texten"></a>5.1. Arbeiten mit Texten</h3>
 <div class="paragraph">
-<p>Das Tastenkürzel für das Einfügen eines Textrahmens ist <kbd>T</kbd>.</p>
-</div>
-<div class="paragraph">
-<p>Soll in einen Textrahmen Text aus einer eingefügt werden, kann man dies über die Tastenkombination <kbd>Strg I</kbd>(<em>insert</em>) bewerkstelligen.</p>
-</div>
-<div class="paragraph">
-<p>Soll in einen Textrahmen Text editiert werden, kann man entweder über einen Doppelklick in den Editiermodus gelangen oder über die Tastenkombination <kbd>Strg T</kbd> einen Story-Editor öffnen, in dem man neben der reinen Texteingabe auch den einzelnen Absätzen Formatvorlagen zuordnen kann.</p>
+<p>Text muss grundsätzlich in einen Textrahmen eingefügt werden. Das kann entweder ein bestehender Rahmen sein oder ein neuer. Bei einem bestehenden Textrahmen entfernt man zuerst den vorhandenen Inhalt.</p>
 </div>
 <div class="sect3">
-<h4 id="_absätze_formatieren"><a class="anchor" href="#_absätze_formatieren"></a>5.1.1. Absätze formatieren</h4>
+<h4 id="_textinhalt_entfernen"><a class="anchor" href="#_textinhalt_entfernen"></a>5.1.1. Textinhalt entfernen</h4>
 <div class="paragraph">
-<p>Das Format des Textes in einem Absatz sollte nach Möglichkeit <em>nur</em> über die Zuweisung von Formatvorlagen vorgenommen werden.</p>
+<p>Dazu klickt man auf den Rahmen, um ihn zu selektieren und erhält mit einem Rechtsklick das Kontext-Menu:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/Text-InhaltEntfernen.png" alt="Text InhaltEntfernen">
+</div>
+</div>
+<div class="paragraph">
+<p>Daraus wählt man <kbd>Inhalt &gt; /Entfernen</kbd>.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_kvk_absatzformate"><a class="anchor" href="#_kvk_absatzformate"></a>5.1.2. KVK-Absatzformate</h4>
+<h4 id="_textrahmen_erzeugen"><a class="anchor" href="#_textrahmen_erzeugen"></a>5.1.2. Textrahmen erzeugen</h4>
+<div class="paragraph">
+<p>Das Tastenkürzel für das Erzeugen eines Textrahmens ist <kbd>T</kbd></p>
+</div>
+<div class="paragraph">
+<p>Der Cursor wechselt sein Erscheinungsbild und das Programm wartet darauf, dass man Größe und Position des Rahmens durch "Mausklick, Maustaste gedrückt halten und Maus bewegen" definiert.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/Text-RahmenErzeugen.png" alt="Text RahmenErzeugen">
+</div>
+</div>
+<div class="paragraph">
+<p>Der Rahmen ist (im Allgemeinen) so zu positionieren, dass der die blauen Seitenmarkierungen genau abdeckt.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_textinhalt_laden"><a class="anchor" href="#_textinhalt_laden"></a>5.1.3. Textinhalt laden</h4>
+<div class="paragraph">
+<p>Der Textrahmen, in den Text eingefügt werden soll, muss selektiert werden (einfacher Mausklick).</p>
+</div>
+<div class="paragraph">
+<p>Das Tastenkürzel für das Laden eines Textes aus einer Datei in einen Textrahmen ist <kbd>Strg I</kbd>(<em>insert</em>) (genau wie man ein Bild aus einer Datei in einen Bildrahmen einfügt).</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/Text-InhaltLaden.png" alt="Text InhaltLaden">
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Das Format <em>.docx</em> von MicroSoft Word 2007 und höher wird hier nicht unterstützt. Die Dateien müssen im <em>.doc</em>-Format (MicroSoft Word 2003) vorliegen!</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_absätze_formatieren"><a class="anchor" href="#_absätze_formatieren"></a>5.1.4. Absätze formatieren</h4>
+<div class="paragraph">
+<p>Nachdem Text in einen Rahmen geladen ist, ist er noch vollkommen unformatiert.
+Um dem abzuhelfen, doppelklickt man in den Rahmen und selektiert den gesamten Text mittels <kbd>Strg A</kbd>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/Text-InhaltFormatieren1.png" alt="Text InhaltFormatieren1">
+</div>
+</div>
+<div class="paragraph">
+<p>Im zugehörigen Eigenschaften-Dialog wählt man die Abteilung <kbd>Text</kbd> aus und darin den Abschnitt <kbd>Stil verändern</kbd>.</p>
+</div>
+<div class="paragraph">
+<p>Hier ist für den markierten Text die Vorlage <em>KVK-BasisAbsatz</em> zuzuweisen.</p>
+</div>
+<div class="paragraph">
+<p>Um wieder nur den Rahmen zu selektieren, muss man einmal außerhalb und dann wieder innerhalb des Rahmens klicken.</p>
+</div>
+<div class="paragraph">
+<p>Danach gelangt man über die Tastenkombination <kbd>Strg T</kbd> in den Story-Editor, in dem man neben der reinen Texteingabe auch den einzelnen Absätzen Formatvorlagen zuordnen kann.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/Text-InhaltFormatieren2.png" alt="Text InhaltFormatieren2">
+</div>
+</div>
+<div class="paragraph">
+<p>Hier erkennt man, dass allen Absätze momentan die Formvorlage <em>KVK-BasisAbsatz</em> zugeordnet ist.</p>
+</div>
+<div class="paragraph">
+<p>Die erste Zeile (die immer leer ist :-/ ) wird entfernt. Der zweiten Zeile weist man das Absatzformat <em>KVK_ArtikelÜberschrift</em> zu, indem man in der linken Spalte es Story-Editors auf die Formatauswahl-Box klickt. Dem zweiten Absatz weist man auf die gleiche Weise die Formatvorlage <em>KVK_UnterÜberschrift 1</em> zu.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/Text-InhaltFormatieren3.png" alt="Text InhaltFormatieren3">
+</div>
+</div>
+<div class="paragraph">
+<p>Der Story-Editor wird verlassen durch einen Klick auf den grünen Haken:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/Text-InhaltFormatieren4.png" alt="Text InhaltFormatieren4">
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_textrahmen_verketten"><a class="anchor" href="#_textrahmen_verketten"></a>5.1.5. Textrahmen verketten</h4>
+<div class="paragraph">
+<p>Ist ein einen Textrahmen mehr Text eingefügt worden, als dort Platz findet, so ist der überschüssige Text schlicht unsichtbar. Die Tatsache, dass da Text aus dem Rahmen hinausläuft, wird durch ein kleines "X" am rechten unteren Rand des Rahmens angezeigt:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/Text-Verketten1.png" alt="Text Verketten1">
+</div>
+</div>
+<div class="paragraph">
+<p>Um den Text dieses Rahmens in einen anderen weiterfließen zu lassen, muss der Textrahmen mit einem weiteren verkettet werden. Der zu verkettende Rahmen muss selektiert sein, dann klickt man auf das (sehr unscheinbare!) Menu-Icon <kbd>Textrahmen verketten</kbd>:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/Text-Verketten2.png" alt="Text Verketten2">
+</div>
+</div>
+<div class="paragraph">
+<p>Daraufhin klickt man einfach in den Rahmen, mit dem man den selektierten verketten möchte. Nun fließt derüberschüssige Text automatisch in den angehängten Rahmen über.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/Text-Verketten3.png" alt="Text Verketten3">
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_aufzählungen_paddelrätsel"><a class="anchor" href="#_aufzählungen_paddelrätsel"></a>5.1.6. Aufzählungen, Paddelrätsel</h4>
+<div class="paragraph">
+<p>Für das Formatieren von eingerückten Aufzählungen gibt es die Formatvorlagen <em>KVK-Aufzählung-Ebene 1</em> und <em>KVK-Aufzählung-Ebene 2</em>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/Text-Aufzählungen.png" alt="Text Aufzählungen">
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>In <em>Scribus</em> werden bei Aufzählungen weder die <em>Bullets</em> automatisch eingefügt, noch eventuelle Nummerierungen inkrementiert. Beides muss manuell erledigt werden.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Für die immer wiederkehrende Rubrik <em>Paddelrätsel</em> gibt es zwei spezielle Formatvorlagen:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/Text-Aufzählungen2.png" alt="Text Aufzählungen2">
+</div>
+</div>
+<div class="paragraph">
+<p>Die fett gesetzten Überschriften sind vom Format <em>KVK-Paddelrätselfrage</em> und die eingerückten Antwortmöglichkeiten vom Format <em>KVK-Paddelrätselantwort</em>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_kvk_absatzformate"><a class="anchor" href="#_kvk_absatzformate"></a>5.1.7. KVK-Absatzformate</h4>
+<div class="paragraph">
+<p>Das Format des Textes in einem Absatz sollte nach Möglichkeit <em>nur</em> über die Zuweisung von Formatvorlagen vorgenommen werden. Es stehen folgende Absatzformatvorlagen zur Verfügung:</p>
+</div>
 <table class="tableblock frame-all grid-all spread">
 <caption class="title">Tabelle 1. Spalten der Datei BasisDaten.csv</caption>
 <colgroup>
@@ -932,23 +1124,51 @@ Wenn noch kein Nummernbild vorbereitet ist, guckst du
 </thead>
 <tfoot>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">KVK-UnterUeberschrift</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Unterüberschrift für die Zeile unter der Überschrift von Artikeln</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">KVK-Paddelrätselantwort</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Eingerückte Antwort der Rubrik "Paddelrätsel"</p></td>
 </tr>
 </tfoot>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">KVK-Standardabsatz</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Bildet die Basis für weitere Formatvorlagen</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">KVK-Basis</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Bildet die Basis für weitere Formatvorlagen, wird eigentlich nicht direkt verwendet</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">KVK-00-BasisAbsatz</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Format für alle normalen Absätze</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">KVK-01-Artikelüberschrift</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Überschrift für Artikel,
+die ins Inhaltsverzeichnis aufgenommen werden sollen</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">KVK-02-UnterÜberschrift 1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Unterüberschrift für die Zeile unter der Überschrift von Artikeln (Verfasserzeile)</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">KVK-Inhaltsverzeichnis</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Inhaltsverzeichnis</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Absätze im Inhaltsverzeichnis</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">KVK-Artikelüberschrift</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Überschrift für Artikel,
-die ins Inhaltsverzeichnis aufgenommen werden sollen</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">KVK-Termin</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Absätze für Veranstaltungstermine</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">KVK-Aufzählung-Ebene 1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Eingerückte Aufzählung</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">KVK-Aufzählung-Ebene 2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Eingerückte Unteraufzählung</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">KVK-Bildunterschrift</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Text in Bildunterschriften</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">KVK-Paddelrätselfrage</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Fett gesetzte Frage der Rubrik "Paddelrätsel"</p></td>
 </tr>
 </tbody>
 </table>
@@ -957,10 +1177,144 @@ die ins Inhaltsverzeichnis aufgenommen werden sollen</p></td>
 <div class="sect2">
 <h3 id="_arbeiten_mit_bildern"><a class="anchor" href="#_arbeiten_mit_bildern"></a>5.2. Arbeiten mit Bildern</h3>
 <div class="paragraph">
-<p>Das Tastenkürzel für das Einfügen eines Bildrahmens ist <kbd>I</kbd>.</p>
+<p>Ein Bild muss grundsätzlich in einen Bildrahmen eingefügt werden. Das kann entweder ein bestehender Rahmen sein oder ein neuer. Bei einem bestehenden Bildrahmen entfernt man zuerst den vorhandenen Inhalt.</p>
+</div>
+<div class="sect3">
+<h4 id="_bildinhalt_entfernen"><a class="anchor" href="#_bildinhalt_entfernen"></a>5.2.1. Bildinhalt entfernen</h4>
+<div class="paragraph">
+<p>Dazu klickt man auf den Rahmen, um ihn zu selektieren und erhält mit einem Rechtsklick das Kontext-Menu:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/Bild_InhaltEntfernen.png" alt="Bild InhaltEntfernen">
+</div>
 </div>
 <div class="paragraph">
-<p>Soll in einen Bildrahmen ein Bild eingefügt werden, kann man dies über die Tastenkombination <kbd>Strg I</kbd>(<em>insert</em>) bewerkstelligen.</p>
+<p>Daraus wählt man <kbd>Inhalt &gt; /Entfernen</kbd>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_bildrahmen_erzeugen"><a class="anchor" href="#_bildrahmen_erzeugen"></a>5.2.2. Bildrahmen erzeugen</h4>
+<div class="paragraph">
+<p>Das Tastenkürzel für das Einfügen eines neuen Bildrahmens ist <kbd>I</kbd>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/Bild-RahmenErzeugen.png" alt="Bild RahmenErzeugen">
+</div>
+</div>
+<div class="paragraph">
+<p>Der Rahmen ist (im Allgemeinen) so zu positionieren, dass er mit den blauen Seitenmarkierungen harmoniert.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_bildinhalt_laden"><a class="anchor" href="#_bildinhalt_laden"></a>5.2.3. Bildinhalt laden</h4>
+<div class="paragraph">
+<p>Der Bildrahmen, in den Text eingefügt werden soll, muss selektiert werden (einfacher Mausklick).</p>
+</div>
+<div class="paragraph">
+<p>Das Tastenkürzel für das Laden eines Bildes aus einer Datei in einen Bildrahmen ist <kbd>Strg I</kbd>(<em>insert</em>) (genau wie man einen Text aus einer Datei in einen Textrahmen einfügt).</p>
+</div>
+<div class="paragraph">
+<p>Hat man die Datei ausgewählt, wird das darin enthaltene Bild in Originalgröße in den Rahmen geladen:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/Bild-InhaltLaden.png" alt="Bild InhaltLaden">
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_bild_formatieren"><a class="anchor" href="#_bild_formatieren"></a>5.2.4. Bild formatieren</h4>
+<div class="paragraph">
+<p>Ein frisch in einen Bildrahmen geladenes Bild ist in aller Regel größer, als dass es in seiner Originalgröße in den Rahmen passt (wenn es doch passt, ist irgend etwas falsch!).</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/Bild-Formatieren1.png" alt="Bild Formatieren1">
+</div>
+</div>
+<div class="paragraph">
+<p>Um die Größe anzupassen, macht man einen Rechtsklick und wählt aus dem dadurch erscheinenden Kontext-Menu den Punkt <kbd>Bild an Rahmen anpassen</kbd> aus.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/Bild-Formatieren2.png" alt="Bild Formatieren2">
+</div>
+</div>
+<div class="paragraph">
+<p>Daraufhin wird das Bild verzerrungsfrei soweit verkleinert, dass es komplett innerhalb des Rahmens liegt.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/Bild-Formatieren3.png" alt="Bild Formatieren3">
+</div>
+</div>
+<div class="paragraph">
+<p>Da diese rigorose Anpassung selten den gewünschten Bildausschnitt liefert, müssen noch weitere Anpassungen vorgenommen werden.</p>
+</div>
+<div class="paragraph">
+<p>Im zum Bild-Objekt gehörigen Eigenschaften-Dialog wählt man die Abteilung <kbd>Bild</kbd> aus, und darin aktiviert man den Knopf <kbd>Freie Skalierung</kbd>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/Bild-Formatieren4.png" alt="Bild Formatieren4">
+</div>
+</div>
+<div class="paragraph">
+<p>Über die Felder <kbd>X-Position</kbd>, <kbd>Y-Position</kbd> und <kbd>X-Größe</kbd> vergrößert und verschiebt man den dargestellten Bildausschnitt solange, bis er den eigenen Wünschen entspricht.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Damit die Größenänderungen verzerrungsfrei ausgeführt werden, ist darauf zu achten, dass das Verkettungssymbol rechts neben den Größenskalierungsfeldern eingeschaltet ist!</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_text_soll_bild_umfließen"><a class="anchor" href="#_text_soll_bild_umfließen"></a>5.2.5. Text soll Bild umfließen</h4>
+<div class="paragraph">
+<p>Bisher verdeckt das Bild noch dahinter liegenden Text.
+Abhilfe steckt im zum Bild-Objekt gehörigen Eigenschaften-Dialog in der Abteilung <kbd>Form</kbd>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/Bild-Formatieren5.png" alt="Bild Formatieren5">
+</div>
+</div>
+<div class="paragraph">
+<p>Dort wird unter <kbd>Text umfließt Rahmen</kbd> die Auswahlmöglichkeit <kbd>Konturlinie benutzen</kbd> aktiviert. Danach prallt der Text am Bildrahmen ab.</p>
+</div>
+<div class="paragraph">
+<p>Allerdings stößt der Text immer noch teilweise gefährlich nahe an das Bild heran. Um auch das noch auszumerzen, muss man die Konturlinie etwas bearbeiten.</p>
+</div>
+<div class="paragraph">
+<p>Im Eigenschaftsdialog drückt zuerst auf <kbd>Bearbeiten</kbd>(1), im sich dann öffnenden Pfade-Dialog auf <kbd>Konturlinie bearbeiten</kbd>(2) und schließlich auf das Symbol zum Pfad vergrößern(3):</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/Bild-Formatieren6.png" alt="Bild Formatieren6">
+</div>
+</div>
+<div class="paragraph">
+<p>Es erscheint die Konturlinie um das Bildobjekt herum. Diese kann ggfs. noch manuell angepasst werden (1). Zum Abschluss muss auf <kbd>Bearbeitung beenden</kbd> gedrückt werden(2).</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/Bild-Formatieren7.png" alt="Bild Formatieren7">
+</div>
+</div>
+<div class="paragraph">
+<p>Nun hält der Text überall gebührenden Abstand vom Bild.</p>
+</div>
 </div>
 </div>
 <div class="sect2">
@@ -1135,7 +1489,7 @@ Mit einem Doppelklick in das Feld unter dem Überschrift <em>Wert</em> trägt ma
 <div id="footer">
 <div id="footer-text">
 Version 1.0<br>
-Erstellt mit Asciidoctor v1.5.3 : Zuletzt geändert: 2017-01-15 18:51:23 +01:00
+Erstellt mit Asciidoctor v1.5.3 : Zuletzt geändert: 2017-01-16 22:23:59 +01:00
 </div>
 </div>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/styles/github.min.css">

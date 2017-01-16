@@ -109,7 +109,7 @@ link:_erzeugen_eines_bildes_fuer_die_ausgabennummer[hier]!
 
 Die Datei _Nochtun.txt_ ist schlicht ein Merkzettel, in die man Dinge hineinschreibt, die einem während der Arbeit am Layout auffallen, die aber nicht sofort erledigt werden können (wie z.B. das Besorgen der aktuellen Termine der Polo-Sparte, sollten diese ausnahmsweise einmal nicht bereits zum Redaktionsschluss vorliegen).
 
-Die Datei _Platsch.pdf_ ist das Endergebnis dieses Prozessschrittes, während die Datei _Platsch.sla_ das Scribus-Layout repräsentiert und damit den Startpunkt dieses Prozessschrittes.
+Die Datei _Platsch.sla_ repräsentiert das Scribus-Layout und damit den Startpunkt dieses Prozessschrittes. Sie wird aus dem Verzeichnis der vorherigen Ausgabe in das Verzeichnis dieser Ausgabe kopiert.
 
 ==== Erzeugen eines Bildes fuer die Ausgabennummer
 
@@ -120,7 +120,7 @@ Für das Erzeugen der Ausgabennummer, wie es hier beschrieben ist, wird _MicroSo
 Es wird hier nicht darauf eingegangen, wie diese Werkzeuge installiert oder benutzt werden. Die Erzeugung der Ausgabennummern ist aber nicht an den Termin der konkreten Ausgabe gebunden und kann auch auf Vorrat erfolgen. Es ist daher sinnvoll, dass jemand mit dem notwendigem Wissen und den Werkzeugen eine Serie von Ausgabennummern im Vorhinein erzeugt.
 ====
 
-Im Verzeichnis _00-Vorlagen_ liegt eine Word-Datei _Ausgabennummer.docx_. Sie enthält eine bereits korrekt formatierte Zahl (als WordArt-Objekt) für die (zuletzt erstellte) Auflagennummer:
+Im Wurzelverzeichnis der Cloud liegt im Verzeichnis _00-Vorlagen_ eine Word-Datei _Ausgabennummer.docx_. Sie enthält eine bereits korrekt formatierte Zahl (als WordArt-Objekt) für die (zuletzt erstellte) Auflagennummer:
 
 .Bearbeitung der Ausgabennummer
 image::images/Ausgabennummer1.png[]
@@ -161,13 +161,20 @@ image::images/Ausgabennummer6.png[]
 
 Hier klickt man einfach in den weißen Hintergrund - et voilá: schon haben wir eine schöne neue Ausgabennummer!
 
-[TIP]
+[NOTE]
 ====
 Die RGB-Farbewerte für das Innere der Zahl sind:
 
-- Rot:  39
-- Grün: 76
-- Blau: 176
+
+[width="10%",options="header,footer"]
+|====================
+| Farbe |  Wert
+| Rot   |  39
+| Grün  |  76
+| Blau  |  176
+|====================
+
+Die Farbe des Rahmens ist schlicht schwarz, die Strichdicke 6pt.
 ====
 
 === Wiederkehrende Arbeitsschritte
@@ -214,7 +221,7 @@ Eventuell ist die Zuordnung zu bestimmten Ausgaben/Zeitpunkten besser in der lin
 
 Das Arbeiten mit einem Layout-Programm unterscheidet sich sehr grundlegend von dem eines Textverarbeitungsprogrammes.
 
-In einem Layout-Programm wird explizit festgelegt, in welchem (Papier-)Format es erstellt werden und wieviele Seiten es umfassen soll. Diese Angaben sind der Rahmen für alle folgenden Schritte, die nichts daran ändern können. Wenn also der Text anwächst, wird nie der Fall eintreten, dass sich die Seitenzahl des Endproduktes von alleine verändert.
+In einem Layout-Programm wird explizit festgelegt, in welchem (Papier-)Format es erstellt werden und wieviele Seiten es umfassen soll. Diese Angaben sind der Rahmen für alle folgenden Schritte, die nichts daran ändern können. Wenn also der Text anwächst, wird nie der Fall eintreten, dass sich die Seitenzahl des Endproduktes von alleine verändert. Ist dies gewünscht, muss es explizit vorgenommen werden.
 
 Die Seiten der Broschure werden in erster Linie mit Rahmen befüllt, die Text oder Bilder beinhalten können. Auch hier wird der Inhalt nie die Größe oder die Position des umgebenden Rahmens auf der Seite verändern. So ist eine absolut verlässliche Gestaltung des Ergebnisses möglich.
 
@@ -222,39 +229,201 @@ Im Wesentlichen schaltet man zwischen Arbeiten am Rahmen und Arbeiten am Inhalt 
 
 Das Tastenkürzel für das Einfügen eines Textrahmens ist kbd:[T], für das  Einfügen eines Bildrahmens kbd:[I].
 
-Soll in einen Textrahmen Text eingefügt werden, kann man dies über die Tastenkombination kbd:[Strg T] bewerkstelligen, um ein Bild in einen Bildrahmen einzufügen, dazu dient die Tastenkombination kbd:[Strg I].
+Sowohl um Text aus einer Datei in einen Textrahmen als auch um ein Bild in einen Bildrahmen einzufügen, wird die Tastenkombination kbd:[Strg I](_insert_) benutzt.
 
 === Arbeiten mit Texten
 
-Das Tastenkürzel für das Einfügen eines Textrahmens ist kbd:[T].
+Text muss grundsätzlich in einen Textrahmen eingefügt werden. Das kann entweder ein bestehender Rahmen sein oder ein neuer. Bei einem bestehenden Textrahmen entfernt man zuerst den vorhandenen Inhalt. 
 
-Soll in einen Textrahmen Text aus einer eingefügt werden, kann man dies über die Tastenkombination kbd:[Strg I](_insert_) bewerkstelligen.
+==== Textinhalt entfernen
 
-Soll in einen Textrahmen Text editiert werden, kann man entweder über einen Doppelklick in den Editiermodus gelangen oder über die Tastenkombination kbd:[Strg T] einen Story-Editor öffnen, in dem man neben der reinen Texteingabe auch den einzelnen Absätzen Formatvorlagen zuordnen kann.
+Dazu klickt man auf den Rahmen, um ihn zu selektieren und erhält mit einem Rechtsklick das Kontext-Menu:
+
+image::images/Text-InhaltEntfernen.png[]
+
+Daraus wählt man kbd:[Inhalt > /Entfernen].
+
+==== Textrahmen erzeugen
+
+Das Tastenkürzel für das Erzeugen eines Textrahmens ist kbd:[T]
+
+Der Cursor wechselt sein Erscheinungsbild und das Programm wartet darauf, dass man Größe und Position des Rahmens durch "Mausklick, Maustaste gedrückt halten und Maus bewegen" definiert.
+
+image::images/Text-RahmenErzeugen.png[]
+
+Der Rahmen ist (im Allgemeinen) so zu positionieren, dass der die blauen Seitenmarkierungen genau abdeckt.
+
+==== Textinhalt laden
+
+Der Textrahmen, in den Text eingefügt werden soll, muss selektiert werden (einfacher Mausklick).
+
+Das Tastenkürzel für das Laden eines Textes aus einer Datei in einen Textrahmen ist kbd:[Strg I](_insert_) (genau wie man ein Bild aus einer Datei in einen Bildrahmen einfügt).
+
+image::images/Text-InhaltLaden.png[]
+
+[NOTE]
+====
+Das Format _.docx_ von MicroSoft Word 2007 und höher wird hier nicht unterstützt. Die Dateien müssen im _.doc_-Format (MicroSoft Word 2003) vorliegen!
+====
 
 ==== Absätze formatieren
 
-Das Format des Textes in einem Absatz sollte nach Möglichkeit _nur_ über die Zuweisung von Formatvorlagen vorgenommen werden. 
+Nachdem Text in einen Rahmen geladen ist, ist er noch vollkommen unformatiert.
+Um dem abzuhelfen, doppelklickt man in den Rahmen und selektiert den gesamten Text mittels kbd:[Strg A].
+
+image::images/Text-InhaltFormatieren1.png[]
+
+Im zugehörigen Eigenschaften-Dialog wählt man die Abteilung kbd:[Text] aus und darin den Abschnitt kbd:[Stil verändern].
+
+Hier ist für den markierten Text die Vorlage _KVK-BasisAbsatz_ zuzuweisen. 
+
+Um wieder nur den Rahmen zu selektieren, muss man einmal außerhalb und dann wieder innerhalb des Rahmens klicken.
+
+Danach gelangt man über die Tastenkombination kbd:[Strg T] in den Story-Editor, in dem man neben der reinen Texteingabe auch den einzelnen Absätzen Formatvorlagen zuordnen kann.
+
+image::images/Text-InhaltFormatieren2.png[]
+
+Hier erkennt man, dass allen Absätze momentan die Formvorlage _KVK-BasisAbsatz_ zugeordnet ist. 
+
+Die erste Zeile (die immer leer ist :-/ ) wird entfernt. Der zweiten Zeile weist man das Absatzformat _KVK_ArtikelÜberschrift_ zu, indem man in der linken Spalte es Story-Editors auf die Formatauswahl-Box klickt. Dem zweiten Absatz weist man auf die gleiche Weise die Formatvorlage _KVK_UnterÜberschrift 1_ zu.
+
+image::images/Text-InhaltFormatieren3.png[]
+
+Der Story-Editor wird verlassen durch einen Klick auf den grünen Haken:
+
+image::images/Text-InhaltFormatieren4.png[]
+
+==== Textrahmen verketten
+
+Ist ein einen Textrahmen mehr Text eingefügt worden, als dort Platz findet, so ist der überschüssige Text schlicht unsichtbar. Die Tatsache, dass da Text aus dem Rahmen hinausläuft, wird durch ein kleines "X" am rechten unteren Rand des Rahmens angezeigt:
+
+image::images/Text-Verketten1.png[]
+
+Um den Text dieses Rahmens in einen anderen weiterfließen zu lassen, muss der Textrahmen mit einem weiteren verkettet werden. Der zu verkettende Rahmen muss selektiert sein, dann klickt man auf das (sehr unscheinbare!) Menu-Icon kbd:[Textrahmen verketten]:
+
+image::images/Text-Verketten2.png[]
+
+Daraufhin klickt man einfach in den Rahmen, mit dem man den selektierten verketten möchte. Nun fließt derüberschüssige Text automatisch in den angehängten Rahmen über.
+
+image::images/Text-Verketten3.png[]
+
+==== Aufzählungen, Paddelrätsel
+
+Für das Formatieren von eingerückten Aufzählungen gibt es die Formatvorlagen _KVK-Aufzählung-Ebene 1_ und _KVK-Aufzählung-Ebene 2_.
+
+image::images/Text-Aufzählungen.png[]
+
+[NOTE]
+====
+In _Scribus_ werden bei Aufzählungen weder die _Bullets_ automatisch eingefügt, noch eventuelle Nummerierungen inkrementiert. Beides muss manuell erledigt werden.
+====
+
+Für die immer wiederkehrende Rubrik _Paddelrätsel_ gibt es zwei spezielle Formatvorlagen:
+
+image::images/Text-Aufzählungen2.png[]
+
+Die fett gesetzten Überschriften sind vom Format _KVK-Paddelrätselfrage_ und die eingerückten Antwortmöglichkeiten vom Format _KVK-Paddelrätselantwort_.
 
 ==== KVK-Absatzformate
+
+Das Format des Textes in einem Absatz sollte nach Möglichkeit _nur_ über die Zuweisung von Formatvorlagen vorgenommen werden. Es stehen folgende Absatzformatvorlagen zur Verfügung:
+
 .Spalten der Datei +BasisDaten.csv+
 [cols="15,85",options="header,footer"]
 |====================
 | Vorlagennamename          | Verwendung
-| KVK-Standardabsatz        | Bildet die Basis für weitere Formatvorlagen
-| KVK-Inhaltsverzeichnis    | Inhaltsverzeichnis
-| KVK-Artikelüberschrift    | Überschrift für Artikel,
+| KVK-Basis                 | Bildet die Basis für weitere Formatvorlagen, wird eigentlich nicht direkt verwendet
+| KVK-00-BasisAbsatz        | Format für alle normalen Absätze
+| KVK-01-Artikelüberschrift | Überschrift für Artikel,
 die ins Inhaltsverzeichnis aufgenommen werden sollen
-| KVK-UnterUeberschrift     | Unterüberschrift für die Zeile unter der Überschrift von Artikeln
+| KVK-02-UnterÜberschrift 1 | Unterüberschrift für die Zeile unter der Überschrift von Artikeln (Verfasserzeile)
+| KVK-Inhaltsverzeichnis    | Absätze im Inhaltsverzeichnis
+| KVK-Termin                | Absätze für Veranstaltungstermine
+| KVK-Aufzählung-Ebene 1    | Eingerückte Aufzählung
+| KVK-Aufzählung-Ebene 2    | Eingerückte Unteraufzählung
+| KVK-Bildunterschrift      | Text in Bildunterschriften
+| KVK-Paddelrätselfrage     | Fett gesetzte Frage der Rubrik "Paddelrätsel"
+| KVK-Paddelrätselantwort   | Eingerückte Antwort der Rubrik "Paddelrätsel"
 |====================
-
 
 === Arbeiten mit Bildern
 
-Das Tastenkürzel für das Einfügen eines Bildrahmens ist kbd:[I].
+Ein Bild muss grundsätzlich in einen Bildrahmen eingefügt werden. Das kann entweder ein bestehender Rahmen sein oder ein neuer. Bei einem bestehenden Bildrahmen entfernt man zuerst den vorhandenen Inhalt.
 
-Soll in einen Bildrahmen ein Bild eingefügt werden, kann man dies über die Tastenkombination kbd:[Strg I](_insert_) bewerkstelligen.
+==== Bildinhalt entfernen
 
+Dazu klickt man auf den Rahmen, um ihn zu selektieren und erhält mit einem Rechtsklick das Kontext-Menu:
+
+image::images/Bild_InhaltEntfernen.png[]
+
+Daraus wählt man kbd:[Inhalt > /Entfernen].
+
+==== Bildrahmen erzeugen
+
+Das Tastenkürzel für das Einfügen eines neuen Bildrahmens ist kbd:[I].
+
+image::images/Bild-RahmenErzeugen.png[]
+
+Der Rahmen ist (im Allgemeinen) so zu positionieren, dass er mit den blauen Seitenmarkierungen harmoniert.
+
+
+==== Bildinhalt laden
+
+Der Bildrahmen, in den Text eingefügt werden soll, muss selektiert werden (einfacher Mausklick).
+
+Das Tastenkürzel für das Laden eines Bildes aus einer Datei in einen Bildrahmen ist kbd:[Strg I](_insert_) (genau wie man einen Text aus einer Datei in einen Textrahmen einfügt).
+
+Hat man die Datei ausgewählt, wird das darin enthaltene Bild in Originalgröße in den Rahmen geladen:
+
+image::images/Bild-InhaltLaden.png[]
+
+==== Bild formatieren
+
+Ein frisch in einen Bildrahmen geladenes Bild ist in aller Regel größer, als dass es in seiner Originalgröße in den Rahmen passt (wenn es doch passt, ist irgend etwas falsch!).
+
+image::images/Bild-Formatieren1.png[]
+
+Um die Größe anzupassen, macht man einen Rechtsklick und wählt aus dem dadurch erscheinenden Kontext-Menu den Punkt kbd:[Bild an Rahmen anpassen] aus.
+
+image::images/Bild-Formatieren2.png[]
+
+Daraufhin wird das Bild verzerrungsfrei soweit verkleinert, dass es komplett innerhalb des Rahmens liegt.
+
+image::images/Bild-Formatieren3.png[]
+
+Da diese rigorose Anpassung selten den gewünschten Bildausschnitt liefert, müssen noch weitere Anpassungen vorgenommen werden.
+
+Im zum Bild-Objekt gehörigen Eigenschaften-Dialog wählt man die Abteilung kbd:[Bild] aus, und darin aktiviert man den Knopf kbd:[Freie Skalierung].
+
+image::images/Bild-Formatieren4.png[]
+
+Über die Felder kbd:[X-Position], kbd:[Y-Position] und kbd:[X-Größe] vergrößert und verschiebt man den dargestellten Bildausschnitt solange, bis er den eigenen Wünschen entspricht.
+
+[NOTE]
+====
+Damit die Größenänderungen verzerrungsfrei ausgeführt werden, ist darauf zu achten, dass das Verkettungssymbol rechts neben den Größenskalierungsfeldern eingeschaltet ist!
+====
+
+==== Text soll Bild umfließen
+
+Bisher verdeckt das Bild noch dahinter liegenden Text.
+Abhilfe steckt im zum Bild-Objekt gehörigen Eigenschaften-Dialog in der Abteilung kbd:[Form].
+
+image::images/Bild-Formatieren5.png[]
+
+Dort wird unter kbd:[Text umfließt Rahmen] die Auswahlmöglichkeit kbd:[Konturlinie benutzen] aktiviert. Danach prallt der Text am Bildrahmen ab.
+
+Allerdings stößt der Text immer noch teilweise gefährlich nahe an das Bild heran. Um auch das noch auszumerzen, muss man die Konturlinie etwas bearbeiten.
+
+Im Eigenschaftsdialog drückt zuerst auf kbd:[Bearbeiten](1), im sich dann öffnenden Pfade-Dialog auf kbd:[Konturlinie bearbeiten](2) und schließlich auf das Symbol zum Pfad vergrößern(3):
+
+image::images/Bild-Formatieren6.png[]
+
+Es erscheint die Konturlinie um das Bildobjekt herum. Diese kann ggfs. noch manuell angepasst werden (1). Zum Abschluss muss auf kbd:[Bearbeitung beenden] gedrückt werden(2). 
+
+image::images/Bild-Formatieren7.png[]
+
+Nun hält der Text überall gebührenden Abstand vom Bild.
 
 === Seiten hinzufügen und löschen
 
