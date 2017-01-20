@@ -1,6 +1,7 @@
 = Platsch - Layout
 Mathias-H. Weber <mhw@teambaltic.de>
-v1.0, 08. Januar 2017
+// v1.0,  zuletzt geändert: {docdatetime}
+v1.1, 20. Januar 2017 
 :doctype: book
 :encoding: utf-8
 :lang: de
@@ -15,15 +16,23 @@ v1.0, 08. Januar 2017
 // Deutsche Überschriften:
 :figure-caption: Abbildung
 :table-caption: Tabelle
+:chapter-label: Kapitel
 //:example-caption!:
 // Jeder Abschnitt bekommt automatisch einen Anker:
 :sectanchors:
+:imagesdir: images
 // Makro "kbd:" aktivieren:
 :experimental:
+// ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// Praktische Makros
+// Ein Haken a la CheckBox:
+//:checkedbox: pass:normal[{startsb}&#10004;{endsb}]
 
 [abstract]
 == Einleitung
 
+// CheckBox [red]*{checkedbox}*
+  
 In dieser Dokumentation ist der gesamte Prozess beschrieben, wie aus den durch die Redaktionsarbeit gesammelten Inhalten eine PDF_Datei erstellt wird, die schließlich der Druckerei übergeben wird, um daraus _wirklich_ die Vereinszeitung in Form einer Papierbroschure zu machen.
 
 == Verwendete Software
@@ -55,12 +64,12 @@ In der folgenden Abbildung ist die grundlegende Struktur des Cloud-Verzeichnisse
 
 [[image-dateibaum,CloudVerzeichnis1]]
 .Schema des Cloud-Verzeichnisses
-image::images/CloudVerzeichnis1.png[]
+image::CloudVerzeichnis1.png[]
 
 
 Dort sind einige Verzeichnisse, die ausgabenübergreifende Bedeutung haben und für jede Ausgabe der Vereinszeitung ein eigener Ordner.
 
-Der Ordner _00-Vorlagen_ enthält Vorlagendateien, die für jede Ausgabe Verwendung finden. 
+Der Ordner _00-Vorlagen_ enthält Vorlagendateien, die für jede Ausgabe Verwendung finden.
 
 Im Verzeichnis _01-Ausgabennummern_ sind vorbereitete Bilder für die Nummern, die auf der Titelseite der jeweiligen Ausgaben auftauchen.
 
@@ -74,7 +83,7 @@ Die folgende Abbildung gibt einen detaillierteren Blick in das Innere des Ordner
 
 [[image-dateibaum,Dateibaum2]]
 .Ordnerstruktur einer bestimmten Ausgabe (hier: Januar 2017)
-image::images/CloudVerzeichnis4.png[]
+image::CloudVerzeichnis4.png[]
 
 Die zentrale Datei einer jeden Ausgabe ist die Datei _Platsch.sla_. Sie repräsentiert das Layout zusammen mit den Inhalten und ist die Quelle, aus der am Ende das druckbare PDF erzeugt wird.
 
@@ -92,18 +101,18 @@ Wenn man "Trockenübungen" machen möchte, um einen Bearbeitungsschritt auszupro
 
 Der erste Schritt zur Erstellung einer neuen Ausgabe ist das Erzeugen eines entsprechenden Unterverzeichnisses, das durch das Skript _NeuePlatschAusgabeStarten.bat_ erstellt wird. Das Skript _muss_ in einer Command-Shell im Hauptverzeichnis der Cloud aufgerufen werden.
 
-image:images/NeuePlatschAusgabeStarten.bat1.png[]
+image::NeuePlatschAusgabeStarten.bat1.png[]
 
 Nach Bestätigen des vorgeschlagenen Verzeichnisnamens - oder Eingabe eines neuen - wird das Verzeichnis der vorherigen Ausgabe bestimmt sowie die neue Ausgabennummer:
 
-image:images/NeuePlatschAusgabeStarten.bat2.png[]
+image::NeuePlatschAusgabeStarten.bat2.png[]
 
 Es wird die oben dargestellte Verzeichnisstruktur erzeugt, sowie einige grundlegende Dateien in den Ordner kopiert.
 
 [WARNING]
 ====
 Es ist unbedingt zu überprüfen, ob das Bild für die Ausgabennummer im Verzeichnis _03-FertigeBilder_ korrekt angelegt worden ist!
-Wenn noch kein Nummernbild vorbereitet ist, guckst du 
+Wenn noch kein Nummernbild vorbereitet ist, guckst du
 link:_erzeugen_eines_bildes_fuer_die_ausgabennummer[hier]!
 ====
 
@@ -123,7 +132,7 @@ Es wird hier nicht darauf eingegangen, wie diese Werkzeuge installiert oder benu
 Im Wurzelverzeichnis der Cloud liegt im Verzeichnis _00-Vorlagen_ eine Word-Datei _Ausgabennummer.docx_. Sie enthält eine bereits korrekt formatierte Zahl (als WordArt-Objekt) für die (zuletzt erstellte) Auflagennummer:
 
 .Bearbeitung der Ausgabennummer
-image::images/Ausgabennummer1.png[]
+image::Ausgabennummer1.png[]
 
 . Zuerst ist das WordArt-Objekt anzuklicken
 . Dann muss im Menu kbd:[Format] angewählt werden (entfällt, wenn man einen Doppelklick auf das WordArt-Objekt macht)
@@ -131,12 +140,12 @@ image::images/Ausgabennummer1.png[]
 . in dem man die Nummer entsprechend anpasst
 
 .Anpassung der Ausgabennummer
-image::images/Ausgabennummer2.png[]
+image::Ausgabennummer2.png[]
 
 Nun muss diese Nummer "abfotografiert" werden. Dazu sollte man zuerst mit der Maus unter den Rahmen des WordArt-Objekt klicken, damit dieser nicht mehr dargestellt wird.
 
 ."Screenshotten" der Ausgabennummer
-image::images/Ausgabennummer3.png[]
+image::Ausgabennummer3.png[]
 
 Das "Abfotografieren" macht man mit einem beliebigen "Snippet"-Tool - ich verwende link:http://getgreenshot.org/[GreenShot]. Der Screenshot ist als "png"-Datei zu speichern.
 
@@ -147,17 +156,17 @@ Das transparent-Machen kann man mit einem beliebigen Bildverarbeitungsprogramm b
 Dazu wird die eben gespeicherte Datei mit dem Programm geöffnet. Durch Drücken der Taste kbd:[S] öffnet sich der "Speichern unter..."-Dialog:
 
 .IrfanView: Bild speichern unter...
-image::images/Ausgabennummer4.png[]
+image::Ausgabennummer4.png[]
 
 Als Ausgabeort wählt man das Unterverzeichnis _01-Ausgabennummern_ direkt im Cloud-Ordner. Wenn das Häkchen im Kasten "Show Option Dialog" gesetzt ist, erscheint ein weiterer Dialog, in dem die Optionen wie unten dargestellt angewählt sein müssen:
 
 .Optionen, um Transparenz zu erzeugen
-image::images/Ausgabennummer5.png[]
+image::Ausgabennummer5.png[]
 
 Wenn man dann im ursprünglichen "Speichern"-Dialog den Knopf kbd:[Speichern] drückt, öffnet sich abermals ein Fenster, in dem man die Farbe auswählen kann, die transparent gesetzt werden soll:
 
 .Transparente Farbe auswählen
-image::images/Ausgabennummer6.png[]
+image::Ausgabennummer6.png[]
 
 Hier klickt man einfach in den weißen Hintergrund - et voilá: schon haben wir eine schöne neue Ausgabennummer!
 
@@ -165,13 +174,12 @@ Hier klickt man einfach in den weißen Hintergrund - et voilá: schon haben wir 
 ====
 Die RGB-Farbewerte für das Innere der Zahl sind:
 
-
-[width="10%",options="header,footer"]
+[width="40%",cols="25,75",options="header,footer"]
 |====================
-| Farbe |  Wert
-| Rot   |  39
-| Grün  |  76
-| Blau  |  176
+| Farbe           |  Wert
+| [red]*Rot*      |  39
+| [green]*Grün*   |  76
+| [blue]*Blau*    |  176
 |====================
 
 Die Farbe des Rahmens ist schlicht schwarz, die Strichdicke 6pt.
@@ -190,7 +198,7 @@ Hier sind zunächst einmal nur die blanken Arbeitsschritte aufgeführt, die zur 
 .. Änderungen in der Redaktionsmannschaft?
 .. Nächsten Redaktionsschluss angeben
 .. Inhaltsverzeichnis aktualisieren (geschieht erst ganz am Schluss)
-. Vorwort der Redaktion 
+. Vorwort der Redaktion
 . Vorstandsecke
 . Termine Wanderfahrer
 . Termine Polospieler
@@ -233,13 +241,13 @@ Sowohl um Text aus einer Datei in einen Textrahmen als auch um ein Bild in einen
 
 === Arbeiten mit Texten
 
-Text muss grundsätzlich in einen Textrahmen eingefügt werden. Das kann entweder ein bestehender Rahmen sein oder ein neuer. Bei einem bestehenden Textrahmen entfernt man zuerst den vorhandenen Inhalt. 
+Text muss grundsätzlich in einen Textrahmen eingefügt werden. Das kann entweder ein bestehender Rahmen sein oder ein neuer. Bei einem bestehenden Textrahmen entfernt man zuerst den vorhandenen Inhalt.
 
 ==== Textinhalt entfernen
 
 Dazu klickt man auf den Rahmen, um ihn zu selektieren und erhält mit einem Rechtsklick das Kontext-Menu:
 
-image::images/Text-InhaltEntfernen.png[]
+image::Text-InhaltEntfernen.png[]
 
 Daraus wählt man kbd:[Inhalt > /Entfernen].
 
@@ -249,7 +257,7 @@ Das Tastenkürzel für das Erzeugen eines Textrahmens ist kbd:[T]
 
 Der Cursor wechselt sein Erscheinungsbild und das Programm wartet darauf, dass man Größe und Position des Rahmens durch "Mausklick, Maustaste gedrückt halten und Maus bewegen" definiert.
 
-image::images/Text-RahmenErzeugen.png[]
+image::Text-RahmenErzeugen.png[]
 
 Der Rahmen ist (im Allgemeinen) so zu positionieren, dass der die blauen Seitenmarkierungen genau abdeckt.
 
@@ -259,7 +267,7 @@ Der Textrahmen, in den Text eingefügt werden soll, muss selektiert werden (einf
 
 Das Tastenkürzel für das Laden eines Textes aus einer Datei in einen Textrahmen ist kbd:[Strg I](_insert_) (genau wie man ein Bild aus einer Datei in einen Bildrahmen einfügt).
 
-image::images/Text-InhaltLaden.png[]
+image::Text-InhaltLaden.png[]
 
 [NOTE]
 ====
@@ -271,47 +279,47 @@ Das Format _.docx_ von MicroSoft Word 2007 und höher wird hier nicht unterstüt
 Nachdem Text in einen Rahmen geladen ist, ist er noch vollkommen unformatiert.
 Um dem abzuhelfen, doppelklickt man in den Rahmen und selektiert den gesamten Text mittels kbd:[Strg A].
 
-image::images/Text-InhaltFormatieren1.png[]
+image::Text-InhaltFormatieren1.png[]
 
 Im zugehörigen Eigenschaften-Dialog wählt man die Abteilung kbd:[Text] aus und darin den Abschnitt kbd:[Stil verändern].
 
-Hier ist für den markierten Text die Vorlage _KVK-BasisAbsatz_ zuzuweisen. 
+Hier ist für den markierten Text die Vorlage _KVK-BasisAbsatz_ zuzuweisen.
 
 Um wieder nur den Rahmen zu selektieren, muss man einmal außerhalb und dann wieder innerhalb des Rahmens klicken.
 
 Danach gelangt man über die Tastenkombination kbd:[Strg T] in den Story-Editor, in dem man neben der reinen Texteingabe auch den einzelnen Absätzen Formatvorlagen zuordnen kann.
 
-image::images/Text-InhaltFormatieren2.png[]
+image::Text-InhaltFormatieren2.png[]
 
-Hier erkennt man, dass allen Absätze momentan die Formvorlage _KVK-BasisAbsatz_ zugeordnet ist. 
+Hier erkennt man, dass allen Absätze momentan die Formvorlage _KVK-BasisAbsatz_ zugeordnet ist.
 
 Die erste Zeile (die immer leer ist :-/ ) wird entfernt. Der zweiten Zeile weist man das Absatzformat _KVK_ArtikelÜberschrift_ zu, indem man in der linken Spalte es Story-Editors auf die Formatauswahl-Box klickt. Dem zweiten Absatz weist man auf die gleiche Weise die Formatvorlage _KVK_UnterÜberschrift 1_ zu.
 
-image::images/Text-InhaltFormatieren3.png[]
+image::Text-InhaltFormatieren3.png[]
 
 Der Story-Editor wird verlassen durch einen Klick auf den grünen Haken:
 
-image::images/Text-InhaltFormatieren4.png[]
+image::Text-InhaltFormatieren4.png[]
 
 ==== Textrahmen verketten
 
 Ist ein einen Textrahmen mehr Text eingefügt worden, als dort Platz findet, so ist der überschüssige Text schlicht unsichtbar. Die Tatsache, dass da Text aus dem Rahmen hinausläuft, wird durch ein kleines "X" am rechten unteren Rand des Rahmens angezeigt:
 
-image::images/Text-Verketten1.png[]
+image::Text-Verketten1.png[]
 
 Um den Text dieses Rahmens in einen anderen weiterfließen zu lassen, muss der Textrahmen mit einem weiteren verkettet werden. Der zu verkettende Rahmen muss selektiert sein, dann klickt man auf das (sehr unscheinbare!) Menu-Icon kbd:[Textrahmen verketten]:
 
-image::images/Text-Verketten2.png[]
+image::Text-Verketten2.png[]
 
 Daraufhin klickt man einfach in den Rahmen, mit dem man den selektierten verketten möchte. Nun fließt derüberschüssige Text automatisch in den angehängten Rahmen über.
 
-image::images/Text-Verketten3.png[]
+image::Text-Verketten3.png[]
 
 ==== Aufzählungen, Paddelrätsel
 
 Für das Formatieren von eingerückten Aufzählungen gibt es die Formatvorlagen _KVK-Aufzählung-Ebene 1_ und _KVK-Aufzählung-Ebene 2_.
 
-image::images/Text-Aufzählungen.png[]
+image::Text-Aufzählungen.png[]
 
 [NOTE]
 ====
@@ -320,7 +328,7 @@ In _Scribus_ werden bei Aufzählungen weder die _Bullets_ automatisch eingefügt
 
 Für die immer wiederkehrende Rubrik _Paddelrätsel_ gibt es zwei spezielle Formatvorlagen:
 
-image::images/Text-Aufzählungen2.png[]
+image::Text-Aufzählungen2.png[]
 
 Die fett gesetzten Überschriften sind vom Format _KVK-Paddelrätselfrage_ und die eingerückten Antwortmöglichkeiten vom Format _KVK-Paddelrätselantwort_.
 
@@ -329,7 +337,7 @@ Die fett gesetzten Überschriften sind vom Format _KVK-Paddelrätselfrage_ und d
 Das Format des Textes in einem Absatz sollte nach Möglichkeit _nur_ über die Zuweisung von Formatvorlagen vorgenommen werden. Es stehen folgende Absatzformatvorlagen zur Verfügung:
 
 .Spalten der Datei +BasisDaten.csv+
-[cols="15,85",options="header,footer"]
+[cols="25,75",options="header,footer"]
 |====================
 | Vorlagennamename          | Verwendung
 | KVK-Basis                 | Bildet die Basis für weitere Formatvorlagen, wird eigentlich nicht direkt verwendet
@@ -343,6 +351,7 @@ die ins Inhaltsverzeichnis aufgenommen werden sollen
 | KVK-Aufzählung-Ebene 2    | Eingerückte Unteraufzählung
 | KVK-Bildunterschrift      | Text in Bildunterschriften
 | KVK-Paddelrätselfrage     | Fett gesetzte Frage der Rubrik "Paddelrätsel"
+
 | KVK-Paddelrätselantwort   | Eingerückte Antwort der Rubrik "Paddelrätsel"
 |====================
 
@@ -354,7 +363,7 @@ Ein Bild muss grundsätzlich in einen Bildrahmen eingefügt werden. Das kann ent
 
 Dazu klickt man auf den Rahmen, um ihn zu selektieren und erhält mit einem Rechtsklick das Kontext-Menu:
 
-image::images/Bild_InhaltEntfernen.png[]
+image::Bild_InhaltEntfernen.png[]
 
 Daraus wählt man kbd:[Inhalt > /Entfernen].
 
@@ -362,7 +371,7 @@ Daraus wählt man kbd:[Inhalt > /Entfernen].
 
 Das Tastenkürzel für das Einfügen eines neuen Bildrahmens ist kbd:[I].
 
-image::images/Bild-RahmenErzeugen.png[]
+image::Bild-RahmenErzeugen.png[]
 
 Der Rahmen ist (im Allgemeinen) so zu positionieren, dass er mit den blauen Seitenmarkierungen harmoniert.
 
@@ -375,27 +384,27 @@ Das Tastenkürzel für das Laden eines Bildes aus einer Datei in einen Bildrahme
 
 Hat man die Datei ausgewählt, wird das darin enthaltene Bild in Originalgröße in den Rahmen geladen:
 
-image::images/Bild-InhaltLaden.png[]
+image::Bild-InhaltLaden.png[]
 
 ==== Bild formatieren
 
 Ein frisch in einen Bildrahmen geladenes Bild ist in aller Regel größer, als dass es in seiner Originalgröße in den Rahmen passt (wenn es doch passt, ist irgend etwas falsch!).
 
-image::images/Bild-Formatieren1.png[]
+image::Bild-Formatieren1.png[]
 
 Um die Größe anzupassen, macht man einen Rechtsklick und wählt aus dem dadurch erscheinenden Kontext-Menu den Punkt kbd:[Bild an Rahmen anpassen] aus.
 
-image::images/Bild-Formatieren2.png[]
+image::Bild-Formatieren2.png[]
 
 Daraufhin wird das Bild verzerrungsfrei soweit verkleinert, dass es komplett innerhalb des Rahmens liegt.
 
-image::images/Bild-Formatieren3.png[]
+image::Bild-Formatieren3.png[]
 
 Da diese rigorose Anpassung selten den gewünschten Bildausschnitt liefert, müssen noch weitere Anpassungen vorgenommen werden.
 
 Im zum Bild-Objekt gehörigen Eigenschaften-Dialog wählt man die Abteilung kbd:[Bild] aus, und darin aktiviert man den Knopf kbd:[Freie Skalierung].
 
-image::images/Bild-Formatieren4.png[]
+image::Bild-Formatieren4.png[]
 
 Über die Felder kbd:[X-Position], kbd:[Y-Position] und kbd:[X-Größe] vergrößert und verschiebt man den dargestellten Bildausschnitt solange, bis er den eigenen Wünschen entspricht.
 
@@ -409,7 +418,7 @@ Damit die Größenänderungen verzerrungsfrei ausgeführt werden, ist darauf zu 
 Bisher verdeckt das Bild noch dahinter liegenden Text.
 Abhilfe steckt im zum Bild-Objekt gehörigen Eigenschaften-Dialog in der Abteilung kbd:[Form].
 
-image::images/Bild-Formatieren5.png[]
+image::Bild-Formatieren5.png[]
 
 Dort wird unter kbd:[Text umfließt Rahmen] die Auswahlmöglichkeit kbd:[Konturlinie benutzen] aktiviert. Danach prallt der Text am Bildrahmen ab.
 
@@ -417,11 +426,11 @@ Allerdings stößt der Text immer noch teilweise gefährlich nahe an das Bild he
 
 Im Eigenschaftsdialog drückt zuerst auf kbd:[Bearbeiten](1), im sich dann öffnenden Pfade-Dialog auf kbd:[Konturlinie bearbeiten](2) und schließlich auf das Symbol zum Pfad vergrößern(3):
 
-image::images/Bild-Formatieren6.png[]
+image::Bild-Formatieren6.png[]
 
-Es erscheint die Konturlinie um das Bildobjekt herum. Diese kann ggfs. noch manuell angepasst werden (1). Zum Abschluss muss auf kbd:[Bearbeitung beenden] gedrückt werden(2). 
+Es erscheint die Konturlinie um das Bildobjekt herum. Diese kann ggfs. noch manuell angepasst werden (1). Zum Abschluss muss auf kbd:[Bearbeitung beenden] gedrückt werden(2).
 
-image::images/Bild-Formatieren7.png[]
+image::Bild-Formatieren7.png[]
 
 Nun hält der Text überall gebührenden Abstand vom Bild.
 
@@ -430,13 +439,13 @@ Nun hält der Text überall gebührenden Abstand vom Bild.
 ==== Seiten hinzufügen
 Aus dem Menu den Punkt kbd:[Seite] anwählen
 
-image::images/SeitenHinzufuegen.png[]
+image::SeitenHinzufuegen.png[]
 
 und dann kbd:[Einfügen...]
 
 Im folgenden Dialog ist darauf zu achten, dass bei der Anzahl der dazuzufügenden Seiten immer Vielfache von 4 sind (weil wir ja DIN-A5-Seiten auf DIN-A4-Bogen drucken - und auf einen Bogen gehen halt immer vier Seiten)!
 
-image::images/SeitenHinzufuegen2.png[]
+image::SeitenHinzufuegen2.png[]
 
 Es ist außerdem anzugeben, wo diese Seiten einzufügen sind - vor oder nach der ausgewählten Seite oder ganz am Ende des Dokumentes (was bei uns aber wohl nie vorkommt).
 
@@ -451,7 +460,7 @@ Wenn man Seiten löschen will, muss einem klar, dass alle Inhalte auf gelöschte
 
 Aus dem Menu den Punkt kbd:[Seite] anwählen
 
-image::images/SeitenEntfernen.png[]
+image::SeitenEntfernen.png[]
 
 und dann kbd:[Löschen...]
 
@@ -476,15 +485,15 @@ Soll die Überschrift eines Textrahmens ins Inhaltsverzeichnis aufgenommen werde
 Mit kbd:[Strg C] sichert man den Text in den Kopierpuffer.
 Anschließend präsentiert ein rechter Mausklick irgendwo im Textrahmen das Kontext-Menu:
 
-image::images/TOC1.png[align="center"]
+image::TOC1.png[]
 
 Aus dem wählt man den Eintrag kbd:[Attribute...] aus und erhält folgendes Fenster:
 
-image::images/TOC2.png[align="center"]
+image::TOC2.png[]
 
 Mit kbd:[Hinzufügen] erhält man einen Editor für die Objekt-Attribute:
 
-image::images/TOC3.png[align="center"]
+image::TOC3.png[]
 
 [NOTE]
 ====
@@ -494,26 +503,42 @@ Eventuell ist bereits ein Attribut-Eintrag vorhanden. Das ist in aller Regel der
 In der Auswahlbox der Spalte _Name_ wählt man den Wert _Inhalt_ aus.
 Mit einem Doppelklick in das Feld unter dem Überschrift _Wert_ trägt man mit kbd:[Strg V] den eben kopierten Text der Überschrift hier hinein:
 
-image::images/TOC4.png[align="center"] 
+image::TOC4.png[]
 
 Dieser Vorgang ist (leider) für jeden neuen bzw. jeden Textrahmen notwendig, in dem sich die Überschrift geändert hat.
 
 Der letzte Schritt besteht darin, die eben markierten Überschriften auch tatsächlich in den bereits dafür vorbereiteten Textrahmen zu übernehmen. Das geschieht durch Aufruf des Menu-Punktes kbd:[Extras/Inhaltsverzeichnis erstellen]:
 
-image::images/TOC5.png[align="center"]
+image::TOC5.png[]
 
 Nun sind die Überschriten alle unter der Angabe der korrekten Seitenzahl im Inhaltsverzeichnis auf der Umschlaginnenseite aufgeführt. Aber die Zeilen sind noch herzlich unformatiert.
 
-image::images/TOC7.png[align="center"]
+image::TOC7.png[]
 
 Daher muss durch einen Doppelklick in den Rahmen und ein nachfolgendes kbd:[Strg A] der gesamte Text markiert werden.
 
 Im zugehörigen Eigenschaften-Dialog wählt man die Abteilung kbd:[Text] aus und darin den Abschnitt kbd:[Stil verändern].
 
-image::images/TOC8.png[align="center"]
+image::TOC8.png[]
 
-Hier ist für den markierten Text die Vorlage _KVK-Inhaltsverzeichnis_ zuzuweisen. 
+Hier ist für den markierten Text die Vorlage _KVK-Inhaltsverzeichnis_ zuzuweisen.
 
 Bei der Revision, bevor also die PDF-Datei endgültig für den Druck freigegeben wird, muss noch einmal das Inhaltsverzeichnis mit den in der Broschure enthaltenen Überschriften verglichen werden.
 
+=== Hilfslinien
 
+Beim Platzieren von Objekten sind _Hilfslinien_ eine gute Unterstützung.
+Man erzeugt sie, indem man mit der Maus in die obere oder linke Lineal-Leiste klickt und die Maustaste gedrückt hält (1).
+Dann zieht man die Linie an die gewünschte Stelle im Dokument (2):
+
+image::Hilfslinien1.png[]
+
+Es ist grundsätzlich darauf zu achten, dass Objekte möglichst gemeinsam ausgerichtet sind. So schließt auf der Titelseite der Vereinswimpel linksbündig mit der Ausgabennummer ab (3 und 4) und deren Unterkante fluchtet mit der der Monatsangabe (5 und 6).
+
+Auf der Titel sind auch zwei Hilfslinien für die Ausrichtung des Hintergrund-Farbverlaufs eingerichtet (7 und 8). Sollte das Objekt für den Farbverlauf einmal verrutschen, kann man es anhand dieser Linien neu ausrichten.
+
+Damit die Hilfslinien überhaupt zu sehen sind, muss man dies im Dialog für die Dokumenteinstellungen konfigurieren.
+Der Dialog öffnet sich durch die Auswahl aus dem Menu kbd:[Datei / Dokument einrichten].
+Dort muss man dann die Abteilung kbd:[Hilfslinien] auswählen:
+
+image::Hilfslinien2.png[]

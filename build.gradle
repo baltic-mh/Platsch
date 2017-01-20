@@ -6,6 +6,12 @@
  * For more details take a look at the Java Quickstart chapter in the Gradle
  * user guide available at https://docs.gradle.org/2.9/userguide/tutorial_java_projects.html
  */
+buildscript {
+    dependencies {
+        classpath 'org.asciidoctor:asciidoctor-gradle-plugin:1.5.3'
+        classpath 'org.asciidoctor:asciidoctorj-pdf:1.5.0-alpha.11'
+    }
+}
 
 plugins {
     // Asciidoctor
@@ -43,11 +49,21 @@ configure(copyArtifacts) {
 // ############################################################################
 // Dokumentation mit Asciidoctor
 asciidoctor {
+    backends 'pdf','html5'
+    attributes \
+        'pdf-stylesdir' : 'theme',
+        'pdf-style'     : 'custom',
+        'stylesdir'     : '../stylesheets',
+        'stylesheet'    : 'riak.css'
+//        'stylesheet'    : 'readthedocs.css'
+    
     sourceDir = file('.')
     sourceDir = file('adocs')
     sources {
       include '*.adoc'
     }
-    outputDir = file('build/docs')
+    
+    outputDir  = file('build/docs')
 }
+
 // ############################################################################
