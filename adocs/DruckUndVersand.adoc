@@ -49,7 +49,7 @@ Das fertige PDF wird an die Druckerei übergeben, die daraus die physische Brosc
 Vierzehn Tage vor Dateiabgabe muss die Zeitung in der Druckerei avisiert werden, damit sie mit anderen anstehenden Aufträgen eingeplant werden kann.
 ====
 
-==== Druck
+=== Druck
 
 Die PDF-Datei wird zur Druckerei geschickt [fuchsia]*(Email?)*
 
@@ -71,7 +71,7 @@ Es ist darauf zu achten, dass die Schriften eingebettet sind (Option beim Export
 | Papier Innenteil        | [fuchsia]*90g?*
 |====================
 
-==== Versand
+=== Versand
 
 Die Gesamtauflage wird auf zwei unterschiedliche Versandarten verschickt: Info-Post und Brief-Post. Die Brief-Post ist deutlich teurer und muss für solche Adressaten verwendet werden, die außerhalb des Stadtgebietes wohnen.
 
