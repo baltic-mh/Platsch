@@ -1,6 +1,6 @@
 = Platsch - Druck und Versand
 Mathias-H. Weber <mhw@teambaltic.de>
-v1.0, 08. Januar 2017 
+v1.0, 24. Januar 2017 
 :doctype: book
 :encoding: utf-8
 :lang: de
@@ -24,3 +24,57 @@ v1.0, 08. Januar 2017
 
 [abstract]
 == Einleitung
+
+Das fertige PDF wird an die Druckerei übergeben, die daraus die physische Broschure erstellt. Die Druckerei übernimmt ebenfalls den Postversand. Der gesamte Prozess von der Dateiübergabe über den Druck und den Versand bis die Zeitung bei den Mitgliedern im Briefkasten liegt, dauert etwa [fuchsia]#???# Tage.
+
+=== Druckerei
+
+.Postanschrift
+****
+ Stiftung Drachensee
+ - Arbeit und Wohnen für Menschen mit Behinderungen -
+ Hamburger Chaussee 334   
+ 24113 Kiel  
+ Tel.: 0431-6484440  
+ Fax : 0431-6484445
+****
+
+
+*Ansprechpartner:* [red]#Herr Bornhöft# oder [red]#Frau Konken#
+
+*Email-Adresse:* mailto:druckunddigital@drachensee.de[druckunddigital@drachensee.de]
+
+[WARNING]
+====
+Vierzehn Tage vor Dateiabgabe muss die Zeitung in der Druckerei avisiert werden, damit sie mit anderen anstehenden Aufträgen eingeplant werden kann.
+====
+
+==== Druck
+
+Die PDF-Datei wird zur Druckerei geschickt [fuchsia]*(Email?)*
+
+[WARNING]
+====
+Die Seitenreihenfolge in der Datei ist in Lesereihenfolge (Seite 1, Seite 2, ...) - nicht in ausgeschossener Reihenfolge  (Seite 16, Seite 1, Seite 15, Seite 2, ...) .
+====
+
+Es ist darauf zu achten, dass die Schriften eingebettet sind (Option beim Exportieren des PDFs).
+
+[width="100%",options="header,footer"]
+|====================
+| Option     | Wert
+| Produkttyp | Broschure in Klammerheftung
+| Format     | A5
+| Auflage    | [fuchsia]*150?*
+| Umschlagseite | einseitiger Farbdruck
+| Papier Umschlagseite    | [fuchsia]*120g?*
+| Papier Innenteil        | [fuchsia]*90g?*
+|====================
+
+==== Versand
+
+Die Gesamtauflage wird auf zwei unterschiedliche Versandarten verschickt: Info-Post und Brief-Post. Die Brief-Post ist deutlich teurer und muss für solche Adressaten verwendet werden, die außerhalb des Stadtgebietes wohnen.
+
+Als Info-Post und damit kostengünstig kann an all die Adressen geschickt werden, die innerhalb eines bestimmten Postleitzahlenbereiches liegen.
+
+Für beide Versandarten müssen Adresslisten an die Druckerei übergeben werden. [fuchsia]*Wie müssen diese Listen genau aussehen?*
