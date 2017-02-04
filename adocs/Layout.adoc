@@ -1,7 +1,7 @@
 = Platsch - Layout
 Mathias-H. Weber <mhw@teambaltic.de>
 // v1.0,  zuletzt geändert: {docdatetime}
-v1.1, 20. Januar 2017 
+v1.2, 04. Februar 2017 
 :doctype: book
 :encoding: utf-8
 :lang: de
@@ -466,13 +466,24 @@ und dann kbd:[Löschen...]
 
 
 
-=== Besondere Bedeutung der Mittelseite
+=== Mittelseiten
 
 Unsere Vereinszeitung hat das Format DIN-A5. Gedruckt wird sie auf DIN-A4 Bogen, die übereinander gelegt, geheftet und gefalzt werden. Daraus folgt, dass beim Lesen nebeneinander liegende Seiten immer auf unterschiedliche Blätter gedruckt werden - außer bei den beiden Seiten genau in der Mitte (wo man auch die Heftklammern sehen kann).
 
 Nicht ohne Grund sind bei Zeitschriften Anzeigen auf dieser Innenseite besonders teuer. Denn nur hier kann mein ein Bild über zwei (Lese-)Seiten drucken, ohne dass der Druck auf zwei unterschiedlichen Bogen landet!
 
 Damit bietet sich nur diese Seite an, Bilder über die Seitengrenzen hinweg zu drucken! Ich freue mich schon darauf, wenn jemand das zum ersten Mal ausprobiert!
+
+=== Umschlagseiten
+
+Wie die Mittelseiten haben die Umschlagseiten eine besondere Stellung. 
+Auch sie werden auf einem gemeinsamen Blatt gedruckt. Da sie in vollflächig gedruckt werden, ist es besonders wichtig, dass ihre Größen und Ausrichtungen exakt aufeinander abgestimmt sind. 
+
+Weichen z.B. die Höhe oder die vertikale Ausrichtung voneinander ab, ergibt sich im fertigen Produkt ein Absatz in der Kontur der blauen Hintergrundfläche.
+
+Die Dimensionen für die beiden Rahmen, die den blauen Hintergrund enthalten, sind im folgenden Bild dargestellt. Die Werte für die X-Position und die Höhe sind für den Rahmen auf der Titelseite sowie den auf der Rückseite exakt gleich zu halten:
+
+image::Titelseiten1.png[]
 
 === Inhaltsverzeichnis
 
@@ -542,3 +553,4 @@ Der Dialog öffnet sich durch die Auswahl aus dem Menu kbd:[Datei / Dokument ein
 Dort muss man dann die Abteilung kbd:[Hilfslinien] auswählen:
 
 image::Hilfslinien2.png[]
+
