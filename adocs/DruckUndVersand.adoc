@@ -1,6 +1,6 @@
 = Platsch - Druck und Versand
 Mathias-H. Weber <mhw@teambaltic.de>
-v1.0, 24. Januar 2017 
+v1.1, 04. Februar 2017 
 :doctype: book
 :encoding: utf-8
 :lang: de
@@ -21,6 +21,9 @@ v1.0, 24. Januar 2017
 :imagesdir: images
 // Makro "kbd:" aktivieren:
 :experimental:
+// Bei URLs den 'unlesbaren Teil' verstecken
+:hide-uri-scheme:
+
 
 [abstract]
 == Einleitung
@@ -60,7 +63,7 @@ Die Seitenreihenfolge in der Datei ist in Lesereihenfolge (Seite 1, Seite 2, ...
 
 Es ist darauf zu achten, dass die Schriften eingebettet sind (Option beim Exportieren des PDFs).
 
-[width="100%",options="header,footer"]
+[width="100%",options="header"]
 |====================
 | Option     | Wert
 | Produkttyp | Broschure in Klammerheftung
@@ -73,8 +76,71 @@ Es ist darauf zu achten, dass die Schriften eingebettet sind (Option beim Export
 
 == Versand
 
-Die Gesamtauflage wird auf zwei unterschiedliche Versandarten verschickt: Info-Post und Brief-Post. Die Brief-Post ist deutlich teurer und muss für solche Adressaten verwendet werden, die außerhalb des Stadtgebietes wohnen.
+Die Gesamtauflage wird auf zwei unterschiedliche Versandarten verschickt: DIALOGPOST (früher Info-Post) und Brief-Post. Die Brief-Post ist deutlich teurer und muss für solche Adressaten verwendet werden, die außerhalb des Stadtgebietes wohnen.
 
-Als Info-Post und damit kostengünstig kann an all die Adressen geschickt werden, die innerhalb eines bestimmten Postleitzahlenbereiches liegen.
+Als DIALOGPOST und damit kostengünstig kann an all die Adressen geschickt werden, die innerhalb eines bestimmten Postleitzahlenbereiches liegen.
 
 Für beide Versandarten müssen Adresslisten an die Druckerei übergeben werden. [fuchsia]*Wie müssen diese Listen genau aussehen?*
+
+=== DIALOGPOST
+
+
+.link:https://www.deutschepost.de/de/d/dialogpost/konditionen.html[Formate und Preise]
+[width="100%",options="header",cols="1,2,2,2]
+|====================
+| Formate       | Preise pro Sendung ^1)^   | Gewicht ^2)^  | Maße
+s| Standard^3)^  
+v| 0,28 €
+0,35 €
+v| bis 20 g
+21 - 50 g
+
+v| L: 150 - 235 mm
+B: 90 - 125 mm
+H: bis 5 mm
+
+nur Rechteckform 
+
+s| Groß
+v|#0,45 €#
+#0,58 €#
+0,72 €
+0,79 €
+0,92 €
+v| #bis 50 g#
+#51 - 100 g#
+101 - 250 g
+251 - 500 g
+501 - 1000 g
+v| L: 140 - 353 mm
+B: 90 - 250 mm
+H: bis 30 mm
+
+Quadratform möglich ^4)^ 
+|====================
+
+====
+^1)^ Alle Entgelte verstehen sich zuzüglich der gesetzlichen Umsatzsteuer.  
+
+^2)^ Bruchteile beim Gewicht sind auf ganze Gramm aufzurunden.  
+
+^3)^ Die Länge muss mindestens das 1,4-Fache der Breite betragen. DIALOGPOST Sendungen sind auch mit einer Länge von 148 mm zulässig.  
+
+^4)^ Wenn Seitenmaße mehr als 140 mm betragen.
+====
+
+====
+[NOTE]
+Um Sendungen per DIALOGPOST verschicken zu können, ist eine Mindestmenge von 200 Stück erforderlich, bei denen die Adressen innerhalb der _Leitregion_ liegen (Übereinstimmung der ersten beiden Stellen der Postleitzahl) . 
+====
+
+Diese Menge erreichen wir nicht, aber man kann auch kleinere Mengen als DIALOGPOST verschicken, muss dann aber trotzdem für 200 Stück zahlen.
+
+Die Januar-Ausgabe 2017 wog bei 28 Seiten (inkl. Umschlag) 49 Gramm. Das Format fällt in die Kategorie *Groß*, so dass der Stückpreis 0,45€ betragen würde. Das macht bei 200 zu zahlenden Exemplaren 90€. Ist die Zeitung etwas schwerer, beträgt der Geamtpreis 116€.
+
+Der Versand per normaler Briefpost kostet pro Stück aktuell (Februar 2017) 1,45€. Bei angenommenen 120 zu verschickenden Exemplaren kommt man auf 174€. Somit ist die Abwicklung über DIALOGPOST solange günstiger, wie wir mehr als 80 Exemplare verschicken müssen.
+
+====
+[WARNING]
+Der Nachteil an der Verschickung über DIALOGPOST ist die Tatsache, dass die Sendungen innerhalb einer Woche gesammelt werden und erst in der darauffolgenden verschickt. Dadurch ergibt sich eine recht lange Zustellzeit, die für die Ausgabe, die die Einladung zur Mitgliederversammlung enthält, kritisch werden kann (zwischen Einladung und Termin der Mitgliederversammlung müssen zehn Tage liegen!).
+====
