@@ -741,8 +741,8 @@ table.tableblock.grid-all { -webkit-border-radius: 0; border-radius: 0; -webkit-
 <div class="details">
 <span id="author" class="author">Mathias-H. Weber</span><br>
 <span id="email" class="email"><a href="mailto:mhw@teambaltic.de">mhw@teambaltic.de</a></span><br>
-<span id="revnumber">version 1.2,</span>
-<span id="revdate">04. Februar 2017</span>
+<span id="revnumber">version 1.3,</span>
+<span id="revdate">13. Februar 2017</span>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Inhaltsverzeichnis</div>
@@ -906,7 +906,7 @@ Die Installation und Bedienung sind separat <a href="Software.html#_cloud_softwa
 <p>Die zentrale Datei einer jeden Ausgabe ist die Datei <em>Platsch.sla</em>. Sie repräsentiert das Layout zusammen mit den Inhalten und ist die Quelle, aus der am Ende das druckbare PDF erzeugt wird.</p>
 </div>
 <div class="paragraph">
-<p><em>Alle</em> erzeugten und zugelieferten Dateien werden zuerst im Unterverzeichnis <em>01-Eingang</em> aufgenommen <mark>(1)</mark>. Sobald sie redationell bearbeitet werden, werden sie in den Ordner <em>02-InBearbeitung</em> verschoben <mark>(2)</mark>. Erst wenn sie ihre Form, in der sie in die Zeitung Eingang finden sollen, erhalten haben, werden sie - im Falle von Bildern - in das Verzeichnis <em>03-FertigeBilder</em> verschoben <mark>(3)</mark>, im Falle von Texten in den Ordner <em>03-FertigeTexte</em> <mark>(4)</mark>.</p>
+<p><em>Alle</em> erzeugten und zugelieferten Dateien werden zuerst im Unterverzeichnis <em>01-Eingang</em> aufgenommen (<mark>1</mark>). Sobald sie redationell bearbeitet werden, werden sie in den Ordner <em>02-InBearbeitung</em> verschoben (<mark>2</mark>). Erst wenn sie ihre Form, in der sie in die Zeitung Eingang finden sollen, erhalten haben, werden sie - im Falle von Bildern - in das Verzeichnis <em>03-FertigeBilder</em> verschoben (<mark>3</mark>), im Falle von Texten in den Ordner <em>03-FertigeTexte</em> (<mark>4</mark>).</p>
 </div>
 <div class="paragraph">
 <p>So ist eine für alle ersichtliche Trennung der unterschiedlichen Stadien der Bearbeitung gesichert und die Gefahr von Missverständnissen und Datenverluste ist minimal.</p>
@@ -953,7 +953,7 @@ Die Installation und Bedienung sind separat <a href="Software.html#_cloud_softwa
 <div class="paragraph">
 <p>Es ist unbedingt zu überprüfen, ob das Bild für die Ausgabennummer im Verzeichnis <em>03-FertigeBilder</em> korrekt angelegt worden ist!
 Wenn noch kein Nummernbild vorbereitet ist, guckst du
-<a href="_erzeugen_eines_bildes_fuer_die_ausgabennummer">hier</a>!</p>
+<a href="#_erzeugen_eines_bildes_fuer_die_ausgabennummer">hier</a>!</p>
 </div>
 </td>
 </tr>
@@ -1085,12 +1085,6 @@ Wenn noch kein Nummernbild vorbereitet ist, guckst du
 <th class="tableblock halign-left valign-top">Wert</th>
 </tr>
 </thead>
-<tfoot>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong class="blue">Blau</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">176</p></td>
-</tr>
-</tfoot>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong class="red">Rot</strong></p></td>
@@ -1099,6 +1093,10 @@ Wenn noch kein Nummernbild vorbereitet ist, guckst du
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong class="green">Grün</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">76</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong class="blue">Blau</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">176</p></td>
 </tr>
 </tbody>
 </table>
@@ -1348,7 +1346,7 @@ Um dem abzuhelfen, doppelklickt man in den Rahmen und selektiert den gesamten Te
 <p>Hier erkennt man, dass allen Absätze momentan die Formvorlage <em>KVK-BasisAbsatz</em> zugeordnet ist.</p>
 </div>
 <div class="paragraph">
-<p>Die erste Zeile (die immer leer ist :-/ ) wird entfernt. Der zweiten Zeile weist man das Absatzformat <em>KVK_ArtikelÜberschrift</em> zu, indem man in der linken Spalte es Story-Editors auf die Formatauswahl-Box klickt. Dem zweiten Absatz weist man auf die gleiche Weise die Formatvorlage <em>KVK_UnterÜberschrift 1</em> zu.</p>
+<p>Die erste Zeile (die immer leer ist :-/ ) wird entfernt. Der zweiten Zeile weist man das Absatzformat <em>KVK_ArtikelÜberschrift</em> zu, indem man in der linken Spalte des Story-Editors auf die Formatauswahl-Box klickt. Dem zweiten Absatz weist man auf die gleiche Weise die Formatvorlage <em>KVK_UnterÜberschrift 1</em> zu.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -1367,7 +1365,7 @@ Um dem abzuhelfen, doppelklickt man in den Rahmen und selektiert den gesamten Te
 <div class="sect3">
 <h4 id="_textrahmen_verketten"><a class="anchor" href="#_textrahmen_verketten"></a>5.1.5. Textrahmen verketten</h4>
 <div class="paragraph">
-<p>Ist ein einen Textrahmen mehr Text eingefügt worden, als dort Platz findet, so ist der überschüssige Text schlicht unsichtbar. Die Tatsache, dass da Text aus dem Rahmen hinausläuft, wird durch ein kleines "X" am rechten unteren Rand des Rahmens angezeigt:</p>
+<p>Ist in einen Textrahmen mehr Text eingefügt worden, als dort Platz findet, so ist der überschüssige Text schlicht unsichtbar. Die Tatsache, dass da Text aus dem Rahmen hinausläuft, wird durch ein kleines "X" am rechten unteren Rand des Rahmens angezeigt:</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -1444,12 +1442,6 @@ Um dem abzuhelfen, doppelklickt man in den Rahmen und selektiert den gesamten Te
 <th class="tableblock halign-left valign-top">Verwendung</th>
 </tr>
 </thead>
-<tfoot>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">KVK-Paddelrätselantwort</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Eingerückte Antwort der Rubrik "Paddelrätsel"</p></td>
-</tr>
-</tfoot>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">KVK-Basis</p></td>
@@ -1492,6 +1484,10 @@ die ins Inhaltsverzeichnis aufgenommen werden sollen</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">KVK-Paddelrätselfrage</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Fett gesetzte Frage der Rubrik "Paddelrätsel"</p></td>
 </tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">KVK-Paddelrätselantwort</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Eingerückte Antwort der Rubrik "Paddelrätsel"</p></td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -1532,7 +1528,7 @@ die ins Inhaltsverzeichnis aufgenommen werden sollen</p></td>
 <div class="sect3">
 <h4 id="_bildinhalt_laden"><a class="anchor" href="#_bildinhalt_laden"></a>5.2.3. Bildinhalt laden</h4>
 <div class="paragraph">
-<p>Der Bildrahmen, in den Text eingefügt werden soll, muss selektiert werden (einfacher Mausklick).</p>
+<p>Der Bildrahmen, in den ein Bild eingefügt werden soll, muss selektiert werden (einfacher Mausklick).</p>
 </div>
 <div class="paragraph">
 <p>Das Tastenkürzel für das Laden eines Bildes aus einer Datei in einen Bildrahmen ist <kbd>Strg I</kbd>(<em>insert</em>) (genau wie man einen Text aus einer Datei in einen Textrahmen einfügt).</p>
@@ -1619,7 +1615,7 @@ Abhilfe steckt im zum Bild-Objekt gehörigen Eigenschaften-Dialog in der Abteilu
 <p>Allerdings stößt der Text immer noch teilweise gefährlich nahe an das Bild heran. Um auch das noch auszumerzen, muss man die Konturlinie etwas bearbeiten.</p>
 </div>
 <div class="paragraph">
-<p>Im Eigenschaftsdialog drückt zuerst auf <kbd>Bearbeiten</kbd>(1), im sich dann öffnenden Pfade-Dialog auf <kbd>Konturlinie bearbeiten</kbd>(2) und schließlich auf das Symbol zum Pfad vergrößern(3):</p>
+<p>Im Eigenschaftsdialog drückt zuerst auf <kbd>Bearbeiten</kbd>(<mark>1</mark>), im sich dann öffnenden Pfade-Dialog auf <kbd>Konturlinie bearbeiten</kbd>(<mark>2</mark>) und schließlich auf das Symbol zum Pfad vergrößern(<mark>3</mark>):</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -1627,7 +1623,7 @@ Abhilfe steckt im zum Bild-Objekt gehörigen Eigenschaften-Dialog in der Abteilu
 </div>
 </div>
 <div class="paragraph">
-<p>Es erscheint die Konturlinie um das Bildobjekt herum. Diese kann ggfs. noch manuell angepasst werden (1). Zum Abschluss muss auf <kbd>Bearbeitung beenden</kbd> gedrückt werden(2).</p>
+<p>Es erscheint die Konturlinie um das Bildobjekt herum. Diese kann ggfs. noch manuell angepasst werden (<mark>1</mark>). Zum Abschluss muss auf <kbd>Bearbeitung beenden</kbd> gedrückt werden(<mark>2</mark>).</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -1798,7 +1794,7 @@ Mit einem Doppelklick in das Feld unter dem Überschrift <em>Wert</em> trägt ma
 </div>
 </div>
 <div class="paragraph">
-<p>Nun sind die Überschriten alle unter der Angabe der korrekten Seitenzahl im Inhaltsverzeichnis auf der Umschlaginnenseite aufgeführt. Aber die Zeilen sind noch herzlich unformatiert.</p>
+<p>Nun sind die Überschriften alle unter der Angabe der korrekten Seitenzahl im Inhaltsverzeichnis auf der Umschlaginnenseite aufgeführt. Aber die Zeilen sind noch herzlich unformatiert.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -1827,8 +1823,8 @@ Mit einem Doppelklick in das Feld unter dem Überschrift <em>Wert</em> trägt ma
 <h3 id="_hilfslinien"><a class="anchor" href="#_hilfslinien"></a>5.7. Hilfslinien</h3>
 <div class="paragraph">
 <p>Beim Platzieren von Objekten sind <em>Hilfslinien</em> eine gute Unterstützung.
-Man erzeugt sie, indem man mit der Maus in die obere oder linke Lineal-Leiste klickt und die Maustaste gedrückt hält (1).
-Dann zieht man die Linie an die gewünschte Stelle im Dokument (2):</p>
+Man erzeugt sie, indem man mit der Maus in die obere oder linke Lineal-Leiste klickt und die Maustaste gedrückt hält (<mark>1</mark>).
+Dann zieht man die Linie an die gewünschte Stelle im Dokument (<mark>2</mark>):</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -1836,10 +1832,10 @@ Dann zieht man die Linie an die gewünschte Stelle im Dokument (2):</p>
 </div>
 </div>
 <div class="paragraph">
-<p>Es ist grundsätzlich darauf zu achten, dass Objekte möglichst gemeinsam ausgerichtet sind. So schließt auf der Titelseite der Vereinswimpel linksbündig mit der Ausgabennummer ab (3 und 4) und deren Unterkante fluchtet mit der der Monatsangabe (5 und 6).</p>
+<p>Es ist grundsätzlich darauf zu achten, dass Objekte möglichst gemeinsam ausgerichtet sind. So schließt auf der Titelseite der Vereinswimpel linksbündig mit der Ausgabennummer ab (<mark>3</mark> und <mark>4</mark>) und deren Unterkante fluchtet mit der der Monatsangabe (<mark>5</mark> und <mark>6</mark>).</p>
 </div>
 <div class="paragraph">
-<p>Auf der Titel sind auch zwei Hilfslinien für die Ausrichtung des Hintergrund-Farbverlaufs eingerichtet (7 und 8). Sollte das Objekt für den Farbverlauf einmal verrutschen, kann man es anhand dieser Linien neu ausrichten.</p>
+<p>Auf der Titel sind auch zwei Hilfslinien für die Ausrichtung des Hintergrund-Farbverlaufs eingerichtet (<mark>7</mark> und <mark>8</mark>). Sollte das Objekt für den Farbverlauf einmal verrutschen, kann man es anhand dieser Linien neu ausrichten.</p>
 </div>
 <div class="paragraph">
 <p>Damit die Hilfslinien überhaupt zu sehen sind, muss man dies im Dialog für die Dokumenteinstellungen konfigurieren.
@@ -1857,8 +1853,8 @@ Dort muss man dann die Abteilung <kbd>Hilfslinien</kbd> auswählen:</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Version 1.2<br>
-Erstellt mit Asciidoctor v1.5.4 : Zuletzt geändert: 2017-02-04 13:34:45 +01:00
+Version 1.3<br>
+Erstellt mit Asciidoctor v1.5.4 : Zuletzt geändert: 2017-02-13 19:39:42 +01:00
 </div>
 </div>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/styles/github.min.css">

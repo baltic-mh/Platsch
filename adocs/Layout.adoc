@@ -1,7 +1,7 @@
 = Platsch - Layout
 Mathias-H. Weber <mhw@teambaltic.de>
 // v1.0,  zuletzt geändert: {docdatetime}
-v1.2, 04. Februar 2017 
+v1.3, 13. Februar 2017 
 :doctype: book
 :encoding: utf-8
 :lang: de
@@ -87,7 +87,7 @@ image::CloudVerzeichnis4.png[]
 
 Die zentrale Datei einer jeden Ausgabe ist die Datei _Platsch.sla_. Sie repräsentiert das Layout zusammen mit den Inhalten und ist die Quelle, aus der am Ende das druckbare PDF erzeugt wird.
 
-_Alle_ erzeugten und zugelieferten Dateien werden zuerst im Unterverzeichnis _01-Eingang_ aufgenommen #(1)#. Sobald sie redationell bearbeitet werden, werden sie in den Ordner _02-InBearbeitung_ verschoben #(2)#. Erst wenn sie ihre Form, in der sie in die Zeitung Eingang finden sollen, erhalten haben, werden sie - im Falle von Bildern - in das Verzeichnis _03-FertigeBilder_ verschoben #(3)#, im Falle von Texten in den Ordner _03-FertigeTexte_ #(4)#.
+_Alle_ erzeugten und zugelieferten Dateien werden zuerst im Unterverzeichnis _01-Eingang_ aufgenommen (#1#). Sobald sie redationell bearbeitet werden, werden sie in den Ordner _02-InBearbeitung_ verschoben (#2#). Erst wenn sie ihre Form, in der sie in die Zeitung Eingang finden sollen, erhalten haben, werden sie - im Falle von Bildern - in das Verzeichnis _03-FertigeBilder_ verschoben (#3#), im Falle von Texten in den Ordner _03-FertigeTexte_ (#4#).
 
 So ist eine für alle ersichtliche Trennung der unterschiedlichen Stadien der Bearbeitung gesichert und die Gefahr von Missverständnissen und Datenverluste ist minimal.
 
@@ -113,7 +113,7 @@ Es wird die oben dargestellte Verzeichnisstruktur erzeugt, sowie einige grundleg
 ====
 Es ist unbedingt zu überprüfen, ob das Bild für die Ausgabennummer im Verzeichnis _03-FertigeBilder_ korrekt angelegt worden ist!
 Wenn noch kein Nummernbild vorbereitet ist, guckst du
-link:_erzeugen_eines_bildes_fuer_die_ausgabennummer[hier]!
+link:#_erzeugen_eines_bildes_fuer_die_ausgabennummer[hier]!
 ====
 
 Die Datei _Nochtun.txt_ ist schlicht ein Merkzettel, in die man Dinge hineinschreibt, die einem während der Arbeit am Layout auffallen, die aber nicht sofort erledigt werden können (wie z.B. das Besorgen der aktuellen Termine der Polo-Sparte, sollten diese ausnahmsweise einmal nicht bereits zum Redaktionsschluss vorliegen).
@@ -174,7 +174,7 @@ Hier klickt man einfach in den weißen Hintergrund - et voilá: schon haben wir 
 ====
 Die RGB-Farbewerte für das Innere der Zahl sind:
 
-[width="40%",cols="25,75",options="header,footer"]
+[width="40%",cols="25,75",options="header"]
 |====================
 | Farbe           |  Wert
 | [red]*Rot*      |  39
@@ -293,7 +293,7 @@ image::Text-InhaltFormatieren2.png[]
 
 Hier erkennt man, dass allen Absätze momentan die Formvorlage _KVK-BasisAbsatz_ zugeordnet ist.
 
-Die erste Zeile (die immer leer ist :-/ ) wird entfernt. Der zweiten Zeile weist man das Absatzformat _KVK_ArtikelÜberschrift_ zu, indem man in der linken Spalte es Story-Editors auf die Formatauswahl-Box klickt. Dem zweiten Absatz weist man auf die gleiche Weise die Formatvorlage _KVK_UnterÜberschrift 1_ zu.
+Die erste Zeile (die immer leer ist :-/ ) wird entfernt. Der zweiten Zeile weist man das Absatzformat _KVK_ArtikelÜberschrift_ zu, indem man in der linken Spalte des Story-Editors auf die Formatauswahl-Box klickt. Dem zweiten Absatz weist man auf die gleiche Weise die Formatvorlage _KVK_UnterÜberschrift 1_ zu.
 
 image::Text-InhaltFormatieren3.png[]
 
@@ -303,7 +303,7 @@ image::Text-InhaltFormatieren4.png[]
 
 ==== Textrahmen verketten
 
-Ist ein einen Textrahmen mehr Text eingefügt worden, als dort Platz findet, so ist der überschüssige Text schlicht unsichtbar. Die Tatsache, dass da Text aus dem Rahmen hinausläuft, wird durch ein kleines "X" am rechten unteren Rand des Rahmens angezeigt:
+Ist in einen Textrahmen mehr Text eingefügt worden, als dort Platz findet, so ist der überschüssige Text schlicht unsichtbar. Die Tatsache, dass da Text aus dem Rahmen hinausläuft, wird durch ein kleines "X" am rechten unteren Rand des Rahmens angezeigt:
 
 image::Text-Verketten1.png[]
 
@@ -337,7 +337,7 @@ Die fett gesetzten Überschriften sind vom Format _KVK-Paddelrätselfrage_ und d
 Das Format des Textes in einem Absatz sollte nach Möglichkeit _nur_ über die Zuweisung von Formatvorlagen vorgenommen werden. Es stehen folgende Absatzformatvorlagen zur Verfügung:
 
 .Spalten der Datei +BasisDaten.csv+
-[cols="25,75",options="header,footer"]
+[cols="25,75",options="header"]
 |====================
 | Vorlagennamename          | Verwendung
 | KVK-Basis                 | Bildet die Basis für weitere Formatvorlagen, wird eigentlich nicht direkt verwendet
@@ -378,7 +378,7 @@ Der Rahmen ist (im Allgemeinen) so zu positionieren, dass er mit den blauen Seit
 
 ==== Bildinhalt laden
 
-Der Bildrahmen, in den Text eingefügt werden soll, muss selektiert werden (einfacher Mausklick).
+Der Bildrahmen, in den ein Bild eingefügt werden soll, muss selektiert werden (einfacher Mausklick).
 
 Das Tastenkürzel für das Laden eines Bildes aus einer Datei in einen Bildrahmen ist kbd:[Strg I](_insert_) (genau wie man einen Text aus einer Datei in einen Textrahmen einfügt).
 
@@ -424,11 +424,11 @@ Dort wird unter kbd:[Text umfließt Rahmen] die Auswahlmöglichkeit kbd:[Konturl
 
 Allerdings stößt der Text immer noch teilweise gefährlich nahe an das Bild heran. Um auch das noch auszumerzen, muss man die Konturlinie etwas bearbeiten.
 
-Im Eigenschaftsdialog drückt zuerst auf kbd:[Bearbeiten](1), im sich dann öffnenden Pfade-Dialog auf kbd:[Konturlinie bearbeiten](2) und schließlich auf das Symbol zum Pfad vergrößern(3):
+Im Eigenschaftsdialog drückt zuerst auf kbd:[Bearbeiten](#1#), im sich dann öffnenden Pfade-Dialog auf kbd:[Konturlinie bearbeiten](#2#) und schließlich auf das Symbol zum Pfad vergrößern(#3#):
 
 image::Bild-Formatieren6.png[]
 
-Es erscheint die Konturlinie um das Bildobjekt herum. Diese kann ggfs. noch manuell angepasst werden (1). Zum Abschluss muss auf kbd:[Bearbeitung beenden] gedrückt werden(2).
+Es erscheint die Konturlinie um das Bildobjekt herum. Diese kann ggfs. noch manuell angepasst werden (#1#). Zum Abschluss muss auf kbd:[Bearbeitung beenden] gedrückt werden(#2#).
 
 image::Bild-Formatieren7.png[]
 
@@ -522,7 +522,7 @@ Der letzte Schritt besteht darin, die eben markierten Überschriften auch tatsä
 
 image::TOC5.png[]
 
-Nun sind die Überschriten alle unter der Angabe der korrekten Seitenzahl im Inhaltsverzeichnis auf der Umschlaginnenseite aufgeführt. Aber die Zeilen sind noch herzlich unformatiert.
+Nun sind die Überschriften alle unter der Angabe der korrekten Seitenzahl im Inhaltsverzeichnis auf der Umschlaginnenseite aufgeführt. Aber die Zeilen sind noch herzlich unformatiert.
 
 image::TOC7.png[]
 
@@ -539,14 +539,14 @@ Bei der Revision, bevor also die PDF-Datei endgültig für den Druck freigegeben
 === Hilfslinien
 
 Beim Platzieren von Objekten sind _Hilfslinien_ eine gute Unterstützung.
-Man erzeugt sie, indem man mit der Maus in die obere oder linke Lineal-Leiste klickt und die Maustaste gedrückt hält (1).
-Dann zieht man die Linie an die gewünschte Stelle im Dokument (2):
+Man erzeugt sie, indem man mit der Maus in die obere oder linke Lineal-Leiste klickt und die Maustaste gedrückt hält (#1#).
+Dann zieht man die Linie an die gewünschte Stelle im Dokument (#2#):
 
 image::Hilfslinien1.png[]
 
-Es ist grundsätzlich darauf zu achten, dass Objekte möglichst gemeinsam ausgerichtet sind. So schließt auf der Titelseite der Vereinswimpel linksbündig mit der Ausgabennummer ab (3 und 4) und deren Unterkante fluchtet mit der der Monatsangabe (5 und 6).
+Es ist grundsätzlich darauf zu achten, dass Objekte möglichst gemeinsam ausgerichtet sind. So schließt auf der Titelseite der Vereinswimpel linksbündig mit der Ausgabennummer ab (#3# und #4#) und deren Unterkante fluchtet mit der der Monatsangabe (#5# und #6#).
 
-Auf der Titel sind auch zwei Hilfslinien für die Ausrichtung des Hintergrund-Farbverlaufs eingerichtet (7 und 8). Sollte das Objekt für den Farbverlauf einmal verrutschen, kann man es anhand dieser Linien neu ausrichten.
+Auf der Titel sind auch zwei Hilfslinien für die Ausrichtung des Hintergrund-Farbverlaufs eingerichtet (#7# und #8#). Sollte das Objekt für den Farbverlauf einmal verrutschen, kann man es anhand dieser Linien neu ausrichten.
 
 Damit die Hilfslinien überhaupt zu sehen sind, muss man dies im Dialog für die Dokumenteinstellungen konfigurieren.
 Der Dialog öffnet sich durch die Auswahl aus dem Menu kbd:[Datei / Dokument einrichten].
