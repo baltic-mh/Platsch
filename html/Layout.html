@@ -741,8 +741,8 @@ table.tableblock.grid-all { -webkit-border-radius: 0; border-radius: 0; -webkit-
 <div class="details">
 <span id="author" class="author">Mathias-H. Weber</span><br>
 <span id="email" class="email"><a href="mailto:mhw@teambaltic.de">mhw@teambaltic.de</a></span><br>
-<span id="revnumber">version 1.3,</span>
-<span id="revdate">13. Februar 2017</span>
+<span id="revnumber">version 1.4,</span>
+<span id="revdate">18. März 2017</span>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Inhaltsverzeichnis</div>
@@ -787,6 +787,7 @@ table.tableblock.grid-all { -webkit-border-radius: 0; border-radius: 0; -webkit-
 <li><a href="#_textrahmen_verketten">5.1.5. Textrahmen verketten</a></li>
 <li><a href="#_aufzählungen_paddelrätsel">5.1.6. Aufzählungen, Paddelrätsel</a></li>
 <li><a href="#_kvk_absatzformate">5.1.7. KVK-Absatzformate</a></li>
+<li><a href="#_trennhilfen">5.1.8. Trennhilfen</a></li>
 </ul>
 </li>
 <li><a href="#_arbeiten_mit_bildern">5.2. Arbeiten mit Bildern</a>
@@ -818,7 +819,7 @@ table.tableblock.grid-all { -webkit-border-radius: 0; border-radius: 0; -webkit-
 <h2 id="_einleitung"><a class="anchor" href="#_einleitung"></a>1. Einleitung</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>In dieser Dokumentation ist der gesamte Prozess beschrieben, wie aus den durch die Redaktionsarbeit gesammelten Inhalten eine PDF_Datei erstellt wird, die schließlich der Druckerei übergeben wird, um daraus <em>wirklich</em> die Vereinszeitung in Form einer Papierbroschure zu machen.</p>
+<p>In dieser Dokumentation ist der gesamte Prozess beschrieben, wie aus den durch die Redaktionsarbeit gesammelten Inhalten eine PDF-Datei erstellt wird, die schließlich der Druckerei übergeben wird, um daraus <em>wirklich</em> die Vereinszeitung in Form einer Papierbroschure zu machen.</p>
 </div>
 </div>
 </div>
@@ -1491,6 +1492,39 @@ die ins Inhaltsverzeichnis aufgenommen werden sollen</p></td>
 </tbody>
 </table>
 </div>
+<div class="sect3">
+<h4 id="_trennhilfen"><a class="anchor" href="#_trennhilfen"></a>5.1.8. Trennhilfen</h4>
+<div class="paragraph">
+<p>Roher Text passt häufig nicht so auf eine Zeile, dass diese gefällig ausgefüllt wird. Insbesondere, wenn lange Wörter vorkommen oder die Breite der Zeile verhältnismäßig gering ist, kommt es zu hässlichen Lücken im Text. Bei linksbündigem Satz entstehen diese Lücken am rechten Rand, bei Blocksatz mitten in der Zeile.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/Trennhilfen-LinksBuendig-Roh.png" alt="Trennhilfen LinksBuendig Roh">
+</div>
+<div class="title">Abbildung 9. Linksbündig gesetzter Text mit hässlichen Lücken</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/Trennhilfen-Blocksatz-Roh.png" alt="Trennhilfen Blocksatz Roh">
+</div>
+<div class="title">Abbildung 10. Im Blocksatz gesetzter Text mit hässlichen Lücken</div>
+</div>
+<div class="paragraph">
+<p>Um diese Unschönheit wenigstens etwas auszugleichen, gibt es das Hilfsmittel der <em>Trennangebote</em>.
+Man bestimmt damit sozusagen, wo in den Wörtern Trennzeichen eingefügt werden können, wenn dies helfen würde, die Zeile besser zu füllen.
+Wird das Wort nicht getrennt, ist auch der Trennstrich nicht zu sehen.
+Man macht ein Trennangebot, indem man an die Stelle im Wort geht, an der die Trennung erfolgen darf und drückt die Tastenkombination <kbd>Umschalt</kbd> + <kbd>Strg</kbd> + <kbd>-</kbd>.</p>
+</div>
+<div class="paragraph">
+<p>Damit sieht der obige Text schon deutlich besser aus - wenn auch noch nicht wirklich gut:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/Trennhilfen-Blocksatz-Fertig.png" alt="Trennhilfen Blocksatz Fertig">
+</div>
+<div class="title">Abbildung 11. Derselbe Text mit Trennangeboten (Blocksatz)</div>
+</div>
+</div>
 </div>
 <div class="sect2">
 <h3 id="_arbeiten_mit_bildern"><a class="anchor" href="#_arbeiten_mit_bildern"></a>5.2. Arbeiten mit Bildern</h3>
@@ -1853,8 +1887,8 @@ Dort muss man dann die Abteilung <kbd>Hilfslinien</kbd> auswählen:</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Version 1.3<br>
-Erstellt mit Asciidoctor v1.5.4 : Zuletzt geändert: 2017-02-13 19:39:42 +01:00
+Version 1.4<br>
+Erstellt mit Asciidoctor v1.5.4 : Zuletzt geändert: 2017-03-18 15:23:16 +01:00 2017-03-18 15:23:16 +01:00
 </div>
 </div>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/styles/github.min.css">

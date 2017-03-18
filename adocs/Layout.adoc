@@ -1,14 +1,14 @@
 = Platsch - Layout
 Mathias-H. Weber <mhw@teambaltic.de>
 // v1.0,  zuletzt geändert: {docdatetime}
-v1.3, 13. Februar 2017 
+v1.4, 18. März 2017 
 :doctype: book
 :encoding: utf-8
 :lang: de
 :toc: left
 :toclevels: 4
 :toc-title: Inhaltsverzeichnis
-:last-update-label: Erstellt mit Asciidoctor v{asciidoctor-version} : Zuletzt geändert:
+:last-update-label: Erstellt mit Asciidoctor v{asciidoctor-version} : Zuletzt geändert: {docdatetime}
 // Ohne dem haben die "Admonition"-Blocks keine Icons!
 :icons: font
 :numbered:
@@ -33,7 +33,7 @@ v1.3, 13. Februar 2017
 
 // CheckBox [red]*{checkedbox}*
   
-In dieser Dokumentation ist der gesamte Prozess beschrieben, wie aus den durch die Redaktionsarbeit gesammelten Inhalten eine PDF_Datei erstellt wird, die schließlich der Druckerei übergeben wird, um daraus _wirklich_ die Vereinszeitung in Form einer Papierbroschure zu machen.
+In dieser Dokumentation ist der gesamte Prozess beschrieben, wie aus den durch die Redaktionsarbeit gesammelten Inhalten eine PDF-Datei erstellt wird, die schließlich der Druckerei übergeben wird, um daraus _wirklich_ die Vereinszeitung in Form einer Papierbroschure zu machen.
 
 == Verwendete Software
 
@@ -354,6 +354,26 @@ die ins Inhaltsverzeichnis aufgenommen werden sollen
 
 | KVK-Paddelrätselantwort   | Eingerückte Antwort der Rubrik "Paddelrätsel"
 |====================
+
+==== Trennhilfen
+
+Roher Text passt häufig nicht so auf eine Zeile, dass diese gefällig ausgefüllt wird. Insbesondere, wenn lange Wörter vorkommen oder die Breite der Zeile verhältnismäßig gering ist, kommt es zu hässlichen Lücken im Text. Bei linksbündigem Satz entstehen diese Lücken am rechten Rand, bei Blocksatz mitten in der Zeile.
+
+.Linksbündig gesetzter Text mit hässlichen Lücken
+image::Trennhilfen-LinksBuendig-Roh.png[]
+
+.Im Blocksatz gesetzter Text mit hässlichen Lücken
+image::Trennhilfen-Blocksatz-Roh.png[]
+
+Um diese Unschönheit wenigstens etwas auszugleichen, gibt es das Hilfsmittel der _Trennangebote_.
+Man bestimmt damit sozusagen, wo in den Wörtern Trennzeichen eingefügt werden können, wenn dies helfen würde, die Zeile besser zu füllen. 
+Wird das Wort nicht getrennt, ist auch der Trennstrich nicht zu sehen.
+Man macht ein Trennangebot, indem man an die Stelle im Wort geht, an der die Trennung erfolgen darf und drückt die Tastenkombination kbd:[Umschalt] + kbd:[Strg] + kbd:[-].
+
+Damit sieht der obige Text schon deutlich besser aus - wenn auch noch nicht wirklich gut:
+
+.Derselbe Text mit Trennangeboten (Blocksatz)
+image::Trennhilfen-Blocksatz-Fertig.png[]
 
 === Arbeiten mit Bildern
 
