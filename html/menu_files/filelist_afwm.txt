@@ -1,0 +1,7 @@
+D:\Mathias\Entwicklung\Projekte\Platsch\menu_files\ebab_mbmcp.png
+D:\Mathias\Entwicklung\Projekte\Platsch\menu_files\ebab_mbmcp_c.png
+D:\Mathias\Entwicklung\Projekte\Platsch\menu_files\ebab_mbmcp_c2.png
+D:\Mathias\Entwicklung\Projekte\Platsch\menu_files\mbjsmbmcp.js
+D:\Mathias\Entwicklung\Projekte\Platsch\menu_files\mbcsmbmcp.css
+D:\Mathias\Entwicklung\Projekte\Platsch\menu.html
+D:\Mathias\Entwicklung\Projekte\Platsch\menu_files\filelist_afwm.txt
