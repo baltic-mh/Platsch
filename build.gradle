@@ -17,6 +17,7 @@ plugins {
     // Asciidoctor
     // http://asciidoctor.org/
     id 'org.asciidoctor.convert' version '1.5.3'
+
 }
 
 // In this section you declare where to find the dependencies of your project
@@ -64,6 +65,23 @@ asciidoctor {
     }
     
     outputDir  = file('build/docs')
+}
+
+task insertMenu(dependsOn: 'copyArtifacts') << {
+    File menuFile     = project.file('html/menu_files/menu.html')
+    def filesToAddMenuTo = []
+    filesToAddMenuTo.add( project.file('html/Colophon.html') )
+    filesToAddMenuTo.add( project.file('html/Layout.html') )
+    filesToAddMenuTo.add( project.file('html/DruckUndVersand.html') )
+    filesToAddMenuTo.add( project.file('html/Redaktionsarbeit.html') )
+    filesToAddMenuTo.add( project.file('html/Software.html') )
+    
+    def aMenuInserter = new MenuInserter( project.file('html'), menuFile )
+    aMenuInserter.insertMenu()
+}
+configure(insertMenu) {
+    group = 'documentation'
+    description = 'Fügt ein Menu in alle html-Dateien ein'
 }
 
 // ############################################################################

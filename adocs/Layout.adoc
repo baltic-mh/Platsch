@@ -23,6 +23,7 @@ v1.4, 18. März 2017
 :imagesdir: images
 // Makro "kbd:" aktivieren:
 :experimental:
+:pdf-page-size: A4
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 // Praktische Makros
 // Ein Haken a la CheckBox:
@@ -271,7 +272,7 @@ image::Text-InhaltLaden.png[]
 
 [NOTE]
 ====
-Das Format _.docx_ von MicroSoft Word 2007 und höher wird hier nicht unterstützt. Die Dateien müssen im _.doc_-Format (MicroSoft Word 2003) vorliegen!
+Das Format _.docx_ von MicroSoft Word 2007 und höher wird erst ab Scribus Version 1.5.2 unterstützt. Sonst müssen die Dateien im _.doc_-Format (MicroSoft Word 2003) vorliegen!
 ====
 
 ==== Absätze formatieren

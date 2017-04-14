@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 1.5.4">
 <meta name="author" content="Mathias-H. Weber">
-<title>Platsch - Colophon</title>
+<title>Platsch - Kolophon</title>
 <style>
 /* Derived from the Riak documentation theme developed by Basho Technologies, Inc. | CC BY 3.0 License | http://docs.basho.org */
 @import url(https://fonts.googleapis.com/css?family=Titillium+Web:400,700);
@@ -736,8 +736,34 @@ table.tableblock.grid-all { -webkit-border-radius: 0; border-radius: 0; -webkit-
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
 </head>
 <body class="book toc2 toc-left">
+<!-- START eingef�gtes Menu -->
+<!-- Diese Datei muss in alle .html-Dateien nach dem �ffnenden "<body>"-Tag eingef�gt werden -->
+
+<link rel="stylesheet" href="menu_files/mbcsmbmcp.css" type="text/css" />
+<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans">
+
+
+<!-- Navigation menus created with the free version of Easy CSS Menu downloaded from www.easycssmenu.com
+     You are free to use this menu code for personal, non-commercial use only. Any other use is a serious violation of copyright laws.
+     You are required to retain this comment block in your website code in an unchanged fashion.
+     The above limitations do not apply on menus created with the paid version of the software. -->
+<div id="mbmcpebul_wrapper">
+  <ul id="mbmcpebul_table" class="mbmcpebul_menulist css_menu">
+  <li title="Kanu-Vereinigung Kiel e.V."><div class="buttonbg" style="width: 158px;"><a href="http://www.kv-kiel.de" target="_blank">KVK-Homepage</a></div></li>
+  <li><div class="buttonbg"><a href="Redaktionsarbeit.html">Redaktionsarbeit</a></div></li>
+  <li><div class="buttonbg" style="width: 91px;"><a href="Layout.html">Layout</a></div></li>
+  <li><div class="buttonbg" style="width: 186px;"><a href="DruckUndVersand.html">Druck und Versand</a></div></li>
+  <li><div class="buttonbg" style="width: 107px;"><a href="Software.html">Software</a></div></li>
+  <li><div class="buttonbg" style="width: 114px;"><a href="Colophon.html" class="button_6">Kolophon</a></div></li>
+  </ul>
+</div>
+<!-- Menus will work without this javascript file. It is used only for extra
+     effects, improved usability, compatibility with very old web browsers
+     and support for touch screen devices. -->
+<script type="text/javascript" src="menu_files/mbjsmbmcp.js"></script>
+<!-- ENDE eingef�gtes Menu -->
 <div id="header">
-<h1>Platsch - Colophon</h1>
+<h1>Platsch - Kolophon</h1>
 <div class="details">
 <span id="author" class="author">Mathias-H. Weber</span><br>
 <span id="email" class="email"><a href="mailto:mhw@teambaltic.de">mhw@teambaltic.de</a></span><br>
@@ -748,6 +774,15 @@ table.tableblock.grid-all { -webkit-border-radius: 0; border-radius: 0; -webkit-
 <div id="toctitle">Inhaltsverzeichnis</div>
 <ul class="sectlevel1">
 <li><a href="#_einleitung">1. Einleitung</a></li>
+<li><a href="#_installation_benötigter_software">2. Installation benötigter Software</a>
+<ul class="sectlevel2">
+<li><a href="#_ruby_installieren">2.1. Ruby installieren:</a></li>
+<li><a href="#_asciidoctor_installieren">2.2. Asciidoctor installieren</a></li>
+<li><a href="#_asciidoctor_pdf_installieren">2.3. AsciiDoctor-PDF installieren</a></li>
+</ul>
+</li>
+<li><a href="#_erstellen_der_dokumentation">3. Erstellen der Dokumentation</a></li>
+<li><a href="#_asciidoctor_links">4. Asciidoctor Links</a></li>
 </ul>
 </div>
 </div>
@@ -755,14 +790,148 @@ table.tableblock.grid-all { -webkit-border-radius: 0; border-radius: 0; -webkit-
 <div class="sect1">
 <h2 id="_einleitung"><a class="anchor" href="#_einleitung"></a>1. Einleitung</h2>
 <div class="sectionbody">
-
+<div class="paragraph">
+<p>Die Dokumentation dieses Projektes ist mit im <em>AsciiDoc</em>-Format  erstellt worden.</p>
+</div>
+<div class="paragraph">
+<p><em>AsciiDoc</em> ist eine vereinfachte Auszeichnungssprache, die dazu dient, Texte in
+unterschiedlichen Dokumentenformaten zu veröffentlichen. Die in diesem Projekt
+genutzen Formate sind HTML und PDF.</p>
+</div>
+<div class="paragraph">
+<p><em>AsciiDoc</em>-Dateien sind einfache Text-Dateien, die auf .adoc enden. Ihre
+Syntax ist sehr einfach zu erlernen ist und sie können mit jedem beliebigen
+Editor bearbeitet werden.</p>
+</div>
+<div class="paragraph">
+<p>Ein komfortables Hilfsmittel zum Editieren der .adoc-Dateien ist der
+<a href="http://asciidocfx.com/">Asciidoc Book Editor</a>.</p>
+</div>
+<div class="paragraph">
+<p>Zur Umwandlung der <em>AsciiDoc</em>-Dateien in HTML oder PDF wird das Werkzeug <a href="http://asciidoctor.org/">AsciiDoctor</a> benötigt.</p>
+</div>
+<div class="paragraph">
+<p>Das Projekt steht auf
+<a href="https://github.com/baltic-mh/Platsch">GitHub</a>
+zur Verfügung und kann von jedem bearbeitet werden.
+Dazu muss man einen Account bei GitHub haben und das <a href="https://de.wikipedia.org/wiki/Versionsverwaltung">Versionsverwaltungssystem</a> <a href="https://de.wikipedia.org/wiki/Git">Git</a> installieren. Wie das funktioniert, ist hier nicht näher beschrieben.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_installation_benötigter_software"><a class="anchor" href="#_installation_benötigter_software"></a>2. Installation benötigter Software</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Man kann die .adoc-Dateien der Dokumentation - wie bereits erwähnt - auch ohne  Installation spezieller Software bearbeiten. Alles, was man benötigt, ist ein ganz normaler Text-Editor.</p>
+</div>
+<div class="paragraph">
+<p>Um sich wenigstens das Ergebnis seiner Änderungen ansehen zu können, empfehle ich, wenigstens den
+<a href="http://asciidocfx.com/">Asciidoc Book Editor</a>
+herunter zu laden und zu installieren.</p>
+</div>
+<div class="paragraph">
+<p>Wenn man das Projekt komplett bearbeiten können möchte, muss man etwas <em>Ruby</em> und die <em>AsciiDoctor</em>-Software installieren.</p>
+</div>
+<div class="sect2">
+<h3 id="_ruby_installieren"><a class="anchor" href="#_ruby_installieren"></a>2.1. Ruby installieren:</h3>
+<div class="paragraph">
+<p><em>AsciiDoctor</em> basiert auf <em>Ruby</em>, das folglich zuerst installiert werden muss. Ich habe mich für die <em>JRuby</em>-Variante entschieden, aber es sollten auch andere Ausprägungen funktionieren.</p>
+</div>
+<div class="paragraph">
+<p>JRuby von</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p><a href="http://jruby.org/download" class="bare">http://jruby.org/download</a></p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>herunterladen und installieren. Dabei vom Installationsprogramm den System-Pfad anpassen lassen.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_asciidoctor_installieren"><a class="anchor" href="#_asciidoctor_installieren"></a>2.2. Asciidoctor installieren</h3>
+<div class="paragraph">
+<p>Shell aufmachen (als Administrator)</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cmd" data-lang="cmd">&gt;gem install asciidoctor</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Wenn <em>AsciiDoctor</em> bereits installiert ist und nur aktualisiert werden soll:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cmd" data-lang="cmd">&gt;gem update asciidoctor</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_asciidoctor_pdf_installieren"><a class="anchor" href="#_asciidoctor_pdf_installieren"></a>2.3. AsciiDoctor-PDF installieren</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cmd" data-lang="cmd">&gt;gem install --pre asciidoctor-pdf</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_erstellen_der_dokumentation"><a class="anchor" href="#_erstellen_der_dokumentation"></a>3. Erstellen der Dokumentation</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Das Erstellen der Dokumentation geschieht durch einen gradle-Prozess</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_asciidoctor_links"><a class="anchor" href="#_asciidoctor_links"></a>4. Asciidoctor Links</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="http://asciidocfx.com/">Asciidoc Book Editor</a></p>
+</li>
+<li>
+<p><a href="http://asciidoctor.org/">Asciidoctor</a></p>
+</li>
+<li>
+<p><a href="http://asciidoctor.org/docs/user-manual/">User-Manual</a></p>
+</li>
+<li>
+<p><a href="http://asciidoctor.org/docs/asciidoc-syntax-quick-reference/">Syntax-Quick-Referenz</a></p>
+</li>
+<li>
+<p><a href="http://powerman.name/doc/asciidoc">Cheat-Sheets</a></p>
+</li>
+<li>
+<p><a href="http://asciidoctor.org/docs/asciidoc-writers-guide/">Writer&#8217;s Guide</a></p>
+</li>
+<li>
+<p><a href="https://leanpub.com/awesomeasciidoctornotebook/read">Awesome Asciidoctor Notebook</a></p>
+</li>
+<li>
+<p><a href="http://asciidoctor.org/docs/asciidoctor-diagram/">Asciidoctor-Diagram</a></p>
+</li>
+<li>
+<p><a href="http://asciidoctor.org/docs/asciidoctor-gradle-plugin/">Getting Started with the Asciidoctor Gradle Plugin</a></p>
+</li>
+<li>
+<p><a href="https://github.com/asciidoctor/asciidoctor-pdf/blob/master/docs/theming-guide.adoc#keys-title-page">Asciidoctor PDF Theming Guide</a></p>
+</li>
+</ul>
+</div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
 Version 1.0<br>
-Erstellt mit Asciidoctor v1.5.4 : Zuletzt geändert: 2017-01-20 23:14:32 +01:00
+Erstellt mit Asciidoctor v1.5.4 : Zuletzt geändert: 2017-04-14 18:49:20 +02:00
 </div>
 </div>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/styles/github.min.css">

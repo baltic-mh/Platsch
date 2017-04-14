@@ -1,4 +1,4 @@
-= Platsch - Colophon
+= Platsch - Kolophon
 Mathias-H. Weber <mhw@teambaltic.de>
 v1.0, 08. Januar 2017 
 :doctype: book
@@ -13,8 +13,10 @@ v1.0, 08. Januar 2017
 :numbered:
 :source-highlighter: highlightjs
 // Deutsche Überschriften:
+:toc-title: Inhaltsverzeichnis
 :figure-caption: Abbildung
 :table-caption: Tabelle
+:chapter-label: Kapitel
 //:example-caption!:
 // Jeder Abschnitt bekommt automatisch einen Anker:
 :sectanchors:
@@ -24,3 +26,84 @@ v1.0, 08. Januar 2017
 
 [abstract]
 == Einleitung
+
+Die Dokumentation dieses Projektes ist mit im _AsciiDoc_-Format  erstellt worden.
+
+_AsciiDoc_ ist eine vereinfachte Auszeichnungssprache, die dazu dient, Texte in
+unterschiedlichen Dokumentenformaten zu veröffentlichen. Die in diesem Projekt
+genutzen Formate sind HTML und PDF.
+
+_AsciiDoc_-Dateien sind einfache Text-Dateien, die auf +.adoc+ enden. Ihre
+Syntax ist sehr einfach zu erlernen ist und sie können mit jedem beliebigen
+Editor bearbeitet werden.
+
+Ein komfortables Hilfsmittel zum Editieren der +.adoc+-Dateien ist der
+http://asciidocfx.com/[Asciidoc Book Editor].
+
+Zur Umwandlung der _AsciiDoc_-Dateien in HTML oder PDF wird das Werkzeug http://asciidoctor.org/[AsciiDoctor] benötigt.
+
+Das Projekt steht auf
+https://github.com/baltic-mh/Platsch[GitHub]
+zur Verfügung und kann von jedem bearbeitet werden. 
+Dazu muss man einen Account bei GitHub haben und das https://de.wikipedia.org/wiki/Versionsverwaltung[Versionsverwaltungssystem] https://de.wikipedia.org/wiki/Git[Git] installieren. Wie das funktioniert, ist hier nicht näher beschrieben.
+
+== Installation benötigter Software
+
+Man kann die +.adoc+-Dateien der Dokumentation - wie bereits erwähnt - auch ohne  Installation spezieller Software bearbeiten. Alles, was man benötigt, ist ein ganz normaler Text-Editor.
+
+Um sich wenigstens das Ergebnis seiner Änderungen ansehen zu können, empfehle ich, wenigstens den 
+http://asciidocfx.com/[Asciidoc Book Editor]
+herunter zu laden und zu installieren.
+
+Wenn man das Projekt komplett bearbeiten können möchte, muss man etwas _Ruby_ und die _AsciiDoctor_-Software installieren.
+
+=== Ruby installieren:
+
+_AsciiDoctor_ basiert auf _Ruby_, das folglich zuerst installiert werden muss. Ich habe mich für die _JRuby_-Variante entschieden, aber es sollten auch andere Ausprägungen funktionieren.
+
+JRuby von
+====
+link:http://jruby.org/download[]
+====
+herunterladen und installieren. Dabei vom Installationsprogramm den System-Pfad anpassen lassen.
+
+
+=== Asciidoctor installieren
+
+Shell aufmachen (als Administrator)
+
+[source,cmd]
+----
+>gem install asciidoctor
+----
+
+Wenn _AsciiDoctor_ bereits installiert ist und nur aktualisiert werden soll:
+
+[source,cmd]
+----
+>gem update asciidoctor
+----
+
+=== AsciiDoctor-PDF installieren
+
+[source,cmd]
+----
+>gem install --pre asciidoctor-pdf
+----
+
+== Erstellen der Dokumentation
+
+Das Erstellen der Dokumentation geschieht durch einen +gradle+-Prozess
+
+== Asciidoctor Links
+
+- link:http://asciidocfx.com/[Asciidoc Book Editor]
+- link:http://asciidoctor.org/[Asciidoctor]
+- link:http://asciidoctor.org/docs/user-manual/[User-Manual]
+- link:http://asciidoctor.org/docs/asciidoc-syntax-quick-reference/[Syntax-Quick-Referenz]
+- link:http://powerman.name/doc/asciidoc[Cheat-Sheets]
+- link:http://asciidoctor.org/docs/asciidoc-writers-guide/[Writer's Guide]
+- link:https://leanpub.com/awesomeasciidoctornotebook/read[Awesome Asciidoctor Notebook]
+- link:http://asciidoctor.org/docs/asciidoctor-diagram/[Asciidoctor-Diagram]
+- link:http://asciidoctor.org/docs/asciidoctor-gradle-plugin/[Getting Started with the Asciidoctor Gradle Plugin]
+- link:https://github.com/asciidoctor/asciidoctor-pdf/blob/master/docs/theming-guide.adoc#keys-title-page[Asciidoctor PDF Theming Guide]
