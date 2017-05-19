@@ -1,7 +1,7 @@
 = Platsch - Layout
 Mathias-H. Weber <mhw@teambaltic.de>
 // v1.0,  zuletzt geändert: {docdatetime}
-v1.4, 18. März 2017 
+v1.5, 19. Mai 2017 
 :doctype: book
 :encoding: utf-8
 :lang: de
@@ -455,9 +455,69 @@ image::Bild-Formatieren7.png[]
 
 Nun hält der Text überall gebührenden Abstand vom Bild.
 
-=== Seiten hinzufügen und löschen
+=== Seiten
+
+Seiten sind die grundlegenden Objekte in einem Scribus-Dokument. Sie sind ein Abbild der Seite des Druckproduktes, das wir später in Händen halten wollen. 
+Es ist wichtig, bei dem Begriff "Seite" zu beachten, dass es sich um eine logische Einheit handelt. 
+Das pyhsikalisch anfassbare Blatt Papier, das man auch gerne als "Seite" bezeichnet, nennt man "Bogen".
+Das Seitenformat unseres Druckproduktes ist DIN-A5.
+Diese Seiten werden (im Prinzip!) auf DIN-A4 Papierbogen gedruckt, so dass immer vier Seiten auf einen Bogen gehen.
+
+Zwei Seiten, die eine fortlaufende Seitenummer tragen und in der fertigen Broschure nebeneinander stehen, liegen in aller Regel auf unterschiedlichen Papierbögen - nur in der Heftmitte sind tatsächlich zwei aufeinander folgende Seiten auf demselben Blatt gedruckt!
+Die Zuordnung, welche Seite auf welches Blatt gedruckt wird, wird in der Druckerei selbst festgelegt - darum müssen wir uns nicht kümmern.
+Wir müssen nur sicherstellen, dass die Gesamtzahl der Seiten immer durch vier teilbar ist.
+
+==== Seitenaufbau und -strukturierung
+
+Eine (logische) Seite hat einen bestimmten Aufbau, der im folgenden Bild dargestellt ist:
+
+image::SeiteMitStegen.jpg[]
+
+Das wichtigste Element einer Seite ist der "Satzspiegel". Das ist sozusagen der bedruckte Teil der Seite. 
+Die Abmessungen der Stege wird in der Dokumentenstruktur definiert und braucht in aller Regel nur ein einziges Mal (beim grundsätzlichen Definieren des Druckproduktes) festgelegt zu werden.
+
+Wenn auf einer Seite nur Text enthalten ist, sollte der den gesamten Satzspiegel ausfüllen, ihn aber auch nicht überschreiten. 
+Mit anderen Worten, die zugehörige Textbox sollte genauso groß sein wie der Satzspiegel.
+
+Damit Text- und Bildrahmen leichter mit der Satzspiegelbegrenzung in Deckung gebracht werden, kann man die Hilfslinien "magnetisch" machen:
+
+image::2017-05-19-Scribus-1.4.6-MagnetischeHilfslinien.png[]
+
+Es gibt auch Elemente, die außerhalb des Satzspiegels stehen, aber das ist fast vernachlassigbar und bei uns eigentlich nur die Paginierung (die Seitenzahl) - und in manchen (wohlüberlegten) Fällen auch Bilder.
+
+Wenn der Satzspiegel genau mittig auf der Seite liegt, ist es besonders einfach, eine ehemals "rechte" Seite durch notwendig gewordene Umstrukturierung auf eine Position links im Heft zu verschieben: Der Textrahmen liegt dann automatisch an der richtigen Position.
+
+==== Musterseiten
+
+Musterseiten sind ein gutes und wichtiges Hilfsmittel, allen "gleichgearteten" Seiten im Dokument auch dasgleiche Aussehen zu verleihen.
+"Gleichgeartet" sind in unserem Falle zum Beispiel alle "linken" Innenseiten oder alle "rechten" Innenseiten. 
+Damit man nicht auf jeder "linken" Innenseite die aktuelle Seitenzahl an der richtigen Position anbringen muss, erstellt man einfach eine Musterseite für "linke" Seiten und ordnet diese allen geradzahligen Seiten im Dokument zu. Entsprechend verfährt man dann mit den rechten Seiten.
+
+Zum Anwenden der Musterseiten wählt man im Menü unter dem Punkt kbd:[Seite] den Eintrag kbd:[Musterseite anwenden...]:
+
+image::2017-05-19-Scribus1.4.6-MusterseiteAnwenden.png[]
+
+Entweder man achtet darauf, die erste und die letzte Seite bei der Auswahl des Bereiches auszunehmen, auf den die Musterseiten angewendet werden sollen, oder man muss diesen beiden Seiten hinterher noch eine Musterseite ohne Paginierung zuordnen.
+
+==== Seiten löschen
+
+Wenn die .sla-Datei aus der der vorhergehenden Ausgabe durch Kopieren erzeugt worden ist, ist die Anzahl der Seiten eventuell zu groß oder zu gering für die aktuelle Ausgabe. In diesem Fall muss man die Anzahl der Seiten entsprechend anpassen. Das Löschen ist besonders einfach.
+
+[WARNING]
+====
+
+Wenn man Seiten löschen will, muss einem klar, dass alle Inhalte auf gelöschten Seiten ebenfalls weg sind!
+
+====
+
+Aus dem Menu den Punkt kbd:[Seite] anwählen
+
+image::SeitenEntfernen.png[]
+
+und dann kbd:[Löschen...]
 
 ==== Seiten hinzufügen
+
 Aus dem Menu den Punkt kbd:[Seite] anwählen
 
 image::SeitenHinzufuegen.png[]
@@ -470,22 +530,41 @@ image::SeitenHinzufuegen2.png[]
 
 Es ist außerdem anzugeben, wo diese Seiten einzufügen sind - vor oder nach der ausgewählten Seite oder ganz am Ende des Dokumentes (was bei uns aber wohl nie vorkommt).
 
+Wichtig ist auch, dass die korrekten Musterseiten für die neu zu erzeugenden Seiten angegeben werden - sonst erscheinen auf diesen Seiten nachher keine Seitenzahlen! 
+Im Notfall kann man die Zuordnung aber auch noch hinterher vornehmen.
+
 [WARNING]
 ====
 Beim Einfügen von Seiten muss man darauf achten, dass man sie nicht mitten in verkettete Textrahmen einfügt. Es ist zwar ohne weiteres möglich, einen Artikel auf Seite drei beginnen und ihn dann auf Seite sieben weiterlaufen zu lassen. Aber das ist in den seltensten Fällen, was man will! In aller Regel will man Seiten auch nur nach ungradzahligen Seitennummern einfügen.
 ====
 
-==== Seiten löschen
+==== Seiten umordnen
 
-Wenn man Seiten löschen will, muss einem klar, dass alle Inhalte auf gelöschten Seiten ebenfalls weg sind!
+Wenn es sich ergibt, dass die ursprünglich gewählte Anordnung der Seiten umgestellt werden muss, kann man einzelne oder auch mehrere Seiten verschieben.
+Unser Dokument soll die folgende Struktur haben, bei der die Seiten jeweils nur ein einzelnes Zeichen als Inhalt haben - und zwar die Ziffer ihrer ursprünglichen Position:
 
-Aus dem Menu den Punkt kbd:[Seite] anwählen
+image::SeitenVerschieben1.png[]
 
-image::SeitenEntfernen.png[]
+und wir wollen die Seiten 3 und 4 hinter die Seite 5 verschieben. 
+Dazu wählen wir den Menu-Punkt kbd:[Seite/Seiten verschieben]:
 
-und dann kbd:[Löschen...]
+image::SeitenVerschieben2.png[]
 
+Das Ergebnis ist wie gewünscht:
 
+image::SeitenVerschieben3.png[]
+
+aber nur fast wie erwartet! Zwar liegen die Seiten nun an der gewünschten Stelle und auch die Paginierung ist korrekt geändert - aber die Seitenzahlen stehen auf der falschen Seite:
+
+image::SeitenVerschieben4.png[]
+
+Das ist auch logisch und verständlich, denn ursprünglich war die Seite mit der Ziffer "3" als Inhalt ja eine "rechte" Seite und hatte auch die entprechende Musterseite zugeordnet bekommen. Diese Zuordnung wird nicht verändert und muss manuell korrigiert werden. 
+
+Die Seite selektieren (nicht den Textrahmen sondern die Seite!), rechte Maustaste kbd:[Eigenschaften der Seite bearbeiten...] und dann die korrekte Musterseite zuordnen:
+
+image::SeitenVerschieben5.png[]
+
+Am besten man verschiebt Seiten immer nur so, dass "rechte" stets rechts bleiben und "linke" links.
 
 === Mittelseiten
 
@@ -574,4 +653,27 @@ Der Dialog öffnet sich durch die Auswahl aus dem Menu kbd:[Datei / Dokument ein
 Dort muss man dann die Abteilung kbd:[Hilfslinien] auswählen:
 
 image::Hilfslinien2.png[]
+
+== PDF-Erzeugung
+
+Wenn das Layout (endlich!) fertig erstellt ist, muss abschließend eine PDF-Datei erzeugt werden, die der Druckerei zur Verarbeitung übergeben werden kann.
+Über das kleine PDF-Symbol startet man die PDF-Erstellung:
+
+image::PDFExport0.png[]
+
+Es wird zuerst eine Druckvorstufenüberprüfung vorgenommen, die recht häufig noch Unzulänglichkeiten im Dokument aufdeckt:
+
+image::PDFExport1.png[]
+
+In diesem Beispiel sind die häufigsten Defizite aufgeführt. Ein Doppelklick auf einen der beanstandeten Einträge bringt das problembehaftete Objekt in die Ansicht. Hier nimmt man dann solange Korrekturen vor, bis die Druckvorstufenüberprüfung keine Probleme mehr findet.
+
+[IMPORTANT]
+====
+
+Im Dialog zum Speichern der PDF-Datei ist unbedingt darauf zu achten, dass alle verwendeten Fonts eingebettet werden:
+
+image::PDFExport2.png[]
+
+====
+
 

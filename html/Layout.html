@@ -736,39 +736,13 @@ table.tableblock.grid-all { -webkit-border-radius: 0; border-radius: 0; -webkit-
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
 </head>
 <body class="book toc2 toc-left">
-<!-- START eingef�gtes Menu -->
-<!-- Diese Datei muss in alle .html-Dateien nach dem �ffnenden "<body>"-Tag eingef�gt werden -->
-
-<link rel="stylesheet" href="menu_files/mbcsmbmcp.css" type="text/css" />
-<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans">
-
-
-<!-- Navigation menus created with the free version of Easy CSS Menu downloaded from www.easycssmenu.com
-     You are free to use this menu code for personal, non-commercial use only. Any other use is a serious violation of copyright laws.
-     You are required to retain this comment block in your website code in an unchanged fashion.
-     The above limitations do not apply on menus created with the paid version of the software. -->
-<div id="mbmcpebul_wrapper">
-  <ul id="mbmcpebul_table" class="mbmcpebul_menulist css_menu">
-  <li title="Kanu-Vereinigung Kiel e.V."><div class="buttonbg" style="width: 158px;"><a href="http://www.kv-kiel.de" target="_blank">KVK-Homepage</a></div></li>
-  <li><div class="buttonbg"><a href="Redaktionsarbeit.html">Redaktionsarbeit</a></div></li>
-  <li><div class="buttonbg" style="width: 91px;"><a href="Layout.html">Layout</a></div></li>
-  <li><div class="buttonbg" style="width: 186px;"><a href="DruckUndVersand.html">Druck und Versand</a></div></li>
-  <li><div class="buttonbg" style="width: 107px;"><a href="Software.html">Software</a></div></li>
-  <li><div class="buttonbg" style="width: 114px;"><a href="Colophon.html" class="button_6">Kolophon</a></div></li>
-  </ul>
-</div>
-<!-- Menus will work without this javascript file. It is used only for extra
-     effects, improved usability, compatibility with very old web browsers
-     and support for touch screen devices. -->
-<script type="text/javascript" src="menu_files/mbjsmbmcp.js"></script>
-<!-- ENDE eingef�gtes Menu -->
 <div id="header">
 <h1>Platsch - Layout</h1>
 <div class="details">
 <span id="author" class="author">Mathias-H. Weber</span><br>
 <span id="email" class="email"><a href="mailto:mhw@teambaltic.de">mhw@teambaltic.de</a></span><br>
-<span id="revnumber">version 1.4,</span>
-<span id="revdate">18. März 2017</span>
+<span id="revnumber">version 1.5,</span>
+<span id="revdate">19. Mai 2017</span>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Inhaltsverzeichnis</div>
@@ -825,10 +799,13 @@ table.tableblock.grid-all { -webkit-border-radius: 0; border-radius: 0; -webkit-
 <li><a href="#_text_soll_bild_umfließen">5.2.5. Text soll Bild umfließen</a></li>
 </ul>
 </li>
-<li><a href="#_seiten_hinzufügen_und_löschen">5.3. Seiten hinzufügen und löschen</a>
+<li><a href="#_seiten">5.3. Seiten</a>
 <ul class="sectlevel3">
-<li><a href="#_seiten_hinzufügen">5.3.1. Seiten hinzufügen</a></li>
-<li><a href="#_seiten_löschen">5.3.2. Seiten löschen</a></li>
+<li><a href="#_seitenaufbau_und_strukturierung">5.3.1. Seitenaufbau und -strukturierung</a></li>
+<li><a href="#_musterseiten">5.3.2. Musterseiten</a></li>
+<li><a href="#_seiten_löschen">5.3.3. Seiten löschen</a></li>
+<li><a href="#_seiten_hinzufügen">5.3.4. Seiten hinzufügen</a></li>
+<li><a href="#_seiten_umordnen">5.3.5. Seiten umordnen</a></li>
 </ul>
 </li>
 <li><a href="#_mittelseiten">5.4. Mittelseiten</a></li>
@@ -837,6 +814,7 @@ table.tableblock.grid-all { -webkit-border-radius: 0; border-radius: 0; -webkit-
 <li><a href="#_hilfslinien">5.7. Hilfslinien</a></li>
 </ul>
 </li>
+<li><a href="#_pdf_erzeugung">6. PDF-Erzeugung</a></li>
 </ul>
 </div>
 </div>
@@ -1696,9 +1674,104 @@ Abhilfe steckt im zum Bild-Objekt gehörigen Eigenschaften-Dialog in der Abteilu
 </div>
 </div>
 <div class="sect2">
-<h3 id="_seiten_hinzufügen_und_löschen"><a class="anchor" href="#_seiten_hinzufügen_und_löschen"></a>5.3. Seiten hinzufügen und löschen</h3>
+<h3 id="_seiten"><a class="anchor" href="#_seiten"></a>5.3. Seiten</h3>
+<div class="paragraph">
+<p>Seiten sind die grundlegenden Objekte in einem Scribus-Dokument. Sie sind ein Abbild der Seite des Druckproduktes, das wir später in Händen halten wollen.
+Es ist wichtig, bei dem Begriff "Seite" zu beachten, dass es sich um eine logische Einheit handelt.
+Das pyhsikalisch anfassbare Blatt Papier, das man auch gerne als "Seite" bezeichnet, nennt man "Bogen".
+Das Seitenformat unseres Druckproduktes ist DIN-A5.
+Diese Seiten werden (im Prinzip!) auf DIN-A4 Papierbogen gedruckt, so dass immer vier Seiten auf einen Bogen gehen.</p>
+</div>
+<div class="paragraph">
+<p>Zwei Seiten, die eine fortlaufende Seitenummer tragen und in der fertigen Broschure nebeneinander stehen, liegen in aller Regel auf unterschiedlichen Papierbögen - nur in der Heftmitte sind tatsächlich zwei aufeinander folgende Seiten auf demselben Blatt gedruckt!
+Die Zuordnung, welche Seite auf welches Blatt gedruckt wird, wird in der Druckerei selbst festgelegt - darum müssen wir uns nicht kümmern.
+Wir müssen nur sicherstellen, dass die Gesamtzahl der Seiten immer durch vier teilbar ist.</p>
+</div>
 <div class="sect3">
-<h4 id="_seiten_hinzufügen"><a class="anchor" href="#_seiten_hinzufügen"></a>5.3.1. Seiten hinzufügen</h4>
+<h4 id="_seitenaufbau_und_strukturierung"><a class="anchor" href="#_seitenaufbau_und_strukturierung"></a>5.3.1. Seitenaufbau und -strukturierung</h4>
+<div class="paragraph">
+<p>Eine (logische) Seite hat einen bestimmten Aufbau, der im folgenden Bild dargestellt ist:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/SeiteMitStegen.jpg" alt="SeiteMitStegen">
+</div>
+</div>
+<div class="paragraph">
+<p>Das wichtigste Element einer Seite ist der "Satzspiegel". Das ist sozusagen der bedruckte Teil der Seite.
+Die Abmessungen der Stege wird in der Dokumentenstruktur definiert und braucht in aller Regel nur ein einziges Mal (beim grundsätzlichen Definieren des Druckproduktes) festgelegt zu werden.</p>
+</div>
+<div class="paragraph">
+<p>Wenn auf einer Seite nur Text enthalten ist, sollte der den gesamten Satzspiegel ausfüllen, ihn aber auch nicht überschreiten.
+Mit anderen Worten, die zugehörige Textbox sollte genauso groß sein wie der Satzspiegel.</p>
+</div>
+<div class="paragraph">
+<p>Damit Text- und Bildrahmen leichter mit der Satzspiegelbegrenzung in Deckung gebracht werden, kann man die Hilfslinien "magnetisch" machen:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/2017-05-19-Scribus-1.4.6-MagnetischeHilfslinien.png" alt="2017 05 19 Scribus 1.4.6 MagnetischeHilfslinien">
+</div>
+</div>
+<div class="paragraph">
+<p>Es gibt auch Elemente, die außerhalb des Satzspiegels stehen, aber das ist fast vernachlassigbar und bei uns eigentlich nur die Paginierung (die Seitenzahl) - und in manchen (wohlüberlegten) Fällen auch Bilder.</p>
+</div>
+<div class="paragraph">
+<p>Wenn der Satzspiegel genau mittig auf der Seite liegt, ist es besonders einfach, eine ehemals "rechte" Seite durch notwendig gewordene Umstrukturierung auf eine Position links im Heft zu verschieben: Der Textrahmen liegt dann automatisch an der richtigen Position.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_musterseiten"><a class="anchor" href="#_musterseiten"></a>5.3.2. Musterseiten</h4>
+<div class="paragraph">
+<p>Musterseiten sind ein gutes und wichtiges Hilfsmittel, allen "gleichgearteten" Seiten im Dokument auch dasgleiche Aussehen zu verleihen.
+"Gleichgeartet" sind in unserem Falle zum Beispiel alle "linken" Innenseiten oder alle "rechten" Innenseiten.
+Damit man nicht auf jeder "linken" Innenseite die aktuelle Seitenzahl an der richtigen Position anbringen muss, erstellt man einfach eine Musterseite für "linke" Seiten und ordnet diese allen geradzahligen Seiten im Dokument zu. Entsprechend verfährt man dann mit den rechten Seiten.</p>
+</div>
+<div class="paragraph">
+<p>Zum Anwenden der Musterseiten wählt man im Menü unter dem Punkt <kbd>Seite</kbd> den Eintrag <kbd>Musterseite anwenden&#8230;&#8203;</kbd>:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/2017-05-19-Scribus1.4.6-MusterseiteAnwenden.png" alt="2017 05 19 Scribus1.4.6 MusterseiteAnwenden">
+</div>
+</div>
+<div class="paragraph">
+<p>Entweder man achtet darauf, die erste und die letzte Seite bei der Auswahl des Bereiches auszunehmen, auf den die Musterseiten angewendet werden sollen, oder man muss diesen beiden Seiten hinterher noch eine Musterseite ohne Paginierung zuordnen.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_seiten_löschen"><a class="anchor" href="#_seiten_löschen"></a>5.3.3. Seiten löschen</h4>
+<div class="paragraph">
+<p>Wenn die .sla-Datei aus der der vorhergehenden Ausgabe durch Kopieren erzeugt worden ist, ist die Anzahl der Seiten eventuell zu groß oder zu gering für die aktuelle Ausgabe. In diesem Fall muss man die Anzahl der Seiten entsprechend anpassen. Das Löschen ist besonders einfach.</p>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Wenn man Seiten löschen will, muss einem klar, dass alle Inhalte auf gelöschten Seiten ebenfalls weg sind!</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Aus dem Menu den Punkt <kbd>Seite</kbd> anwählen</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/SeitenEntfernen.png" alt="SeitenEntfernen">
+</div>
+</div>
+<div class="paragraph">
+<p>und dann <kbd>Löschen&#8230;&#8203;</kbd></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_seiten_hinzufügen"><a class="anchor" href="#_seiten_hinzufügen"></a>5.3.4. Seiten hinzufügen</h4>
 <div class="paragraph">
 <p>Aus dem Menu den Punkt <kbd>Seite</kbd> anwählen</p>
 </div>
@@ -1721,6 +1794,10 @@ Abhilfe steckt im zum Bild-Objekt gehörigen Eigenschaften-Dialog in der Abteilu
 <div class="paragraph">
 <p>Es ist außerdem anzugeben, wo diese Seiten einzufügen sind - vor oder nach der ausgewählten Seite oder ganz am Ende des Dokumentes (was bei uns aber wohl nie vorkommt).</p>
 </div>
+<div class="paragraph">
+<p>Wichtig ist auch, dass die korrekten Musterseiten für die neu zu erzeugenden Seiten angegeben werden - sonst erscheinen auf diesen Seiten nachher keine Seitenzahlen!
+Im Notfall kann man die Zuordnung aber auch noch hinterher vornehmen.</p>
+</div>
 <div class="admonitionblock warning">
 <table>
 <tr>
@@ -1737,20 +1814,54 @@ Abhilfe steckt im zum Bild-Objekt gehörigen Eigenschaften-Dialog in der Abteilu
 </div>
 </div>
 <div class="sect3">
-<h4 id="_seiten_löschen"><a class="anchor" href="#_seiten_löschen"></a>5.3.2. Seiten löschen</h4>
+<h4 id="_seiten_umordnen"><a class="anchor" href="#_seiten_umordnen"></a>5.3.5. Seiten umordnen</h4>
 <div class="paragraph">
-<p>Wenn man Seiten löschen will, muss einem klar, dass alle Inhalte auf gelöschten Seiten ebenfalls weg sind!</p>
-</div>
-<div class="paragraph">
-<p>Aus dem Menu den Punkt <kbd>Seite</kbd> anwählen</p>
+<p>Wenn es sich ergibt, dass die ursprünglich gewählte Anordnung der Seiten umgestellt werden muss, kann man einzelne oder auch mehrere Seiten verschieben.
+Unser Dokument soll die folgende Struktur haben, bei der die Seiten jeweils nur ein einzelnes Zeichen als Inhalt haben - und zwar die Ziffer ihrer ursprünglichen Position:</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/SeitenEntfernen.png" alt="SeitenEntfernen">
+<img src="images/SeitenVerschieben1.png" alt="SeitenVerschieben1">
 </div>
 </div>
 <div class="paragraph">
-<p>und dann <kbd>Löschen&#8230;&#8203;</kbd></p>
+<p>und wir wollen die Seiten 3 und 4 hinter die Seite 5 verschieben.
+Dazu wählen wir den Menu-Punkt <kbd>Seite/Seiten verschieben</kbd>:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/SeitenVerschieben2.png" alt="SeitenVerschieben2">
+</div>
+</div>
+<div class="paragraph">
+<p>Das Ergebnis ist wie gewünscht:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/SeitenVerschieben3.png" alt="SeitenVerschieben3">
+</div>
+</div>
+<div class="paragraph">
+<p>aber nur fast wie erwartet! Zwar liegen die Seiten nun an der gewünschten Stelle und auch die Paginierung ist korrekt geändert - aber die Seitenzahlen stehen auf der falschen Seite:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/SeitenVerschieben4.png" alt="SeitenVerschieben4">
+</div>
+</div>
+<div class="paragraph">
+<p>Das ist auch logisch und verständlich, denn ursprünglich war die Seite mit der Ziffer "3" als Inhalt ja eine "rechte" Seite und hatte auch die entprechende Musterseite zugeordnet bekommen. Diese Zuordnung wird nicht verändert und muss manuell korrigiert werden.</p>
+</div>
+<div class="paragraph">
+<p>Die Seite selektieren (nicht den Textrahmen sondern die Seite!), rechte Maustaste <kbd>Eigenschaften der Seite bearbeiten&#8230;&#8203;</kbd> und dann die korrekte Musterseite zuordnen:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/SeitenVerschieben5.png" alt="SeitenVerschieben5">
+</div>
+</div>
+<div class="paragraph">
+<p>Am besten man verschiebt Seiten immer nur so, dass "rechte" stets rechts bleiben und "linke" links.</p>
 </div>
 </div>
 </div>
@@ -1910,11 +2021,55 @@ Dort muss man dann die Abteilung <kbd>Hilfslinien</kbd> auswählen:</p>
 </div>
 </div>
 </div>
+<div class="sect1">
+<h2 id="_pdf_erzeugung"><a class="anchor" href="#_pdf_erzeugung"></a>6. PDF-Erzeugung</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Wenn das Layout (endlich!) fertig erstellt ist, muss abschließend eine PDF-Datei erzeugt werden, die der Druckerei zur Verarbeitung übergeben werden kann.
+Über das kleine PDF-Symbol startet man die PDF-Erstellung:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/PDFExport0.png" alt="PDFExport0">
+</div>
+</div>
+<div class="paragraph">
+<p>Es wird zuerst eine Druckvorstufenüberprüfung vorgenommen, die recht häufig noch Unzulänglichkeiten im Dokument aufdeckt:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/PDFExport1.png" alt="PDFExport1">
+</div>
+</div>
+<div class="paragraph">
+<p>In diesem Beispiel sind die häufigsten Defizite aufgeführt. Ein Doppelklick auf einen der beanstandeten Einträge bringt das problembehaftete Objekt in die Ansicht. Hier nimmt man dann solange Korrekturen vor, bis die Druckvorstufenüberprüfung keine Probleme mehr findet.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Im Dialog zum Speichern der PDF-Datei ist unbedingt darauf zu achten, dass alle verwendeten Fonts eingebettet werden:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/PDFExport2.png" alt="PDFExport2">
+</div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Version 1.4<br>
-Erstellt mit Asciidoctor v1.5.4 : Zuletzt geändert: 2017-04-14 18:51:31 +02:00 2017-04-14 18:51:31 +02:00
+Version 1.5<br>
+Erstellt mit Asciidoctor v1.5.4 : Zuletzt geändert: 2017-05-19 21:35:55 +02:00 2017-05-19 21:35:55 +02:00
 </div>
 </div>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/styles/github.min.css">
