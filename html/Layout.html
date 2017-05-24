@@ -736,13 +736,39 @@ table.tableblock.grid-all { -webkit-border-radius: 0; border-radius: 0; -webkit-
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
 </head>
 <body class="book toc2 toc-left">
+<!-- START eingef�gtes Menu -->
+<!-- Diese Datei muss in alle .html-Dateien nach dem �ffnenden "<body>"-Tag eingef�gt werden -->
+
+<link rel="stylesheet" href="menu_files/mbcsmbmcp.css" type="text/css" />
+<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans">
+
+
+<!-- Navigation menus created with the free version of Easy CSS Menu downloaded from www.easycssmenu.com
+     You are free to use this menu code for personal, non-commercial use only. Any other use is a serious violation of copyright laws.
+     You are required to retain this comment block in your website code in an unchanged fashion.
+     The above limitations do not apply on menus created with the paid version of the software. -->
+<div id="mbmcpebul_wrapper">
+  <ul id="mbmcpebul_table" class="mbmcpebul_menulist css_menu">
+  <li title="Kanu-Vereinigung Kiel e.V."><div class="buttonbg" style="width: 158px;"><a href="http://www.kv-kiel.de" target="_blank">KVK-Homepage</a></div></li>
+  <li><div class="buttonbg"><a href="Redaktionsarbeit.html">Redaktionsarbeit</a></div></li>
+  <li><div class="buttonbg" style="width: 91px;"><a href="Layout.html">Layout</a></div></li>
+  <li><div class="buttonbg" style="width: 186px;"><a href="DruckUndVersand.html">Druck und Versand</a></div></li>
+  <li><div class="buttonbg" style="width: 107px;"><a href="Software.html">Software</a></div></li>
+  <li><div class="buttonbg" style="width: 114px;"><a href="Colophon.html" class="button_6">Kolophon</a></div></li>
+  </ul>
+</div>
+<!-- Menus will work without this javascript file. It is used only for extra
+     effects, improved usability, compatibility with very old web browsers
+     and support for touch screen devices. -->
+<script type="text/javascript" src="menu_files/mbjsmbmcp.js"></script>
+<!-- ENDE eingef�gtes Menu -->
 <div id="header">
 <h1>Platsch - Layout</h1>
 <div class="details">
 <span id="author" class="author">Mathias-H. Weber</span><br>
 <span id="email" class="email"><a href="mailto:mhw@teambaltic.de">mhw@teambaltic.de</a></span><br>
-<span id="revnumber">version 1.5,</span>
-<span id="revdate">19. Mai 2017</span>
+<span id="revnumber">version 1.5.1,</span>
+<span id="revdate">24. Mai 2017</span>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Inhaltsverzeichnis</div>
@@ -814,7 +840,13 @@ table.tableblock.grid-all { -webkit-border-radius: 0; border-radius: 0; -webkit-
 <li><a href="#_hilfslinien">5.7. Hilfslinien</a></li>
 </ul>
 </li>
-<li><a href="#_pdf_erzeugung">6. PDF-Erzeugung</a></li>
+<li><a href="#_pdf_erzeugung">6. PDF-Erzeugung</a>
+<ul class="sectlevel2">
+<li><a href="#_druckvorstufenüberprüfung">6.1. Druckvorstufenüberprüfung</a></li>
+<li><a href="#_einbetten_der_verwendeten_fonts">6.2. Einbetten der verwendeten Fonts</a></li>
+<li><a href="#_aktivieren_der_marken">6.3. Aktivieren der Marken</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
@@ -2025,14 +2057,18 @@ Dort muss man dann die Abteilung <kbd>Hilfslinien</kbd> auswählen:</p>
 <h2 id="_pdf_erzeugung"><a class="anchor" href="#_pdf_erzeugung"></a>6. PDF-Erzeugung</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Wenn das Layout (endlich!) fertig erstellt ist, muss abschließend eine PDF-Datei erzeugt werden, die der Druckerei zur Verarbeitung übergeben werden kann.
-Über das kleine PDF-Symbol startet man die PDF-Erstellung:</p>
+<p>Wenn das Layout (endlich!) fertig erstellt ist, muss abschließend eine PDF-Datei erzeugt werden, die der Druckerei zur Verarbeitung übergeben werden kann.</p>
+</div>
+<div class="paragraph">
+<p>Über das kleine PDF-Symbol startet man die PDF-Erstellung:</p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/PDFExport0.png" alt="PDFExport0">
 </div>
 </div>
+<div class="sect2">
+<h3 id="_druckvorstufenüberprüfung"><a class="anchor" href="#_druckvorstufenüberprüfung"></a>6.1. Druckvorstufenüberprüfung</h3>
 <div class="paragraph">
 <p>Es wird zuerst eine Druckvorstufenüberprüfung vorgenommen, die recht häufig noch Unzulänglichkeiten im Dokument aufdeckt:</p>
 </div>
@@ -2043,6 +2079,12 @@ Dort muss man dann die Abteilung <kbd>Hilfslinien</kbd> auswählen:</p>
 </div>
 <div class="paragraph">
 <p>In diesem Beispiel sind die häufigsten Defizite aufgeführt. Ein Doppelklick auf einen der beanstandeten Einträge bringt das problembehaftete Objekt in die Ansicht. Hier nimmt man dann solange Korrekturen vor, bis die Druckvorstufenüberprüfung keine Probleme mehr findet.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_einbetten_der_verwendeten_fonts"><a class="anchor" href="#_einbetten_der_verwendeten_fonts"></a>6.2. Einbetten der verwendeten Fonts</h3>
+<div class="paragraph">
+<p>Wer glaubt, dass Buchstaben alle gleich sind und dass jeder das gleiche Verständnis davon hat, wie ein "a" aussieht, hat den Begriff <em>Font</em> noch nicht gehört! Fonts sind eine Wissenschaft für sich - aber für uns ist hier nur von Interesse, dass nicht nur alle am Layout beteiligten Personen die verwendeten Fonts auch zur Verfügung haben müssen, wir müssen auch dafür sorgen, dass auch die Druckerei auf sie zurückgreifen kann. Dazu werden die im Dokument benutzten Fonts in das PDF eingebettet:</p>
 </div>
 <div class="admonitionblock important">
 <table>
@@ -2064,12 +2106,55 @@ Dort muss man dann die Abteilung <kbd>Hilfslinien</kbd> auswählen:</p>
 </table>
 </div>
 </div>
+<div class="sect2">
+<h3 id="_aktivieren_der_marken"><a class="anchor" href="#_aktivieren_der_marken"></a>6.3. Aktivieren der Marken</h3>
+<div class="paragraph">
+<p>In unserer Vereinszeitung sollen auf Vorder- und Rückseite randlose Fotografien abgebildet werden. Leider kann man auf ein DIN-A4-Blatt kein DIN-A4-Bild so drucken, dass sich Bild und Papierblatt exakt decken. Druckmaschinen sind weltliche Maschinenbauprodukte und haben eine, wenn auch klitzekleine, so aber doch bemerkbare Ungenauigkeit in der Ausrichtung (Registerfehler).</p>
+</div>
+<div class="paragraph">
+<p>Aus diesem Dilemma behilft man sich, indem man ein Bild, das größer als DIN-A4 ist, auf ein Blatt Papier druckt, dass ebenfalls größer als DIN-A4 ist. Da kommt es auf einen klitzekleinen Registerfehler nicht nicht an - denn hinterher wird das Blatt einfach auf DIN-A4 zurechtgeschnitten, so dass das Bild exakt mit dem Rand des Papieres abschließt.</p>
+</div>
+<div class="paragraph">
+<p>Das bedeutet nichts anderes, als dass unsere Broschure im PDF (oder wenigstens die beiden Umschlagaußenseiten) größer als (2x)DIN-A5 ist. Nun weiß man in der Druckerei aber nicht, wo denn die von uns gedachte Grenze zwischen gewolltem Ausdruck und zugeschlagenen Verschnitt verläuft.</p>
+</div>
+<div class="paragraph">
+<p>Damit hierüber in der Druckerei Klarheit herrscht, muss beim PDF-Export angegeben werden, dass die zugehörigen Marken mit ins PDF ausgegeben werden:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/PDFExport3.png" alt="PDFExport3">
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Bitte nicht den Haken bei den Farbbalken setzen! Sonst entstehen auf den Innenseiten, die ja in Schwarz-Weiß gedruckt werden sollen, farbige Elemente. Das sollte kein Killerproblem sein, kann aber zu Verwirrung führen.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Das erzeugte PDF hat dann einige zusätzliche Elemente und sieht so aus:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/PDFExport4.png" alt="PDFExport4">
+</div>
+</div>
+</div>
+</div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Version 1.5<br>
-Erstellt mit Asciidoctor v1.5.4 : Zuletzt geändert: 2017-05-19 21:35:55 +02:00 2017-05-19 21:35:55 +02:00
+Version 1.5.1<br>
+Erstellt mit Asciidoctor v1.5.4 : Zuletzt geändert: 2017-05-24 21:58:52 +02:00 2017-05-24 21:58:52 +02:00
 </div>
 </div>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/styles/github.min.css">

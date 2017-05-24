@@ -1,7 +1,7 @@
 = Platsch - Layout
 Mathias-H. Weber <mhw@teambaltic.de>
 // v1.0,  zuletzt geändert: {docdatetime}
-v1.5, 19. Mai 2017 
+v1.5.1, 24. Mai 2017 
 :doctype: book
 :encoding: utf-8
 :lang: de
@@ -656,16 +656,25 @@ image::Hilfslinien2.png[]
 
 == PDF-Erzeugung
 
+
 Wenn das Layout (endlich!) fertig erstellt ist, muss abschließend eine PDF-Datei erzeugt werden, die der Druckerei zur Verarbeitung übergeben werden kann.
+
 Über das kleine PDF-Symbol startet man die PDF-Erstellung:
 
 image::PDFExport0.png[]
+
+=== Druckvorstufenüberprüfung
 
 Es wird zuerst eine Druckvorstufenüberprüfung vorgenommen, die recht häufig noch Unzulänglichkeiten im Dokument aufdeckt:
 
 image::PDFExport1.png[]
 
 In diesem Beispiel sind die häufigsten Defizite aufgeführt. Ein Doppelklick auf einen der beanstandeten Einträge bringt das problembehaftete Objekt in die Ansicht. Hier nimmt man dann solange Korrekturen vor, bis die Druckvorstufenüberprüfung keine Probleme mehr findet.
+
+
+=== Einbetten der verwendeten Fonts
+
+Wer glaubt, dass Buchstaben alle gleich sind und dass jeder das gleiche Verständnis davon hat, wie ein "a" aussieht, hat den Begriff _Font_ noch nicht gehört! Fonts sind eine Wissenschaft für sich - aber für uns ist hier nur von Interesse, dass nicht nur alle am Layout beteiligten Personen die verwendeten Fonts auch zur Verfügung haben müssen, wir müssen auch dafür sorgen, dass auch die Druckerei auf sie zurückgreifen kann. Dazu werden die im Dokument benutzten Fonts in das PDF eingebettet:
 
 [IMPORTANT]
 ====
@@ -676,4 +685,25 @@ image::PDFExport2.png[]
 
 ====
 
+=== Aktivieren der Marken
+
+In unserer Vereinszeitung sollen auf Vorder- und Rückseite randlose Fotografien abgebildet werden. Leider kann man auf ein DIN-A4-Blatt kein DIN-A4-Bild so drucken, dass sich Bild und Papierblatt exakt decken. Druckmaschinen sind weltliche Maschinenbauprodukte und haben eine, wenn auch klitzekleine, so aber doch bemerkbare Ungenauigkeit in der Ausrichtung (Registerfehler). 
+
+Aus diesem Dilemma behilft man sich, indem man ein Bild, das größer als DIN-A4 ist, auf ein Blatt Papier druckt, dass ebenfalls größer als DIN-A4 ist. Da kommt es auf einen klitzekleinen Registerfehler nicht nicht an - denn hinterher wird das Blatt einfach auf DIN-A4 zurechtgeschnitten, so dass das Bild exakt mit dem Rand des Papieres abschließt.
+
+Das bedeutet nichts anderes, als dass unsere Broschure im PDF (oder wenigstens die beiden Umschlagaußenseiten) größer als (2x)DIN-A5 ist. Nun weiß man in der Druckerei aber nicht, wo denn die von uns gedachte Grenze zwischen gewolltem Ausdruck und zugeschlagenen Verschnitt verläuft. 
+
+Damit hierüber in der Druckerei Klarheit herrscht, muss beim PDF-Export angegeben werden, dass die zugehörigen Marken mit ins PDF ausgegeben werden:
+
+
+image::PDFExport3.png[]
+
+[NOTE]
+=====
+Bitte nicht den Haken bei den Farbbalken setzen! Sonst entstehen auf den Innenseiten, die ja in Schwarz-Weiß gedruckt werden sollen, farbige Elemente. Das sollte kein Killerproblem sein, kann aber zu Verwirrung führen.
+=====
+
+Das erzeugte PDF hat dann einige zusätzliche Elemente und sieht so aus:
+
+image::PDFExport4.png[]
 
