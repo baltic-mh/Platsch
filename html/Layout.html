@@ -767,8 +767,8 @@ table.tableblock.grid-all { -webkit-border-radius: 0; border-radius: 0; -webkit-
 <div class="details">
 <span id="author" class="author">Mathias-H. Weber</span><br>
 <span id="email" class="email"><a href="mailto:mhw@teambaltic.de">mhw@teambaltic.de</a></span><br>
-<span id="revnumber">version 1.5.1,</span>
-<span id="revdate">24. Mai 2017</span>
+<span id="revnumber">version 1.5.2,</span>
+<span id="revdate">3. Juni 2017</span>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Inhaltsverzeichnis</div>
@@ -843,8 +843,10 @@ table.tableblock.grid-all { -webkit-border-radius: 0; border-radius: 0; -webkit-
 <li><a href="#_pdf_erzeugung">6. PDF-Erzeugung</a>
 <ul class="sectlevel2">
 <li><a href="#_druckvorstufenüberprüfung">6.1. Druckvorstufenüberprüfung</a></li>
-<li><a href="#_einbetten_der_verwendeten_fonts">6.2. Einbetten der verwendeten Fonts</a></li>
-<li><a href="#_aktivieren_der_marken">6.3. Aktivieren der Marken</a></li>
+<li><a href="#_einstellungen_für_die_pdf_erstellung">6.2. Einstellungen für die PDF-Erstellung</a></li>
+<li><a href="#_einbetten_der_verwendeten_fonts">6.3. Einbetten der verwendeten Fonts</a></li>
+<li><a href="#_konvertierung_der_farben">6.4. Konvertierung der Farben</a></li>
+<li><a href="#_aktivieren_der_marken">6.5. Aktivieren der Marken</a></li>
 </ul>
 </li>
 </ul>
@@ -891,6 +893,26 @@ Die Installation und Bedienung sind separat <a href="Software.html#_cloud_softwa
 </td>
 </tr>
 </table>
+</div>
+<div class="paragraph">
+<p>Diese Beschreibung bezüglich der Anwendung ist eng an die Erstellung der Vereinszeitung der <a href="http://www.kv-kiel.de">Kanu-Vereinigung Kiel</a> angelehnt.
+Es sei hier aber dennoch auf einige allgemeine Seiten im Internet verwiesen, die einen weiteren Blick auf <strong>Scribus</strong> bieten:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://wiki.scribus-user.de/start">Deutschsprachiges Scribus Wiki</a> (die Einführung in <strong>Scribus</strong> daraus ist als PDF im Dokumentationsorder der Cloud zu finden)</p>
+</li>
+<li>
+<p><a href="https://www.scribus-user.de/forum/viewtopic.php?f=6&amp;t=212">Deutschsprachiges Scribus Forum</a></p>
+</li>
+<li>
+<p><a href="http://blog.technopoint.de/2011/10/21/was-ist-eigentlich-beschnitt-und-wie-kommt-der-in-die-pdf/">Was ist eigentlich Beschnitt?</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Auch im Ordner <em>XX-Dokumentation</em> im Cloud-Verzeichnis stehen einige Dokumente, die hilfreich sein können bei Einarbeitung, Problemlösung oder zum Erlangen eines besseren Verständnisses.</p>
 </div>
 </div>
 </div>
@@ -2060,17 +2082,20 @@ Dort muss man dann die Abteilung <kbd>Hilfslinien</kbd> auswählen:</p>
 <p>Wenn das Layout (endlich!) fertig erstellt ist, muss abschließend eine PDF-Datei erzeugt werden, die der Druckerei zur Verarbeitung übergeben werden kann.</p>
 </div>
 <div class="paragraph">
-<p>Über das kleine PDF-Symbol startet man die PDF-Erstellung:</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/PDFExport0.png" alt="PDFExport0">
-</div>
+<p>Da die Druckerei einige spezielle Anforderungen an das PDF stellt, müssen die hier angegebenen Einstellungen genau eingehalten werden.</p>
 </div>
 <div class="sect2">
 <h3 id="_druckvorstufenüberprüfung"><a class="anchor" href="#_druckvorstufenüberprüfung"></a>6.1. Druckvorstufenüberprüfung</h3>
 <div class="paragraph">
 <p>Es wird zuerst eine Druckvorstufenüberprüfung vorgenommen, die recht häufig noch Unzulänglichkeiten im Dokument aufdeckt:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/PDFExport0a.png" alt="PDFExport0a">
+</div>
+</div>
+<div class="paragraph">
+<p>Es erscheint ein Fenster, dass alle gefundenen Defizite auflistet:</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -2082,32 +2107,51 @@ Dort muss man dann die Abteilung <kbd>Hilfslinien</kbd> auswählen:</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_einbetten_der_verwendeten_fonts"><a class="anchor" href="#_einbetten_der_verwendeten_fonts"></a>6.2. Einbetten der verwendeten Fonts</h3>
+<h3 id="_einstellungen_für_die_pdf_erstellung"><a class="anchor" href="#_einstellungen_für_die_pdf_erstellung"></a>6.2. Einstellungen für die PDF-Erstellung</h3>
 <div class="paragraph">
-<p>Wer glaubt, dass Buchstaben alle gleich sind und dass jeder das gleiche Verständnis davon hat, wie ein "a" aussieht, hat den Begriff <em>Font</em> noch nicht gehört! Fonts sind eine Wissenschaft für sich - aber für uns ist hier nur von Interesse, dass nicht nur alle am Layout beteiligten Personen die verwendeten Fonts auch zur Verfügung haben müssen, wir müssen auch dafür sorgen, dass auch die Druckerei auf sie zurückgreifen kann. Dazu werden die im Dokument benutzten Fonts in das PDF eingebettet:</p>
-</div>
-<div class="admonitionblock important">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-important" title="Important"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>Im Dialog zum Speichern der PDF-Datei ist unbedingt darauf zu achten, dass alle verwendeten Fonts eingebettet werden:</p>
+<p>Über das kleine PDF-Symbol startet man die PDF-Erstellung:</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/PDFExport2.png" alt="PDFExport2">
+<img src="images/PDFExport0b.png" alt="PDFExport0b">
 </div>
 </div>
-</td>
-</tr>
-</table>
+<div class="paragraph">
+<p>Hier ist im Wesentlichen darauf zu achten, dass die PDF-Version auf 1.5 gestellt wird:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/PDFExport2a.png" alt="PDFExport2a">
+</div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_aktivieren_der_marken"><a class="anchor" href="#_aktivieren_der_marken"></a>6.3. Aktivieren der Marken</h3>
+<h3 id="_einbetten_der_verwendeten_fonts"><a class="anchor" href="#_einbetten_der_verwendeten_fonts"></a>6.3. Einbetten der verwendeten Fonts</h3>
+<div class="paragraph">
+<p>Wer glaubt, dass Buchstaben alle gleich sind und dass jeder das gleiche Verständnis davon hat, wie ein "a" aussieht, hat den Begriff <em>Font</em> noch nicht gehört! Fonts sind eine Wissenschaft für sich - aber für uns ist hier nur von Interesse, dass nicht nur alle am Layout beteiligten Personen die verwendeten Fonts auch zur Verfügung haben müssen, wir müssen auch dafür sorgen, dass auch die Druckerei auf sie zurückgreifen kann. Dazu werden die im Dokument benutzten Fonts in das PDF eingebettet:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/PDFExport2b.png" alt="PDFExport2b">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_konvertierung_der_farben"><a class="anchor" href="#_konvertierung_der_farben"></a>6.4. Konvertierung der Farben</h3>
+<div class="paragraph">
+<p>Eines der wenigen Dinge, die alle aus dem Physikunterricht behalten haben, ist die Tatsache, dass der Umgang mit Farben grundsätzlich unterschiedlich ist, je nachdem, ob man sie durch Licht erzeugt (additiv) oder durch Auftrag auf z.B. Papier (subtraktiv). Das hat auch für uns Bedeutung.</p>
+</div>
+<div class="paragraph">
+<p>Da wir die Broschure eben nicht für die Betrachtung am Bildschirm erstellen wollen, sondern für die Ausgabe durch einen Druck, müssen wir das hier angeben:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/PDFExport2c.png" alt="PDFExport2c">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_aktivieren_der_marken"><a class="anchor" href="#_aktivieren_der_marken"></a>6.5. Aktivieren der Marken</h3>
 <div class="paragraph">
 <p>In unserer Vereinszeitung sollen auf Vorder- und Rückseite randlose Fotografien abgebildet werden. Leider kann man auf ein DIN-A4-Blatt kein DIN-A4-Bild so drucken, dass sich Bild und Papierblatt exakt decken. Druckmaschinen sind weltliche Maschinenbauprodukte und haben eine, wenn auch klitzekleine, so aber doch bemerkbare Ungenauigkeit in der Ausrichtung (Registerfehler).</p>
 </div>
@@ -2122,7 +2166,7 @@ Dort muss man dann die Abteilung <kbd>Hilfslinien</kbd> auswählen:</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/PDFExport3.png" alt="PDFExport3">
+<img src="images/PDFExport2d.png" alt="PDFExport2d">
 </div>
 </div>
 <div class="admonitionblock note">
@@ -2153,8 +2197,8 @@ Dort muss man dann die Abteilung <kbd>Hilfslinien</kbd> auswählen:</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Version 1.5.1<br>
-Erstellt mit Asciidoctor v1.5.4 : Zuletzt geändert: 2017-05-24 21:58:52 +02:00 2017-05-24 21:58:52 +02:00
+Version 1.5.2<br>
+Erstellt mit Asciidoctor v1.5.4 : Zuletzt geändert: 2017-06-03 13:30:04 +02:00 2017-06-03 13:30:04 +02:00
 </div>
 </div>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/styles/github.min.css">

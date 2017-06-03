@@ -767,15 +767,21 @@ table.tableblock.grid-all { -webkit-border-radius: 0; border-radius: 0; -webkit-
 <div class="details">
 <span id="author" class="author">Mathias-H. Weber</span><br>
 <span id="email" class="email"><a href="mailto:mhw@teambaltic.de">mhw@teambaltic.de</a></span><br>
-<span id="revnumber">version 1.1,</span>
-<span id="revdate">04. Februar 2017</span>
+<span id="revnumber">version 1.2,</span>
+<span id="revdate">03. Juni 2017</span>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Inhaltsverzeichnis</div>
 <ul class="sectlevel1">
 <li><a href="#_einleitung">1. Einleitung</a></li>
 <li><a href="#_druckerei">2. Druckerei</a></li>
-<li><a href="#_druck">3. Druck</a></li>
+<li><a href="#_druck">3. Druck</a>
+<ul class="sectlevel2">
+<li><a href="#_pdf_erzeugung">3.1. PDF-Erzeugung</a></li>
+<li><a href="#_pdf_Übermittlung">3.2. PDF-Übermittlung</a></li>
+<li><a href="#_produktbeschreibung">3.3. Produktbeschreibung</a></li>
+</ul>
+</li>
 <li><a href="#_versand">4. Versand</a>
 <ul class="sectlevel2">
 <li><a href="#_dialogpost">4.1. DIALOGPOST</a></li>
@@ -836,26 +842,47 @@ Fax : 0431-6484445</pre>
 <div class="sect1">
 <h2 id="_druck"><a class="anchor" href="#_druck"></a>3. Druck</h2>
 <div class="sectionbody">
+<div class="sect2">
+<h3 id="_pdf_erzeugung"><a class="anchor" href="#_pdf_erzeugung"></a>3.1. PDF-Erzeugung</h3>
 <div class="paragraph">
-<p>Die PDF-Datei wird zur Druckerei geschickt <strong class="fuchsia">(Email?)</strong></p>
+<p>Die Druckerei benötigt eine PDF-Datei mit einigen speziellen Eigenschaften, um  eine Broschure nach unseren Vorstellungen erzeugen zu können.
+Die PDF-Erzeugung ist im Teil <a href="Layout.html#_pdf_erzeugung">Layout</a> dieser Dokumentation beschrieben.</p>
 </div>
-<div class="admonitionblock warning">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-warning" title="Warning"></i>
-</td>
-<td class="content">
+</div>
+<div class="sect2">
+<h3 id="_pdf_Übermittlung"><a class="anchor" href="#_pdf_Übermittlung"></a>3.2. PDF-Übermittlung</h3>
 <div class="paragraph">
-<p>Die Seitenreihenfolge in der Datei ist in Lesereihenfolge (Seite 1, Seite 2, &#8230;&#8203;) - nicht in ausgeschossener Reihenfolge  (Seite 16, Seite 1, Seite 15, Seite 2, &#8230;&#8203;) .</p>
-</div>
-</td>
-</tr>
-</table>
+<p>Die PDF-Datei ist in aller Regel zu sperrig, um sie per E-Mail an die Druckerei zu schicken. Das ist auch gar nicht notwendig, denn unsere Cloud ermöglicht es, einzelne Dateien für den Zugriff von außen freizugeben.</p>
 </div>
 <div class="paragraph">
-<p>Es ist darauf zu achten, dass die Schriften eingebettet sind (Option beim Exportieren des PDFs).</p>
+<p>Dazu muss man sich in einem Web-Browser in unsere Cloud einloggen. Auf der Seiten
+<a href="https://cloud.telekom-dienste.de/">https://cloud.telekom-dienste.de/</a>
+gibt es einen Knopf <kbd>Login MagentaCLOUD</kbd> über den man zum Login-Dialog gelangt:</p>
 </div>
+<div class="imageblock">
+<div class="content">
+<img src="images/MagentaCLOUD-Login.png" alt="MagentaCLOUD Login">
+</div>
+</div>
+<div class="paragraph">
+<p>Im Verzeichnis der aktuellen Ausgabe selektiert man das freizugebende PDF durch einen Klick auf das Dateisymbol</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/PDF-Freigabe1.png" alt="PDF Freigabe1">
+</div>
+</div>
+<div class="paragraph">
+<p>und klickt dann auf <kbd>Freigeben</kbd>. Nach Bestätigen seines Wunsches erscheint ein Dialog, der einen Link zur freigegebenen Datei enthält. Diesen kann man eingepackt in ein paar freundliche Worte einfach per E-Mail zur Druckerei schicken.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/PDF-Freigabe2.png" alt="PDF Freigabe2">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_produktbeschreibung"><a class="anchor" href="#_produktbeschreibung"></a>3.3. Produktbeschreibung</h3>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 50%;">
@@ -894,6 +921,7 @@ Fax : 0431-6484445</pre>
 </tr>
 </tbody>
 </table>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -1022,8 +1050,8 @@ Der Nachteil an der Verschickung über DIALOGPOST ist die Tatsache, dass die Sen
 </div>
 <div id="footer">
 <div id="footer-text">
-Version 1.1<br>
-Erstellt mit Asciidoctor v1.5.4 : Zuletzt geändert: 2017-03-17 23:52:42 +01:00
+Version 1.2<br>
+Erstellt mit Asciidoctor v1.5.4 : Zuletzt geändert: 2017-06-03 13:30:36 +02:00
 </div>
 </div>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/styles/github.min.css">

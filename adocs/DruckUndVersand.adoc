@@ -1,6 +1,6 @@
 = Platsch - Druck und Versand
 Mathias-H. Weber <mhw@teambaltic.de>
-v1.1, 04. Februar 2017 
+v1.2, 03. Juni 2017 
 :doctype: book
 :encoding: utf-8
 :lang: de
@@ -55,14 +55,30 @@ Vierzehn Tage vor Dateiabgabe muss die Zeitung in der Druckerei avisiert werden,
 
 == Druck
 
-Die PDF-Datei wird zur Druckerei geschickt [fuchsia]*(Email?)*
+=== PDF-Erzeugung
 
-[WARNING]
-====
-Die Seitenreihenfolge in der Datei ist in Lesereihenfolge (Seite 1, Seite 2, ...) - nicht in ausgeschossener Reihenfolge  (Seite 16, Seite 1, Seite 15, Seite 2, ...) .
-====
+Die Druckerei benötigt eine PDF-Datei mit einigen speziellen Eigenschaften, um  eine Broschure nach unseren Vorstellungen erzeugen zu können.
+Die PDF-Erzeugung ist im Teil link:Layout.html#_pdf_erzeugung[Layout] dieser Dokumentation beschrieben.
 
-Es ist darauf zu achten, dass die Schriften eingebettet sind (Option beim Exportieren des PDFs).
+=== PDF-Übermittlung
+
+Die PDF-Datei ist in aller Regel zu sperrig, um sie per E-Mail an die Druckerei zu schicken. Das ist auch gar nicht notwendig, denn unsere Cloud ermöglicht es, einzelne Dateien für den Zugriff von außen freizugeben.
+
+Dazu muss man sich in einem Web-Browser in unsere Cloud einloggen. Auf der Seiten
+link:https://cloud.telekom-dienste.de/[https://cloud.telekom-dienste.de/]
+gibt es einen Knopf kbd:[Login MagentaCLOUD] über den man zum Login-Dialog gelangt:
+
+image::MagentaCLOUD-Login.png[]
+
+Im Verzeichnis der aktuellen Ausgabe selektiert man das freizugebende PDF durch einen Klick auf das Dateisymbol
+
+image::PDF-Freigabe1.png[]
+
+und klickt dann auf kbd:[Freigeben]. Nach Bestätigen seines Wunsches erscheint ein Dialog, der einen Link zur freigegebenen Datei enthält. Diesen kann man eingepackt in ein paar freundliche Worte einfach per E-Mail zur Druckerei schicken.
+
+image::PDF-Freigabe2.png[]
+
+=== Produktbeschreibung
 
 [width="100%",options="header"]
 |====================

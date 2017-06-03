@@ -1,7 +1,7 @@
 = Platsch - Layout
 Mathias-H. Weber <mhw@teambaltic.de>
 // v1.0,  zuletzt geändert: {docdatetime}
-v1.5.1, 24. Mai 2017 
+v1.5.2, 3. Juni 2017 
 :doctype: book
 :encoding: utf-8
 :lang: de
@@ -36,6 +36,7 @@ v1.5.1, 24. Mai 2017
   
 In dieser Dokumentation ist der gesamte Prozess beschrieben, wie aus den durch die Redaktionsarbeit gesammelten Inhalten eine PDF-Datei erstellt wird, die schließlich der Druckerei übergeben wird, um daraus _wirklich_ die Vereinszeitung in Form einer Papierbroschure zu machen.
 
+
 == Verwendete Software
 
 === Cloud-Software
@@ -54,6 +55,15 @@ Innerhalb von Scribus wird von *Ghostscript* Gebrauch gemacht. Daher muss auch d
 ====
 Ist dieses Werkzeug nicht installiert, kann man z.B. keine PDF-Dateien als Bilder einbinden.
 ====
+
+Diese Beschreibung bezüglich der Anwendung ist eng an die Erstellung der Vereinszeitung der link:http://www.kv-kiel.de[Kanu-Vereinigung Kiel] angelehnt.
+Es sei hier aber dennoch auf einige allgemeine Seiten im Internet verwiesen, die einen weiteren Blick auf *Scribus* bieten:
+
+* link:https://wiki.scribus-user.de/start[Deutschsprachiges Scribus Wiki] (die Einführung in *Scribus* daraus ist als PDF im Dokumentationsorder der Cloud zu finden)
+* link:https://www.scribus-user.de/forum/viewtopic.php?f=6&t=212[Deutschsprachiges Scribus Forum]
+* link:http://blog.technopoint.de/2011/10/21/was-ist-eigentlich-beschnitt-und-wie-kommt-der-in-die-pdf/[Was ist eigentlich Beschnitt?]
+
+Auch im Ordner _XX-Dokumentation_ im Cloud-Verzeichnis stehen einige Dokumente, die hilfreich sein können bei Einarbeitung, Problemlösung oder zum Erlangen eines besseren Verständnisses.
 
 == Verzeichnisstrukturen
 
@@ -659,31 +669,44 @@ image::Hilfslinien2.png[]
 
 Wenn das Layout (endlich!) fertig erstellt ist, muss abschließend eine PDF-Datei erzeugt werden, die der Druckerei zur Verarbeitung übergeben werden kann.
 
-Über das kleine PDF-Symbol startet man die PDF-Erstellung:
-
-image::PDFExport0.png[]
+Da die Druckerei einige spezielle Anforderungen an das PDF stellt, müssen die hier angegebenen Einstellungen genau eingehalten werden.
 
 === Druckvorstufenüberprüfung
 
 Es wird zuerst eine Druckvorstufenüberprüfung vorgenommen, die recht häufig noch Unzulänglichkeiten im Dokument aufdeckt:
 
+image::PDFExport0a.png[]
+
+Es erscheint ein Fenster, dass alle gefundenen Defizite auflistet:
+
 image::PDFExport1.png[]
 
 In diesem Beispiel sind die häufigsten Defizite aufgeführt. Ein Doppelklick auf einen der beanstandeten Einträge bringt das problembehaftete Objekt in die Ansicht. Hier nimmt man dann solange Korrekturen vor, bis die Druckvorstufenüberprüfung keine Probleme mehr findet.
+
+=== Einstellungen für die PDF-Erstellung
+
+Über das kleine PDF-Symbol startet man die PDF-Erstellung:
+
+image::PDFExport0b.png[]
+
+Hier ist im Wesentlichen darauf zu achten, dass die PDF-Version auf 1.5 gestellt wird:
+
+image::PDFExport2a.png[]
 
 
 === Einbetten der verwendeten Fonts
 
 Wer glaubt, dass Buchstaben alle gleich sind und dass jeder das gleiche Verständnis davon hat, wie ein "a" aussieht, hat den Begriff _Font_ noch nicht gehört! Fonts sind eine Wissenschaft für sich - aber für uns ist hier nur von Interesse, dass nicht nur alle am Layout beteiligten Personen die verwendeten Fonts auch zur Verfügung haben müssen, wir müssen auch dafür sorgen, dass auch die Druckerei auf sie zurückgreifen kann. Dazu werden die im Dokument benutzten Fonts in das PDF eingebettet:
 
-[IMPORTANT]
-====
+image::PDFExport2b.png[]
 
-Im Dialog zum Speichern der PDF-Datei ist unbedingt darauf zu achten, dass alle verwendeten Fonts eingebettet werden:
+=== Konvertierung der Farben
 
-image::PDFExport2.png[]
+Eines der wenigen Dinge, die alle aus dem Physikunterricht behalten haben, ist die Tatsache, dass der Umgang mit Farben grundsätzlich unterschiedlich ist, je nachdem, ob man sie durch Licht erzeugt (additiv) oder durch Auftrag auf z.B. Papier (subtraktiv). Das hat auch für uns Bedeutung.
 
-====
+Da wir die Broschure eben nicht für die Betrachtung am Bildschirm erstellen wollen, sondern für die Ausgabe durch einen Druck, müssen wir das hier angeben:
+
+image::PDFExport2c.png[]
 
 === Aktivieren der Marken
 
@@ -696,7 +719,7 @@ Das bedeutet nichts anderes, als dass unsere Broschure im PDF (oder wenigstens d
 Damit hierüber in der Druckerei Klarheit herrscht, muss beim PDF-Export angegeben werden, dass die zugehörigen Marken mit ins PDF ausgegeben werden:
 
 
-image::PDFExport3.png[]
+image::PDFExport2d.png[]
 
 [NOTE]
 =====
