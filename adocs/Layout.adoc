@@ -1,7 +1,7 @@
 = Platsch - Layout
 Mathias-H. Weber <mhw@teambaltic.de>
 // v1.0,  zuletzt geändert: {docdatetime}
-v1.5.2, 3. Juni 2017 
+v1.5.3, 22. August 2017 
 :doctype: book
 :encoding: utf-8
 :lang: de
@@ -63,11 +63,19 @@ Es sei hier aber dennoch auf einige allgemeine Seiten im Internet verwiesen, die
 * link:https://www.scribus-user.de/forum/viewtopic.php?f=6&t=212[Deutschsprachiges Scribus Forum]
 * link:http://blog.technopoint.de/2011/10/21/was-ist-eigentlich-beschnitt-und-wie-kommt-der-in-die-pdf/[Was ist eigentlich Beschnitt?]
 
+[WARNING]
+====
+Aktuell wird die Version 1.4.6 von Scribus verwendet.
+Es sei hier ausdrücklich vor der Verwendung der Version 1.5.3 gewarnt, bei der es einige nicht auf den ersten Blick ersichtliche Defizite bei der PDF-Erstellung gibt.
+
+Alle Bilder und Beschreibungen in diesem Dokument beziehen sich auf die Version 1.4.6. Sie können aber natürlich auf jede andere Version sinngemäß übertragen werden.
+====
+
 Auch im Ordner _XX-Dokumentation_ im Cloud-Verzeichnis stehen einige Dokumente, die hilfreich sein können bei Einarbeitung, Problemlösung oder zum Erlangen eines besseren Verständnisses.
 
 == Verzeichnisstrukturen
 
-Um koordiniert mit mehreren Redakteuren und Layoutern an der Zeitung arbeiten zu können, ist ein gemeinsames Verständnis der Arbeitsablaufes und der Verzeichnisstruktur unerlässlich.
+Um koordiniert mit mehreren Redakteuren und Layoutern an der Zeitung arbeiten zu können, ist ein gemeinsames Verständnis des Arbeitsablaufes und der Verzeichnisstruktur unerlässlich.
 
 === Struktur des Cloud-Verzeichnisses
 
@@ -100,9 +108,13 @@ Die zentrale Datei einer jeden Ausgabe ist die Datei _Platsch.sla_. Sie repräse
 
 _Alle_ erzeugten und zugelieferten Dateien werden zuerst im Unterverzeichnis _01-Eingang_ aufgenommen (#1#). Sobald sie redationell bearbeitet werden, werden sie in den Ordner _02-InBearbeitung_ verschoben (#2#). Erst wenn sie ihre Form, in der sie in die Zeitung Eingang finden sollen, erhalten haben, werden sie - im Falle von Bildern - in das Verzeichnis _03-FertigeBilder_ verschoben (#3#), im Falle von Texten in den Ordner _03-FertigeTexte_ (#4#).
 
-So ist eine für alle ersichtliche Trennung der unterschiedlichen Stadien der Bearbeitung gesichert und die Gefahr von Missverständnissen und Datenverluste ist minimal.
+So ist eine für alle ersichtliche Trennung der unterschiedlichen Stadien der Bearbeitung gesichert und die Gefahr von Missverständnissen und Datenverlusten ist minimal.
 
+[WARNING]
+====
 Wenn man "Trockenübungen" machen möchte, um einen Bearbeitungsschritt auszuprobieren, sollte das in einer privaten Kopie des Ausgaben-Verzeichnisses außerhalb des Cloud-Ordners stattfinden.
+====
+
 
 == Grundsätzlicher Arbeitsablauf
 
@@ -132,6 +144,11 @@ Die Datei _Nochtun.txt_ ist schlicht ein Merkzettel, in die man Dinge hineinschr
 Die Datei _Platsch.sla_ repräsentiert das Scribus-Layout und damit den Startpunkt dieses Prozessschrittes. Sie wird aus dem Verzeichnis der vorherigen Ausgabe in das Verzeichnis dieser Ausgabe kopiert.
 
 ==== Erzeugen eines Bildes fuer die Ausgabennummer
+
+[TIP]
+====
+Seit der Ausgabe 84 (Juni/2017) wird die Ausgabennummer nicht mehr wie hier beschrieben erzeugt. Alle Bezüge hierauf sind somit obsolet. Ich habe die Dokumentation trotzdem erst einmal in diesem Dokument belassen.
+====
 
 [WARNING]
 ====
